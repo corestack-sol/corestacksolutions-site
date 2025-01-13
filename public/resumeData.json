@@ -1,41 +1,31 @@
 {
   "main": {
-    "name": "Sonny Sangha",
-    "occupation": "ReactJS Developer && Instructor @CleverProgrammer",
-    "description": "Full Stack React Developer by Day, Founder && Freelancer by Night. #papaReact",
+    "name": "Corestack Solutions",
+    "occupation": "Technology Solutions Company",
+    "description": "We develop applications and technological solutions that integrate innovation, efficiency, and quality. We specialize in robust and customized technology stacks",
     "image": "IG_Sonny.jpeg",
-    "bio": "My name is Sonny, I'm a Full Stack ReactJS Developer. Currently I'm working at Clever Programmer while also coaching ",
-    "contactmessage": "Get in touch with me to receive further details, get coached or anything else.",
-    "email": "sonny@cleverprogrammer.com",
-    "phone": "+44 12 345 6789",
+    "bio": "We are CoreStack Solutions, a company dedicated to providing comprehensive technological solutions, combining expertise in frontend and backend development. Our mission is to transform ideas into impact digital tools.",
+    "contactmessage": "Get in touch with us to learn more about how we can help you achieve your technological goals.",
+    "email": "corestack.sol@gmail.com",
+    "phone": "+529934421347, +529932892836",
     "address": {
       "street": "123 Fake Street",
-      "city": "London",
-      "state": "UK",
-      "zip": "ABC 123"
+      "city": "Villahermosa, Tabasco. México",
+      "state": "MX",
+      "zip": "86030"
     },
     "website": "http://www.timbakerdev.com",
     "resumedownload": "http://timbakerdev.com",
     "social": [
       {
         "name": "facebook",
-        "url": "https://www.facebook.com/sonny.sangha.3",
+        "url": "https://www.facebook.com",
         "className": "fa fa-facebook"
       },
       {
-        "name": "linkedin",
-        "url": "https://www.linkedin.com/in/saajansangha/",
-        "className": "fa fa-linkedin"
-      },
-      {
-        "name": "instagram",
-        "url": "https://www.instagram.com/ssssangha/",
-        "className": "fa fa-instagram"
-      },
-      {
-        "name": "github",
-        "url": "http://github.com/sonnysangha",
-        "className": "fa fa-github"
+        "name": "whatsapp",
+        "url": "https://wa.me/+529934421347",
+        "className": "fa fa-whatsapp"
       }
     ]
   },
@@ -77,15 +67,15 @@
         "level": "60%"
       },
       {
-        "name": "Figma && Adobe XD",
+        "name": "Node",
         "level": "55%"
       },
       {
-        "name": "HTML5",
+        "name": "SQL",
         "level": "80%"
       },
       {
-        "name": "MongoDB",
+        "name": "React Native",
         "level": "80%"
       }
     ]
@@ -127,12 +117,8 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.",
+        "text": "CoreStack Solutions is one of the most forward-thinking and innovative companies I've ever come across. Their approach to technology is not just about delivering results but creating solutions that make a real impact. I’m confident that their team will continue to drive success and exceed expectations in every project they tackle.",
         "user": "Kareem Abdul Jabbar"
-      },
-      {
-        "text": "That Sonny Sangha must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
-        "user": "Steve Wozniak... impersonator"
       }
     ]
   }
