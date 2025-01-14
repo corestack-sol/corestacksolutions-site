@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Logo from "./Logo";
 
 class Header extends Component {
   render() {
@@ -63,6 +64,7 @@ class Header extends Component {
         </nav>
 
         <div className="row banner">
+          <Logo />
           <div className="banner-text">
             <h1 className="responsive-headline">{name}.</h1>
             <h3>
