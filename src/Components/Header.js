@@ -32,35 +32,36 @@ class Header extends Component {
           <ul id="nav" className="nav">
             <li className="current">
               <a className="smoothscroll" href="#home">
-                Home
+                {this.props.language === "EN" ? "Home" : "Inicio"}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#about">
-                About
+                {this.props.language === "EN" ? "About" : "Sobre Nosotros"}
               </a>
             </li>
-            {/*             <li>
-              <a className="smoothscroll" href="#resume">
-                Resume
-              </a>
-            </li> */}
-            {/*             <li>
-              <a className="smoothscroll" href="#portfolio">
-                Works
-              </a>
-            </li> */}
             <li>
               <a className="smoothscroll" href="#testimonials">
-                Testimonials
+                {this.props.language === "EN" ? "Testimonials" : "Testimonios"}
               </a>
             </li>
-            {/*             <li>
-              <a className="smoothscroll" href="#contact">
-                Contact
-              </a>
-            </li> */}
           </ul>
+
+          <button
+            onClick={this.props.toggleLanguage}
+            style={{
+              position: "absolute",
+              right: "20px",
+              top: "15px",
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "3rem",
+              color: "white",
+            }}
+          >
+            {this.props.language === "EN" ? "ES" : "EN"}
+          </button>
         </nav>
 
         <div className="row banner">
@@ -68,7 +69,9 @@ class Header extends Component {
           <div className="banner-text">
             <h1 className="responsive-headline">{name}.</h1>
             <h3>
-              We are a {city} based <span>{occupation}</span>. {description}.
+              {this.props.language === "EN"
+                ? `We are a ${city} based ${occupation}. ${description}.`
+                : `Somos una ${occupation} con sede en ${city}. ${description}.`}
             </h3>
             <hr />
             <ul className="social">{networks}</ul>
