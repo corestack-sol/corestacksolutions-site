@@ -15,12 +15,15 @@ class App extends Component {
     this.state = {
       foo: "bar",
       resumeData: {},
+      language: "EN",
     };
   }
 
-  getResumeData() {
+  getResumeData(language = "EN") {
+    const file = language === "EN" ? "/resumeEN.json" : "/resumeES.json";
+
     $.ajax({
-      url: "/resumeData.json",
+      url: file,
       dataType: "json",
       cache: false,
       success: function (data) {
@@ -37,11 +40,26 @@ class App extends Component {
     this.getResumeData();
   }
 
+  toggleLanguage = () => {
+    const newLanguage = this.state.language === "EN" ? "ES" : "EN";
+    this.setState({ language: newLanguage }, () =>
+      this.getResumeData(newLanguage)
+    );
+  };
+
   render() {
     return (
       <div className="App">
-        <Header data={this.state.resumeData.main} />
-        <About data={this.state.resumeData.main} />
+        <Header
+          data={this.state.resumeData.main}
+          toggleLanguage={this.toggleLanguage}
+          language={this.state.language}
+        />
+        <About
+          data={this.state.resumeData.main}
+          language={this.state.language}
+        />
+
         {/* <Resume data={this.state.resumeData.resume} /> */}
         {/* <Portfolio data={this.state.resumeData.portfolio} /> */}
         <Testimonials data={this.state.resumeData.testimonials} />
