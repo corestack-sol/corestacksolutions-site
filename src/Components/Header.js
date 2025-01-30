@@ -27,8 +27,8 @@ class Header extends Component {
             onClick={this.props.toggleLanguage}
             style={{
               position: "absolute",
-              left: "20px", // Posicionamos el botón en la esquina superior izquierda
-              top: "20px", // Aseguramos que esté justo al principio
+              left: "15px", // Posicionamos el botón en la esquina superior izquierda
+              top: "15px", // Aseguramos que esté justo al principio
               background: "transparent",
               border: "none",
               cursor: "pointer",
