@@ -22,76 +22,45 @@ class Header extends Component {
     return (
       <header id="home">
         <nav id="nav-wrap">
-          {/* Botón de navegación */}
-          <a
-            className="mobile-btn"
-            href="#nav-wrap"
-            title="Show navigation"
-            style={{
-              position: "absolute",
-              left: "20px",
-              top: "15px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              fontSize: "2rem",
-              color: "white",
-            }}
-          >
+          <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
             Show navigation
           </a>
-          <a
-            className="mobile-btn"
-            href="#home"
-            title="Hide navigation"
-            style={{
-              position: "absolute",
-              left: "20px",
-              top: "15px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              fontSize: "2rem",
-              color: "white",
-            }}
-          >
+          <a className="mobile-btn" href="#home" title="Hide navigation">
             Hide navigation
           </a>
 
           <ul id="nav" className="nav">
             <li className="current">
               <a className="smoothscroll" href="#home">
-                {this.props.language === "EN" ? "Home" : "Inicio"}
+                Home
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#about">
-                {this.props.language === "EN" ? "About" : "Sobre Nosotros"}
+                About
               </a>
             </li>
+            {/*             <li>
+              <a className="smoothscroll" href="#resume">
+                Resume
+              </a>
+            </li> */}
+            {/*             <li>
+              <a className="smoothscroll" href="#portfolio">
+                Works
+              </a>
+            </li> */}
             <li>
               <a className="smoothscroll" href="#testimonials">
-                {this.props.language === "EN" ? "Testimonials" : "Testimonios"}
+                Testimonials
               </a>
             </li>
+            {/*             <li>
+              <a className="smoothscroll" href="#contact">
+                Contact
+              </a>
+            </li> */}
           </ul>
-
-          {/* Botón de idioma en la esquina superior izquierda */}
-          <button
-            onClick={this.props.toggleLanguage}
-            style={{
-              position: "absolute",
-              left: "20px", // Asegúrate de que esté en el lado izquierdo
-              top: "50px", // Ajusta la distancia desde la parte superior
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              fontSize: "2rem", // Tamaño de fuente ajustado para visibilidad
-              color: "white",
-            }}
-          >
-            {this.props.language === "EN" ? "ES" : "EN"}
-          </button>
         </nav>
 
         <div className="row banner">
@@ -99,9 +68,7 @@ class Header extends Component {
           <div className="banner-text">
             <h1 className="responsive-headline">{name}.</h1>
             <h3>
-              {this.props.language === "EN"
-                ? `We are a ${city} based ${occupation}. ${description}.`
-                : `Somos una ${occupation} con sede en ${city}. ${description}.`}
+              We are a {city} based <span>{occupation}</span>. {description}.
             </h3>
             <hr />
             <ul className="social">{networks}</ul>
