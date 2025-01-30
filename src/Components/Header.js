@@ -79,8 +79,8 @@ class Header extends Component {
             onClick={this.props.toggleLanguage}
             style={{
               position: "absolute",
-              right: "20px",
-              top: "15px",
+              left: "20px", // Cambié "right" por "left"
+              top: "50px", // Ajusté la posición para que no se solape con otros elementos
               background: "transparent",
               border: "none",
               cursor: "pointer",
