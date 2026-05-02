@@ -30,54 +30,58 @@
     ]
   },
   "resume": {
-    "skillmessage": "Aquí puedes incluir una breve descripción de tus habilidades para mostrar a los empleadores.",
+    "skillmessage": "",
     "education": [
       {
-        "school": "Universidad de Kent",
-        "degree": "Maestría en Ciencias de la Computación Avanzada",
-        "graduated": "Enero 2017",
-        "description": "Graduado con distinción"
+        "school": "Desarrollo Móvil",
+        "degree": "React Native · TypeScript · Zustand · TanStack Query",
+        "graduated": "iOS & Android",
+        "description": "Desarrollo completo de apps móviles multiplataforma con capacidades en tiempo real, escaneo QR con Vision Camera, notificaciones push con Firebase + Notifee, y navegación multi-rol con React Navigation."
+      },
+      {
+        "school": "Desarrollo Web",
+        "degree": "React 19 · Vite · TypeScript · Tailwind CSS",
+        "graduated": "Plataforma Web",
+        "description": "Arquitectura frontend moderna con diseño responsivo, animaciones con Framer Motion, gestión de contenido bilingüe EN/ES e integración de formulario de contacto con EmailJS."
+      },
+      {
+        "school": "Backend & Cloud",
+        "degree": "REST API · Railway · Firebase · Socket.IO",
+        "graduated": "Nube y Tiempo Real",
+        "description": "Integración de APIs con interceptores Axios, despliegue en Railway, comunicación en tiempo real con Socket.IO y notificaciones push con Firebase Messaging."
+      },
+      {
+        "school": "Desarrollo Backend",
+        "degree": "Node.js · Express · MySQL · REST API",
+        "graduated": "Servidor e Integraciones",
+        "description": "Diseño y desarrollo de APIs REST con Node.js y Express: lógica de negocio, envío de correos, procesamiento de pagos, gestión de base de datos MySQL e integración con hardware para control automatizado de barreras vehiculares."
       }
     ],
     "work": [
       {
-        "company": "Clever Programmer",
-        "title": "Miembro del equipo y especialista en React",
-        "years": "Abril 2020 - Presente",
-        "description": "Enseñando ReactJS a miles de estudiantes."
+        "company": "Corestack Solutions",
+        "title": "Desarrollador de Apps Móviles — React Native",
+        "years": "2024 – Presente",
+        "description": "Desarrollo de Residence – QR Residential Access Control desde cero. App multi-rol (residente/guardia) con escaneo QR vía Vision Camera, automatización de barreras en tiempo real con Socket.IO, notificaciones push con Firebase + Notifee, y estado persistente con Zustand + TanStack Query. Publicada en App Store y Google Play."
       },
       {
-        "company": "Lindar Media",
-        "title": "Ingeniero de Software",
-        "years": "Noviembre 2019 - Abril 2020",
-        "description": "Desarrollo de MrQ, un sitio web de apuestas."
+        "company": "Corestack Solutions",
+        "title": "Desarrollador Frontend — Web",
+        "years": "2024 – Presente",
+        "description": "Desarrollo del sitio corporativo con React 19, Vite, TypeScript strict, Tailwind CSS y Framer Motion. Implementación de arquitectura bilingüe EN/ES, React Router v6 y envío de correo en cliente con EmailJS."
       }
     ],
     "skills": [
-      {
-        "name": "ReactJs",
-        "level": "100%"
-      },
-      {
-        "name": "CSS",
-        "level": "95%"
-      },
-      {
-        "name": "Git",
-        "level": "60%"
-      },
-      {
-        "name": "Node",
-        "level": "55%"
-      },
-      {
-        "name": "SQL",
-        "level": "80%"
-      },
-      {
-        "name": "React Native",
-        "level": "80%"
-      }
+      { "name": "React Native", "level": "95%" },
+      { "name": "TypeScript", "level": "90%" },
+      { "name": "React 19", "level": "95%" },
+      { "name": "Zustand", "level": "85%" },
+      { "name": "TanStack Query", "level": "85%" },
+      { "name": "Firebase / FCM", "level": "80%" },
+      { "name": "Socket.IO", "level": "75%" },
+      { "name": "Tailwind CSS", "level": "90%" },
+      { "name": "REST API / Axios", "level": "85%" },
+      { "name": "React Navigation", "level": "90%" }
     ]
   },
   "portfolio": {
@@ -117,8 +121,14 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "CoreStack Solutions es una empresa comprometida y altamente profesional. Su enfoque en la tecnología va más allá de entregar resultados; se centra en brindar soluciones efectivas y en garantizar la satisfacción del cliente. Su equipo demuestra un profundo sentido de responsabilidad y servicio, asegurando que cada proyecto supere las expectativas y contribuya al éxito de sus clientes.",
-        "user": "Kareem Abdul Jabbar"
+        "text": "QR Residential Access Control transformó por completo la gestión de accesos en nuestro residencial. El sistema automatizado de barreras y el monitoreo en tiempo real nos dieron control total y tranquilidad. El respaldo de Corestack durante la implementación fue excepcional.",
+        "user": "Roberto Hernández",
+        "profile": "Administrador de Residencial"
+      },
+      {
+        "text": "Como desarrollador inmobiliario, la seguridad y el control de accesos son prioridad. QR Residential Access Control le dio a nuestros proyectos una ventaja competitiva real — los residentes valoran la comodidad y nosotros tenemos visibilidad total de cada acceso.",
+        "user": "Luis Fernando Castillo",
+        "profile": "Desarrollador Inmobiliario"
       }
     ]
   }

@@ -1,0 +1,125 @@
+{
+  "main": {
+    "name": "Corestack Solutions",
+    "occupation": "Technology Solutions Company",
+    "description": "We develop applications and technological solutions that integrate innovation, efficiency, and quality. We specialize in robust and customized technology stacks",
+    "image": "corestack.png",
+    "bio": "We are Corestack Solutions, a company dedicated to providing comprehensive technological solutions, combining expertise in frontend and backend development. Our mission is to transform ideas into impact digital tools.",
+    "contactmessage": "Get in touch with us to learn more about how we can help you achieve your technological goals.",
+    "email": "corestack.sol@gmail.com",
+    "phone": "+529934421347, +529932892836",
+    "address": {
+      "street": "123 Street",
+      "city": "Villahermosa, Tabasco. México",
+      "state": "MX",
+      "zip": "86030"
+    },
+    "website": "http://www.timbakerdev.com",
+    "resumedownload": "http://timbakerdev.com",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com",
+        "className": "fa fa-facebook fa-2x"
+      },
+      {
+        "name": "whatsapp",
+        "url": "https://wa.me/+529934421347",
+        "className": "fa fa-whatsapp fa-2x"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "Here you can create a short write-up of your skills to show off to employers",
+    "education": [
+      {
+        "school": "University of Kent",
+        "degree": "Masters in Advanced Computer Science",
+        "graduated": "January 2017",
+        "description": "Graduated with Distinction"
+      }
+    ],
+    "work": [
+      {
+        "company": "Clever Programmer",
+        "title": "Team Member && React Specialist",
+        "years": "April 2020 - Present",
+        "description": "Teaching ReactJS to thousands of students."
+      },
+      {
+        "company": "Lindar Media",
+        "title": "Software Engineer",
+        "years": "Nov 2019 - April 2020",
+        "description": "Building MrQ, a gambling website."
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "100%"
+      },
+      {
+        "name": "CSS",
+        "level": "95%"
+      },
+      {
+        "name": "Git",
+        "level": "60%"
+      },
+      {
+        "name": "Node",
+        "level": "55%"
+      },
+      {
+        "name": "SQL",
+        "level": "80%"
+      },
+      {
+        "name": "React Native",
+        "level": "80%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "MERN Stack WhatsApp Clone",
+        "category": "WhatsApp Clone built with MERN (MongoDB, ExpressJS, ReactJS, NodeJS)",
+        "image": "whatsapp-mern.jpeg",
+        "url": "https://www.youtube.com/watch?v=gzdQDxzW2Tw"
+      },
+      {
+        "title": "MERN Stack TikTok Clone",
+        "category": "TikTok Clone built with MERN (MongoDB, ExpressJS, ReactJS, NodeJS)",
+        "image": "tiktok-mern.jpeg",
+        "url": "https://www.youtube.com/watch?v=g8yGxDMyGiE"
+      },
+      {
+        "title": "Facebook Clone with React",
+        "category": "Facebook Clone built with ReactJS",
+        "image": "facebook-clone.png",
+        "url": "https://www.youtube.com/watch?v=B-kxUMHBxNo"
+      },
+      {
+        "title": "Airbnb Clone",
+        "category": "Facebook Clone built with ReactJS",
+        "image": "airbnb-clone.jpeg",
+        "url": "https://www.youtube.com/watch?v=BtJeH_-XYaA"
+      },
+      {
+        "title": "Netflix Clone",
+        "category": "Facebook Clone built with ReactJS",
+        "image": "netflix-clone.jpeg",
+        "url": "https://www.youtube.com/watch?v=XtMThy8QKqU&t=9358s"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "CoreStack Solutions is a committed and highly professional company. Its focus on technology goes beyond delivering results; it is centered on providing effective solutions and ensuring customer satisfaction. Its team demonstrates a deep sense of responsibility and service, ensuring that each project exceeds expectations and contributes to the success of its clients.",
+        "user": "Kareem Abdul Jabbar"
+      }
+    ]
+  }
+}

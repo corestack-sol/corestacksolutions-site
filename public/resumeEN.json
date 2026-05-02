@@ -4,7 +4,7 @@
     "occupation": "Technology Solutions Company",
     "description": "We develop applications and technological solutions that integrate innovation, efficiency, and quality. We specialize in robust and customized technology stacks",
     "image": "corestack.png",
-    "bio": "We are CoreStack Solutions, a company dedicated to providing comprehensive technological solutions, combining expertise in frontend and backend development. Our mission is to transform ideas into impact digital tools.",
+    "bio": "We are Corestack Solutions, a company dedicated to providing comprehensive technological solutions, combining expertise in frontend and backend development. Our mission is to transform ideas into impact digital tools.",
     "contactmessage": "Get in touch with us to learn more about how we can help you achieve your technological goals.",
     "email": "corestack.sol@gmail.com",
     "phone": "+529934421347, +529932892836",
@@ -30,54 +30,58 @@
     ]
   },
   "resume": {
-    "skillmessage": "Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage": "",
     "education": [
       {
-        "school": "University of Kent",
-        "degree": "Masters in Advanced Computer Science",
-        "graduated": "January 2017",
-        "description": "Graduated with Distinction"
+        "school": "Mobile Development",
+        "degree": "React Native · TypeScript · Zustand · TanStack Query",
+        "graduated": "iOS & Android",
+        "description": "End-to-end mobile app development with real-time capabilities, QR scanning via Vision Camera, push notifications with Firebase + Notifee, and multi-role navigation with React Navigation."
+      },
+      {
+        "school": "Web Development",
+        "degree": "React 19 · Vite · TypeScript · Tailwind CSS",
+        "graduated": "Web Platform",
+        "description": "Modern frontend architecture with responsive design, smooth animations via Framer Motion, bilingual EN/ES content management, and EmailJS contact form integration."
+      },
+      {
+        "school": "Backend & Cloud",
+        "degree": "REST API · Railway · Firebase · Socket.IO",
+        "graduated": "Cloud & Real-time",
+        "description": "API integration with Axios interceptors, cloud deployment on Railway, real-time communication via Socket.IO, and push notifications with Firebase Messaging."
+      },
+      {
+        "school": "Backend Development",
+        "degree": "Node.js · Express · MySQL · REST API",
+        "graduated": "Server & Integrations",
+        "description": "Design and development of REST APIs with Node.js and Express: business logic, email delivery, payment processing, MySQL database management, and hardware integration for automated vehicle barrier control."
       }
     ],
     "work": [
       {
-        "company": "Clever Programmer",
-        "title": "Team Member && React Specialist",
-        "years": "April 2020 - Present",
-        "description": "Teaching ReactJS to thousands of students."
+        "company": "Corestack Solutions",
+        "title": "Mobile App Developer — React Native",
+        "years": "2024 – Present",
+        "description": "Built Residence – QR Residential Access Control from the ground up. Multi-role app (resident/guard) with QR scanning via Vision Camera, real-time barrier automation via Socket.IO, push notifications with Firebase + Notifee, and persistent state with Zustand + TanStack Query. Deployed on App Store and Google Play."
       },
       {
-        "company": "Lindar Media",
-        "title": "Software Engineer",
-        "years": "Nov 2019 - April 2020",
-        "description": "Building MrQ, a gambling website."
+        "company": "Corestack Solutions",
+        "title": "Frontend Developer — Web",
+        "years": "2024 – Present",
+        "description": "Developed the corporate portfolio site using React 19, Vite, TypeScript strict, Tailwind CSS, and Framer Motion. Implemented bilingual EN/ES architecture, React Router v6, and client-side email sending via EmailJS."
       }
     ],
     "skills": [
-      {
-        "name": "ReactJs",
-        "level": "100%"
-      },
-      {
-        "name": "CSS",
-        "level": "95%"
-      },
-      {
-        "name": "Git",
-        "level": "60%"
-      },
-      {
-        "name": "Node",
-        "level": "55%"
-      },
-      {
-        "name": "SQL",
-        "level": "80%"
-      },
-      {
-        "name": "React Native",
-        "level": "80%"
-      }
+      { "name": "React Native", "level": "95%" },
+      { "name": "TypeScript", "level": "90%" },
+      { "name": "React 19", "level": "95%" },
+      { "name": "Zustand", "level": "85%" },
+      { "name": "TanStack Query", "level": "85%" },
+      { "name": "Firebase / FCM", "level": "80%" },
+      { "name": "Socket.IO", "level": "75%" },
+      { "name": "Tailwind CSS", "level": "90%" },
+      { "name": "REST API / Axios", "level": "85%" },
+      { "name": "React Navigation", "level": "90%" }
     ]
   },
   "portfolio": {
@@ -117,8 +121,14 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "CoreStack Solutions is a committed and highly professional company. Its focus on technology goes beyond delivering results; it is centered on providing effective solutions and ensuring customer satisfaction. Its team demonstrates a deep sense of responsibility and service, ensuring that each project exceeds expectations and contributes to the success of its clients.",
-        "user": "Kareem Abdul Jabbar"
+        "text": "QR Residential Access Control completely transformed how we manage access in our community. The automated barrier system and real-time monitoring gave us full control and peace of mind. Corestack's support throughout the implementation was outstanding.",
+        "user": "Roberto Hernández",
+        "profile": "Residential Community Manager"
+      },
+      {
+        "text": "As a real estate developer, security and access control are top priorities. QR Residential Access Control gave our projects a real competitive advantage — residents love the convenience and we have complete visibility of every entry.",
+        "user": "Luis Fernando Castillo",
+        "profile": "Real Estate Developer"
       }
     ]
   }
