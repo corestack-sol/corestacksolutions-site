@@ -12,7 +12,7 @@ import Footer from './Components/Footer'
 import PolicyQRResidence from './Components/PolicyQRResidence'
 
 function MainPage() {
-  const [language, setLanguage] = useState<Language>('EN')
+  const [language, setLanguage] = useState<Language>('ES')
   const { data, loading } = useResumeData(language)
 
   const toggleLanguage = () => setLanguage(l => (l === 'EN' ? 'ES' : 'EN'))
