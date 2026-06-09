@@ -210,7 +210,7 @@ const Portfolio = ({ language }: PortfolioProps) => {
                     {/* Notch */}
                     <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-5 bg-slate-900 rounded-full z-10" />
                     {/* Screen */}
-                    <div className="rounded-[2rem] overflow-hidden bg-black aspect-[9/19.5]">
+                    <div className="relative rounded-[2rem] overflow-hidden bg-black aspect-[9/19.5]">
                       {app.video ? (
                         <video
                           src={app.video}
@@ -218,17 +218,17 @@ const Portfolio = ({ language }: PortfolioProps) => {
                           loop
                           muted
                           playsInline
-                          className="w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-cover"
                         />
                       ) : (
                         <div
-                          className="w-full h-full flex items-center justify-center"
+                          className="absolute inset-0 flex items-center justify-center"
                           style={{ backgroundColor: "#4B6EF5" }}
                         >
                           <img
                             src="/images/app.png"
                             alt={app.appName}
-                            className="w-2/3 opacity-90"
+                            className="w-2/3"
                           />
                         </div>
                       )}
