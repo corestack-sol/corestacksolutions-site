@@ -1,83 +1,83 @@
-export type Language = 'EN' | 'ES'
+export type Language = "EN" | "ES";
 
 export interface Social {
-  name: string
-  url: string
-  className: string
+  name: string;
+  url: string;
+  className: string;
 }
 
 export interface Address {
-  street: string
-  city: string
-  state: string
-  zip: string
+  street?: string;
+  city: string;
+  state: string;
+  zip: string;
 }
 
 export interface MainData {
-  name: string
-  occupation: string
-  description: string
-  image: string
-  bio: string
-  contactmessage: string
-  email: string
-  phone: string
-  address: Address
-  website: string
-  resumedownload: string
-  social: Social[]
+  name: string;
+  occupation: string;
+  description: string;
+  image: string;
+  bio: string;
+  contactmessage: string;
+  email: string;
+  phone: string;
+  address: Address;
+  website: string;
+  resumedownload: string;
+  social: Social[];
 }
 
 export interface Education {
-  school: string
-  degree: string
-  graduated: string
-  description: string
+  school: string;
+  degree: string;
+  graduated: string;
+  description: string;
 }
 
 export interface Work {
-  company: string
-  title: string
-  years: string
-  description: string
+  company: string;
+  title: string;
+  years: string;
+  description: string;
 }
 
 export interface Skill {
-  name: string
-  level: string
+  name: string;
+  level: string;
 }
 
 export interface ResumeData {
-  skillmessage: string
-  education: Education[]
-  work: Work[]
-  skills: Skill[]
+  skillmessage: string;
+  education: Education[];
+  work: Work[];
+  skills: Skill[];
 }
 
 export interface Project {
-  title: string
-  category: string
-  image: string
-  url: string
+  title: string;
+  category: string;
+  image: string;
+  url: string;
 }
 
 export interface PortfolioData {
-  projects: Project[]
+  projects: Project[];
 }
 
 export interface Testimonial {
-  text: string
-  user: string
-  profile: string
+  text: string;
+  user: string;
+  profile: string;
 }
 
 export interface TestimonialsData {
-  testimonials: Testimonial[]
+  testimonials: Testimonial[];
 }
 
 export interface FullResumeData {
-  main: MainData
-  resume: ResumeData
-  portfolio: PortfolioData
-  testimonials: TestimonialsData
+  main: MainData;
+  resume: ResumeData;
+  portfolio: PortfolioData;
+  testimonials: TestimonialsData;
 }
