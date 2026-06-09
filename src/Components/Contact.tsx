@@ -191,7 +191,7 @@ const Contact = ({ data, language }: ContactProps) => {
             viewport={{ once: true }}
           >
             {[
-              { label: t.address, value: `${data.address.street}, ${data.address.city}` },
+              { label: t.address, value: data.address.street ? `${data.address.street}, ${data.address.city}` : data.address.city },
               { label: t.phone, value: data.phone },
               { label: t.email, value: data.email },
             ].map(item => (

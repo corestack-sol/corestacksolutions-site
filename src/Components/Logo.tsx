@@ -5,7 +5,7 @@ const Logo = () => (
     src={logo}
     alt="Corestack Solutions"
     width={130}
-    className="mix-blend-screen"
+    className="opacity-90"
   />
 );
 
