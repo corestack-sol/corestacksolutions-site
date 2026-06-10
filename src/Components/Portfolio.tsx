@@ -221,16 +221,11 @@ const Portfolio = ({ language }: PortfolioProps) => {
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       ) : (
-                        <div
-                          className="absolute inset-0 flex items-center justify-center"
-                          style={{ backgroundColor: "#1D6FF2" }}
-                        >
-                          <img
-                            src="/images/app.png"
-                            alt={app.appName}
-                            className="w-2/3"
-                          />
-                        </div>
+                        <img
+                          src="/images/scrn1.jpg"
+                          alt={app.appName}
+                          className="absolute inset-0 w-full h-full object-cover object-top"
+                        />
                       )}
                     </div>
                   </div>
