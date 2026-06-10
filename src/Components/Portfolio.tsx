@@ -40,7 +40,7 @@ const APPS: Record<Language, AppEntry[]> = {
         "Instant push notifications",
       ],
       showLogo: true,
-      liveUrl: "https://residentialaccess.corestack-sol.workers.dev",
+      liveUrl: "https://residentialaccess.corestack.workers.dev/",
       appStoreUrl:
         "https://apps.apple.com/mx/app/qr-residential-access-control/id6760604908?l=en-GB",
       playStoreUrl:
@@ -61,7 +61,7 @@ const APPS: Record<Language, AppEntry[]> = {
         "Integrated payment management",
       ],
       video: "/videos/QRRAC.mov",
-      liveUrl: "https://qrresidentialaccesscontrol.corestack-sol.workers.dev",
+      liveUrl: "https://qrresidentialaccesscontrol.corestack.workers.dev/",
       appStoreUrl:
         "https://apps.apple.com/mx/app/qr-residential-access-control/id6760604908?l=en-GB",
       playStoreUrl:
@@ -84,7 +84,7 @@ const APPS: Record<Language, AppEntry[]> = {
         "Idioma español e inglés",
       ],
       showLogo: true,
-      liveUrl: "https://residentialaccess.corestack-sol.workers.dev",
+      liveUrl: "https://residentialaccess.corestack.workers.dev/",
       appStoreUrl:
         "https://apps.apple.com/mx/app/qr-residential-access-control/id6760604908?l=en-GB",
       playStoreUrl:
@@ -105,7 +105,7 @@ const APPS: Record<Language, AppEntry[]> = {
         "Manejo de pagos integrado",
       ],
       video: "/videos/QRRAC.mov",
-      liveUrl: "https://qrresidentialaccesscontrol.corestack-sol.workers.dev",
+      liveUrl: "https://qrresidentialaccesscontrol.corestack.workers.dev/",
       appStoreUrl:
         "https://apps.apple.com/mx/app/qr-residential-access-control/id6760604908?l=en-GB",
       playStoreUrl:
