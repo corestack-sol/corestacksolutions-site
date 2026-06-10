@@ -81,6 +81,7 @@ const APPS: Record<Language, AppEntry[]> = {
         "Monitoreo de entradas y salidas en tiempo real",
         "Notificaciones push instantáneas",
         "Historial y auditoría de accesos",
+        "Idioma español e inglés",
       ],
       showLogo: true,
       liveUrl: "https://residentialaccess.corestack-sol.workers.dev",
