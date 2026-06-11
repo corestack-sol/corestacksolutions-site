@@ -33,12 +33,21 @@ const Footer = ({ data }: FooterProps) => (
         <span className="text-slate-400 font-medium">Corestack Solutions</span> team
       </p>
 
-      <Link
-        to="/privacy-policy"
-        className="text-slate-600 text-xs hover:text-blue-400 transition-colors duration-200"
-      >
-        Privacy Policy — QR Residential Access Control
-      </Link>
+      <div className="flex items-center gap-4">
+        <Link
+          to="/privacy-policy"
+          className="text-slate-600 text-xs hover:text-blue-400 transition-colors duration-200"
+        >
+          Privacy Policy — QR Residential Access Control
+        </Link>
+        <span className="text-slate-700 text-xs">·</span>
+        <Link
+          to="/delete-account"
+          className="text-slate-600 text-xs hover:text-blue-400 transition-colors duration-200"
+        >
+          Eliminar cuenta
+        </Link>
+      </div>
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

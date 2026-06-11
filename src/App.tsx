@@ -11,6 +11,7 @@ import Testimonials from './Components/Testimonials'
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import PolicyQRResidence from './Components/PolicyQRResidence'
+import DeleteAccount from './Components/DeleteAccount'
 
 function MainPage() {
   const [language, setLanguage] = useState<Language>('ES')
@@ -46,6 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/privacy-policy" element={<PolicyQRResidence />} />
+        <Route path="/delete-account" element={<DeleteAccount />} />
       </Routes>
     </BrowserRouter>
   )
