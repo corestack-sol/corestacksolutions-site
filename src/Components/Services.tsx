@@ -47,9 +47,9 @@ const CONTENT = {
       },
       {
         icon: <FaPlug size={24} />,
-        title: 'API Integrations',
+        title: 'Cloud Service Integrations',
         description:
-          'Connect your existing tools and platforms. We integrate payment gateways, CRMs, IoT devices, and third-party APIs.',
+          'We connect your apps to cloud platforms like Firebase, AWS, and Google Cloud — enabling real-time data, storage, authentication, and scalable infrastructure.',
       },
       {
         icon: <FaLightbulb size={24} />,
@@ -114,9 +114,9 @@ const CONTENT = {
       },
       {
         icon: <FaPlug size={24} />,
-        title: 'Integraciones y APIs',
+        title: 'Integraciones con servicios en la nube',
         description:
-          'Conectamos tus herramientas existentes: pasarelas de pago, CRMs, dispositivos IoT y cualquier API de terceros.',
+          'Conectamos tus apps a plataformas como Firebase, AWS y Google Cloud — habilitando datos en tiempo real, almacenamiento, autenticación e infraestructura escalable.',
       },
       {
         icon: <FaLightbulb size={24} />,
