@@ -5,6 +5,7 @@ import type { Language } from './types'
 import Header from './Components/Header'
 import About from './Components/About'
 import Resume from './Components/Resume'
+import Services from './Components/Services'
 import Portfolio from './Components/Portfolio'
 import Testimonials from './Components/Testimonials'
 import Contact from './Components/Contact'
@@ -29,6 +30,7 @@ function MainPage() {
     <>
       <Header data={data.main} language={language} toggleLanguage={toggleLanguage} />
       <About data={data.main} language={language} />
+      <Services language={language} />
       <Resume data={data.resume} language={language} />
       <Portfolio language={language} />
       <Testimonials data={data.testimonials} language={language} />

@@ -8,13 +8,14 @@ interface NavbarProps {
   toggleLanguage: () => void
 }
 
-const SECTION_IDS = ['home', 'about', 'resume', 'portfolio', 'testimonials', 'contact'] as const
+const SECTION_IDS = ['home', 'about', 'services', 'resume', 'portfolio', 'testimonials', 'contact'] as const
 type SectionId = (typeof SECTION_IDS)[number]
 
 const LABELS: Record<Language, Record<SectionId, string>> = {
   EN: {
     home: 'Home',
     about: 'About',
+    services: 'Services',
     resume: 'Experience',
     portfolio: 'Portfolio',
     testimonials: 'Testimonials',
@@ -23,6 +24,7 @@ const LABELS: Record<Language, Record<SectionId, string>> = {
   ES: {
     home: 'Inicio',
     about: 'Nosotros',
+    services: 'Servicios',
     resume: 'Experiencia',
     portfolio: 'Portafolio',
     testimonials: 'Testimonios',
