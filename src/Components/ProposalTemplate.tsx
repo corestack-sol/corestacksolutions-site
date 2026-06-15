@@ -18,7 +18,7 @@ const ISO_PATTERN = `data:image/svg+xml,${encodeURIComponent(`
 function PageHeader({ title, sub }: { title: string; sub: string }) {
   return (
     <div className="cs-page-header">
-      <img src={LOGO} alt="CoreStack Solutions" className="cs-page-header-logo" />
+      <img src={LOGO} alt="Corestack Solutions" className="cs-page-header-logo" />
       <div className="cs-page-header-info">
         <div className="cs-page-header-title">{title}</div>
         <div className="cs-page-header-sub">{sub}</div>
@@ -30,7 +30,7 @@ function PageHeader({ title, sub }: { title: string; sub: string }) {
 function PageFooter({ page, total, doc }: { page: number; total: number; doc: string }) {
   return (
     <div className="cs-page-footer">
-      <span>CoreStack Solutions © {new Date().getFullYear()}</span>
+      <span>Corestack Solutions © {new Date().getFullYear()}</span>
       <span className="cs-page-footer-center">CORESTACK SOLUTIONS</span>
       <span>
         {doc} · Pág. {page}/{total}
@@ -68,7 +68,7 @@ function CoverPage() {
 
       {/* Cuerpo */}
       <div className="cs-cover-body">
-        <img src={LOGO} alt="CoreStack Solutions" className="cs-cover-logo" />
+        <img src={LOGO} alt="Corestack Solutions" className="cs-cover-logo" />
 
         <div className="cs-cover-eyebrow">Propuesta Técnica y Comercial</div>
 
@@ -100,7 +100,7 @@ function CoverPage() {
       </div>
 
       <div className="cs-cover-footer">
-        <span className="cs-cover-footer-brand">CoreStack Solutions · corestacksolutions.com.mx</span>
+        <span className="cs-cover-footer-brand">Corestack Solutions · corestacksolutions.com.mx</span>
         <span className="cs-cover-footer-contact">corestack.sol@gmail.com · +52 993 442 1347</span>
       </div>
     </div>
@@ -132,7 +132,7 @@ function TOCPage() {
       <div className="cs-content" style={{ flex: 1 }}>
         <h1>Índice General</h1>
         <p>
-          Este documento presenta la propuesta integral de CoreStack Solutions para el desarrollo
+          Este documento presenta la propuesta integral de Corestack Solutions para el desarrollo
           de su solución tecnológica, incluyendo alcance, arquitectura, cronograma e inversión.
         </p>
 
@@ -151,7 +151,7 @@ function TOCPage() {
         <div className="cs-highlight" style={{ marginTop: '2.5rem' }}>
           <h3>Acerca de esta propuesta</h3>
           <p>
-            CoreStack Solutions es una empresa de desarrollo de software fundamentada en la{' '}
+            Corestack Solutions es una empresa de desarrollo de software fundamentada en la{' '}
             <strong>responsabilidad, el rigor técnico y el compromiso genuino</strong> con cada
             cliente. Diseñamos y construimos aplicaciones móviles y plataformas web con altos
             estándares de calidad, cumplimiento de plazos y atención personalizada.
@@ -207,7 +207,7 @@ function ExecutiveSummaryPage() {
           <div className="cs-exec-col left">
             <h3>Propuesta de Valor</h3>
             <p>
-              CoreStack Solutions propone el diseño, desarrollo e implementación de una solución
+              Corestack Solutions propone el diseño, desarrollo e implementación de una solución
               tecnológica a medida que resuelva los desafíos operativos de su organización con
               resultados medibles y sostenibles a largo plazo.
             </p>
@@ -688,7 +688,7 @@ function CaseStudiesPage() {
             <div className="cs-callout-title">Reconocimiento de clientes</div>
             <p>
               "QR Residential Access Control transformó por completo la gestión de accesos en
-              nuestra comunidad. El soporte de CoreStack durante toda la implementación fue
+              nuestra comunidad. El soporte de Corestack durante toda la implementación fue
               excepcional." — Roberto Hernández, Administrador de Conjunto Residencial.
             </p>
           </div>
@@ -732,7 +732,7 @@ function RisksPage() {
       risk: 'Falta de disponibilidad del cliente para pruebas',
       impact: 'Ciclos QA incompletos',
       prob: 'Medium',
-      mit: 'Acordar agenda de pruebas en kickoff. CoreStack provee entorno de staging accesible.',
+      mit: 'Acordar agenda de pruebas en kickoff. Corestack provee entorno de staging accesible.',
     },
   ]
 
@@ -831,7 +831,7 @@ function ConclusionsPage() {
         <div className="cs-highlight">
           <h3>Nuestra propuesta de valor</h3>
           <p>
-            CoreStack Solutions se compromete a entregar una solución tecnológica{' '}
+            Corestack Solutions se compromete a entregar una solución tecnológica{' '}
             <strong>robusta, escalable y diseñada para crecer</strong> junto con su organización.
             Cada línea de código que escribimos está respaldada por responsabilidad técnica,
             comunicación transparente y foco absoluto en resultados medibles.
@@ -856,7 +856,7 @@ function ConclusionsPage() {
             <div className="cs-tl-title">Firma del contrato y anticipo</div>
             <div className="cs-tl-body">
               Se firma el contrato de servicios y se realiza el pago del anticipo del 30%.
-              CoreStack inicia la configuración de entornos.
+              Corestack inicia la configuración de entornos.
             </div>
           </div>
           <div className="cs-tl-item">
@@ -873,7 +873,7 @@ function ConclusionsPage() {
             <div className="cs-tl-date">Paso 4</div>
             <div className="cs-tl-title">Inicio del desarrollo · Sprint 1</div>
             <div className="cs-tl-body">
-              CoreStack Solutions inicia el desarrollo formal con entregables visibles
+              Corestack Solutions inicia el desarrollo formal con entregables visibles
               al cierre de cada sprint. Reportes de avance semanales incluidos.
             </div>
           </div>
@@ -892,9 +892,9 @@ function ConclusionsPage() {
           </div>
           <div className="cs-sig">
             <div className="cs-sig-space" />
-            <div className="cs-sig-name">CoreStack Solutions</div>
+            <div className="cs-sig-name">Corestack Solutions</div>
             <div className="cs-sig-role">Director de Proyecto</div>
-            <div className="cs-sig-company">CoreStack Solutions · corestacksolutions.com.mx</div>
+            <div className="cs-sig-company">Corestack Solutions · corestacksolutions.com.mx</div>
           </div>
         </div>
 
@@ -903,7 +903,7 @@ function ConclusionsPage() {
           textAlign: 'center', lineHeight: 1.6,
         }}>
           Esta propuesta tiene carácter confidencial y está destinada exclusivamente al destinatario indicado.
-          La información contenida no debe reproducirse ni distribuirse sin autorización expresa de CoreStack Solutions.
+          La información contenida no debe reproducirse ni distribuirse sin autorización expresa de Corestack Solutions.
         </p>
       </div>
 
@@ -922,8 +922,8 @@ const ProposalTemplate = () => {
       {/* Toolbar (oculta en impresión) */}
       <div className="cs-toolbar">
         <div className="cs-toolbar-brand">
-          <img src={LOGO} alt="CoreStack Solutions" style={{ height: 28, filter: 'brightness(0) invert(1)' }} />
-          <span>CoreStack</span> · Generador de Propuestas
+          <img src={LOGO} alt="Corestack Solutions" style={{ height: 28, filter: 'brightness(0) invert(1)' }} />
+          <span>Corestack</span> · Generador de Propuestas
         </div>
         <div className="cs-toolbar-actions">
           <a href="/" style={{ textDecoration: 'none' }}>

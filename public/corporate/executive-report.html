@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reporte Ejecutivo — Corestack Solutions</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="editor.js" defer></script>
+  <style>
+    .progress-row { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.55rem; }
+    .progress-label { font-size: 8.5pt; color: var(--gray-600); min-width: 140px; }
+    .progress-bar { flex: 1; height: 7px; background: var(--gray-200); border-radius: 4px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); }
+    .progress-fill.orange { background: linear-gradient(90deg, var(--orange), #FB923C); }
+    .progress-fill.green  { background: linear-gradient(90deg, var(--success), #34D399); }
+    .progress-pct { font-size: 8pt; font-weight: 700; color: var(--navy); min-width: 32px; text-align: right; }
+    .sprint-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin: 0.85rem 0; }
+    .sprint-card { border: 1px solid var(--gray-200); border-radius: 8px; overflow: hidden; }
+    .sprint-head { background: var(--navy); padding: 0.5rem 0.75rem; }
+    .sprint-head-title { font-family: var(--font-heading); font-size: 8.5pt; font-weight: 700; color: var(--white); }
+    .sprint-head-sub { font-size: 7pt; color: rgba(255,255,255,0.5); }
+    .sprint-body { padding: 0.7rem; }
+    .sprint-item { font-size: 8pt; color: var(--gray-600); padding: 0.2rem 0; display: flex; gap: 0.35rem; align-items: flex-start; }
+    .sprint-item .ok { color: var(--success); }
+    .sprint-item .pend { color: var(--orange); }
+    .sprint-pct { font-family: var(--font-display); font-size: 20pt; font-weight: 900; color: var(--blue); text-align: right; padding: 0.35rem 0.7rem; line-height: 1; }
+    .sprint-card.done .sprint-head { background: var(--success); }
+    .sprint-card.active .sprint-head { background: var(--blue); }
+    .budget-bar { margin: 1rem 0; }
+    .budget-bar-track { height: 16px; background: var(--gray-200); border-radius: 8px; overflow: hidden; display: flex; }
+    .budget-bar-fill { height: 100%; }
+    .budget-bar-fill.spent { background: var(--blue); }
+    .budget-bar-fill.pending { background: var(--orange); opacity: 0.6; }
+    .budget-bar-fill.buffer { background: var(--gray-200); }
+    .budget-legend { display: flex; gap: 1.5rem; margin-top: 0.5rem; }
+    .budget-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 8pt; color: var(--gray-600); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .legend-dot.blue { background: var(--blue); }
+    .legend-dot.orange { background: var(--orange); opacity: 0.7; }
+    .legend-dot.gray { background: var(--gray-300); }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <img src="../images/corestack.png" alt="Corestack"/>
+    <span>Corestack</span> Solutions
+    <span class="toolbar-label">· Reporte Ejecutivo</span>
+  </div>
+  <div class="toolbar-actions">
+    <a href="/" class="btn btn-ghost">← Sitio web</a>
+    <button class="btn btn-primary" onclick="window.print()">⬇ Exportar PDF</button>
+  </div>
+</div>
+
+<div class="pages">
+
+<!-- PORTADA OSCURA -->
+<div class="page cover">
+  <div class="cover-body">
+    <div class="cover-brand">
+      <img src="../images/corestack.png" alt="Corestack Solutions" class="cover-logo"/>
+      <div class="cover-brand-text">
+        <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+        <div class="cover-brand-tagline">Tecnología que transforma tu negocio.</div>
+      </div>
+    </div>
+    <div class="cover-eyebrow">Corestack Solutions · Informe Ejecutivo</div>
+    <h1 class="cover-title">REPORTE<br/><span class="accent">EJECUTIVO</span></h1>
+    <p class="cover-subtitle">Avance de proyecto, métricas<br/>e indicadores clave</p>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">📅</span>
+        <span class="cover-meta-value">[Mes] <span id="cover-year"></span></span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">📁</span>
+        <span class="cover-meta-value">Proyecto: [Nombre del Proyecto]</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">🏷️</span>
+        <span class="cover-meta-value">Folio: CS-EXEC-001 · Sprint W## de 14</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-pattern"></div>
+  <div class="cover-footer">
+    <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+    <span class="cover-footer-contact">corestack.sol@gmail.com · +52 993 442 1347</span>
+  </div>
+</div>
+
+<!-- PÁGINA 2 — DASHBOARD DE AVANCE -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Dashboard de Avance</div>
+      <div class="page-header-sub">Reporte Ejecutivo · CS-EXEC-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Dashboard de Avance</h1>
+
+    <!-- KPIs principales -->
+    <div class="kpi-grid cols-4 mt-1">
+      <div class="kpi">
+        <div class="kpi-val">68<span class="u">%</span></div>
+        <div class="kpi-label">Avance general del proyecto</div>
+        <div class="kpi-sub">Semana 9 de 14</div>
+      </div>
+      <div class="kpi orange">
+        <div class="kpi-val">7<span class="u">d</span></div>
+        <div class="kpi-label">Días adelantado al plan</div>
+        <div class="kpi-sub">Tendencia: ↑</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">$0</div>
+        <div class="kpi-label">Desviación presupuestaria</div>
+        <div class="kpi-sub">Dentro del presupuesto</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">3</div>
+        <div class="kpi-label">Riesgos activos (todos bajos)</div>
+        <div class="kpi-sub">Sin bloqueos críticos</div>
+      </div>
+    </div>
+
+    <!-- Avance por módulo -->
+    <h2>Avance por Módulo</h2>
+    <div style="margin-top:0.75rem">
+      <div class="progress-row">
+        <span class="progress-label">🔐 Autenticación y roles</span>
+        <div class="progress-bar"><div class="progress-fill green" style="width:100%"></div></div>
+        <span class="progress-pct">100%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">🚪 Control de accesos</span>
+        <div class="progress-bar"><div class="progress-fill green" style="width:100%"></div></div>
+        <span class="progress-pct">100%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">📱 App móvil (UI/UX)</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+        <span class="progress-pct">85%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">🔔 Notificaciones FCM</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+        <span class="progress-pct">75%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">📊 Panel administrador</span>
+        <div class="progress-bar"><div class="progress-fill orange" style="width:40%"></div></div>
+        <span class="progress-pct">40%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">☁️ Despliegue en la nube</span>
+        <div class="progress-bar"><div class="progress-fill orange" style="width:20%"></div></div>
+        <span class="progress-pct">20%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">🧪 QA y pruebas finales</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+        <span class="progress-pct">—</span>
+      </div>
+    </div>
+
+    <!-- Estado de sprints -->
+    <h2>Estado de Sprints</h2>
+    <div class="sprint-grid">
+      <div class="sprint-card done">
+        <div class="sprint-head">
+          <div class="sprint-head-title">Sprint 1 · Módulo Core</div>
+          <div class="sprint-head-sub">Sem 3–6 · Completado</div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-item"><span class="ok">✔</span> Autenticación JWT</div>
+          <div class="sprint-item"><span class="ok">✔</span> Navegación multi-rol</div>
+          <div class="sprint-item"><span class="ok">✔</span> Conexión API base</div>
+          <div class="sprint-item"><span class="ok">✔</span> Demo aprobada</div>
+        </div>
+        <div class="sprint-pct" style="color:var(--success)">100%</div>
+      </div>
+      <div class="sprint-card active">
+        <div class="sprint-head">
+          <div class="sprint-head-title">Sprint 2 · Módulos</div>
+          <div class="sprint-head-sub">Sem 7–10 · En curso</div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-item"><span class="ok">✔</span> Control de accesos</div>
+          <div class="sprint-item"><span class="ok">✔</span> Escáner QR</div>
+          <div class="sprint-item"><span class="pend">◑</span> Notificaciones FCM</div>
+          <div class="sprint-item"><span class="pend">◷</span> Panel admin</div>
+        </div>
+        <div class="sprint-pct">62%</div>
+      </div>
+      <div class="sprint-card">
+        <div class="sprint-head">
+          <div class="sprint-head-title">Sprint 3 · Cloud</div>
+          <div class="sprint-head-sub">Sem 11–12 · Pendiente</div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-item"><span class="pend">◷</span> Despliegue Railway</div>
+          <div class="sprint-item"><span class="pend">◷</span> Certificados SSL</div>
+          <div class="sprint-item"><span class="pend">◷</span> CI/CD básico</div>
+          <div class="sprint-item"><span class="pend">◷</span> Pruebas de carga</div>
+        </div>
+        <div class="sprint-pct c-muted">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Ejecutivo · Pág. 2</span>
+  </div>
+</div>
+
+<!-- PÁGINA 3 — PRESUPUESTO Y RIESGOS -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Presupuesto y Riesgos</div>
+      <div class="page-header-sub">Reporte Ejecutivo · CS-EXEC-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Presupuesto y Riesgos</h1>
+
+    <h2>Estado Presupuestario</h2>
+    <div class="kpi-grid cols-3 mt-1">
+      <div class="kpi">
+        <div class="kpi-val">$127<span class="u">K</span></div>
+        <div class="kpi-label">Presupuesto total aprobado</div>
+        <div class="kpi-sub">MXN + IVA</div>
+      </div>
+      <div class="kpi orange">
+        <div class="kpi-val">$76<span class="u">K</span></div>
+        <div class="kpi-label">Ejercido a la fecha</div>
+        <div class="kpi-sub">60% del total</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">$51<span class="u">K</span></div>
+        <div class="kpi-label">Presupuesto restante</div>
+        <div class="kpi-sub">Dentro del plan</div>
+      </div>
+    </div>
+
+    <div class="budget-bar">
+      <div class="budget-bar-track">
+        <div class="budget-bar-fill spent" style="width:60%"></div>
+        <div class="budget-bar-fill pending" style="width:30%"></div>
+        <div class="budget-bar-fill buffer" style="width:10%"></div>
+      </div>
+      <div class="budget-legend">
+        <div class="budget-legend-item"><div class="legend-dot blue"></div> Ejercido (60%)</div>
+        <div class="budget-legend-item"><div class="legend-dot orange"></div> Por ejercer (30%)</div>
+        <div class="budget-legend-item"><div class="legend-dot gray"></div> Contingencia (10%)</div>
+      </div>
+    </div>
+
+    <h2>Pagos Recibidos</h2>
+    <table class="corp-table mt-1">
+      <thead><tr><th>Concepto</th><th>Fecha</th><th class="right">Monto</th><th class="center">Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Anticipo (30%) — Inicio del proyecto</td><td>[Fecha]</td><td class="right">$38,340</td><td class="center"><span class="badge badge-green">Recibido</span></td></tr>
+        <tr><td>Segundo pago (40%) — Aprobación Sprint 2</td><td>[Pendiente]</td><td class="right">$51,120</td><td class="center"><span class="badge badge-orange">Pendiente</span></td></tr>
+        <tr><td>Pago final (30%) — Entrega</td><td>—</td><td class="right">$38,340</td><td class="center"><span class="badge badge-red">No iniciado</span></td></tr>
+        <tr class="total"><td colspan="2">Total del proyecto</td><td></td><td class="right highlight-val">$127,800 MXN</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Registro de Riesgos</h2>
+    <table class="corp-table mt-1">
+      <thead><tr><th>Riesgo</th><th>Probabilidad</th><th>Impacto</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Latencia FCM (>800ms)</td><td><span class="risk-medium">Media</span></td><td>Rendimiento</td><td><span class="badge badge-orange">En gestión</span></td></tr>
+        <tr><td>Revisiones del cliente con retraso</td><td><span class="risk-low">Baja</span></td><td>Cronograma</td><td><span class="badge badge-green">Monitoreado</span></td></tr>
+        <tr><td>Cambios de scope en Sprint 3</td><td><span class="risk-low">Baja</span></td><td>Tiempo</td><td><span class="badge badge-green">Monitoreado</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout success mt-2">
+      <span class="callout-icon">✔</span>
+      <div class="callout-body">
+        <div class="callout-title">Resumen ejecutivo de salud del proyecto</div>
+        <p>El proyecto avanza dentro del cronograma, sin desviaciones presupuestarias ni riesgos críticos. El Sprint 2 se encuentra en curso con 62% de avance y se proyecta su cierre en la semana 10 según lo planificado.</p>
+      </div>
+    </div>
+
+    <div class="divider mt-2"><span>Validación del cliente</span></div>
+
+    <div class="sig-grid">
+      <div class="sig">
+        <div class="sig-space"></div>
+        <div class="sig-name">[Nombre del responsable]</div>
+        <div class="sig-role">Aprobación del cliente</div>
+        <div class="sig-company">[Empresa]</div>
+      </div>
+      <div class="sig">
+        <div class="sig-space"></div>
+        <div class="sig-name">Corestack Solutions</div>
+        <div class="sig-role">Líder de Proyecto</div>
+        <div class="sig-company">corestacksolutions.com.mx</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Ejecutivo · Pág. 3</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+  const y = new Date().getFullYear();
+  document.querySelectorAll('.year').forEach(el => el.textContent = y);
+  document.querySelectorAll('#cover-year').forEach(el => el.textContent = y);
+</script>
+</body>
+</html>

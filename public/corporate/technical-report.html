@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reporte Técnico — Corestack Solutions</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="editor.js" defer></script>
+  <style>
+    .code-block {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      margin: 0.75rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 8pt;
+      color: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      overflow: hidden;
+    }
+    .code-block .cm { color: var(--gray-400); }
+    .code-block .kw { color: var(--orange); }
+    .code-block .st { color: #A3E635; }
+    .status-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.7rem; margin: 0.85rem 0; }
+    .status-card { border: 1px solid var(--gray-200); border-radius: 8px; padding: 0.75rem; text-align: center; }
+    .status-card .val { font-family: var(--font-display); font-size: 18pt; font-weight: 900; color: var(--navy); }
+    .status-card .unit { font-size: 10pt; color: var(--blue); font-weight: 700; }
+    .status-card .lbl { font-size: 7pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-600); margin-top: 2px; }
+    .status-card.ok  { border-color: rgba(16,185,129,0.3); }
+    .status-card.ok .val { color: var(--success); }
+    .status-card.warn { border-color: rgba(249,115,22,0.3); }
+    .status-card.warn .val { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <img src="../images/corestack.png" alt="Corestack"/>
+    <span>Corestack</span> Solutions
+    <span class="toolbar-label">· Reporte Técnico</span>
+  </div>
+  <div class="toolbar-actions">
+    <a href="/" class="btn btn-ghost">← Sitio web</a>
+    <button class="btn btn-primary" onclick="window.print()">⬇ Exportar PDF</button>
+  </div>
+</div>
+
+<div class="pages">
+
+<!-- PORTADA OSCURA -->
+<div class="page cover">
+  <div class="cover-body">
+    <div class="cover-brand">
+      <img src="../images/corestack.png" alt="Corestack Solutions" class="cover-logo"/>
+      <div class="cover-brand-text">
+        <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+        <div class="cover-brand-tagline">Tecnología que transforma tu negocio.</div>
+      </div>
+    </div>
+    <div class="cover-eyebrow">Corestack Solutions · Documento Técnico</div>
+    <h1 class="cover-title">REPORTE<br/><span class="accent">TÉCNICO</span></h1>
+    <p class="cover-subtitle">Análisis técnico, métricas<br/>y estado del sistema</p>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">📅</span>
+        <span class="cover-meta-value" id="cover-date"></span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">📁</span>
+        <span class="cover-meta-value">Proyecto: [Nombre del Proyecto]</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">🏷️</span>
+        <span class="cover-meta-value">Folio: CS-TECH-001 · v[X.X.X]</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-pattern"></div>
+  <div class="cover-footer">
+    <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+    <span class="cover-footer-contact">corestack.sol@gmail.com · +52 993 442 1347</span>
+  </div>
+</div>
+
+<!-- ESTADO DEL SISTEMA -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Estado del Sistema</div>
+      <div class="page-header-sub">Reporte Técnico · CS-TECH-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>01 · Estado del Sistema</h1>
+
+    <div class="status-grid">
+      <div class="status-card ok">
+        <div class="val">99<span class="unit">%</span></div>
+        <div class="lbl">Uptime (30 días)</div>
+      </div>
+      <div class="status-card ok">
+        <div class="val">142<span class="unit">ms</span></div>
+        <div class="lbl">Latencia promedio API</div>
+      </div>
+      <div class="status-card">
+        <div class="val">0</div>
+        <div class="lbl">Errores críticos</div>
+      </div>
+      <div class="status-card warn">
+        <div class="val">3</div>
+        <div class="lbl">Alertas pendientes</div>
+      </div>
+    </div>
+
+    <h2>Componentes del Sistema</h2>
+    <table class="corp-table mt-1">
+      <thead>
+        <tr>
+          <th>Componente</th>
+          <th>Versión</th>
+          <th>Estado</th>
+          <th class="right">Tiempo de respuesta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>API REST (Express)</td><td>v2.1.0</td><td><span class="badge badge-green">Operativo</span></td><td class="right">128 ms</td></tr>
+        <tr><td>Base de datos MySQL</td><td>8.0.34</td><td><span class="badge badge-green">Operativo</span></td><td class="right">42 ms</td></tr>
+        <tr><td>Firebase Auth</td><td>SDK 10.x</td><td><span class="badge badge-green">Operativo</span></td><td class="right">210 ms</td></tr>
+        <tr><td>Socket.IO Server</td><td>4.7.x</td><td><span class="badge badge-green">Operativo</span></td><td class="right">— ms</td></tr>
+        <tr><td>Notificaciones FCM</td><td>—</td><td><span class="badge badge-orange">Degradado</span></td><td class="right">850 ms</td></tr>
+        <tr><td>App iOS (App Store)</td><td>1.2.3</td><td><span class="badge badge-green">Publicada</span></td><td class="right">—</td></tr>
+        <tr><td>App Android (Play Store)</td><td>1.2.3</td><td><span class="badge badge-green">Publicada</span></td><td class="right">—</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Stack Tecnológico Actual</h2>
+
+    <div class="arch-box">
+      <div class="arch-layer">
+        <div class="arch-layer-title">Frontend móvil</div>
+        <div class="arch-chips">
+          <span class="chip">React Native 0.75</span>
+          <span class="chip">TypeScript 5.x</span>
+          <span class="chip">Zustand 4.x</span>
+          <span class="chip">TanStack Query 5.x</span>
+          <span class="chip">Vision Camera 4.x</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-title">Backend</div>
+        <div class="arch-chips">
+          <span class="chip orange">Node.js 20 LTS</span>
+          <span class="chip orange">Express 4.x</span>
+          <span class="chip orange">MySQL 8.0</span>
+          <span class="chip orange">Socket.IO 4.x</span>
+          <span class="chip orange">JWT RS256</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-title">Infraestructura</div>
+        <div class="arch-chips">
+          <span class="chip orange">Railway (backend)</span>
+          <span class="chip orange">Cloudflare Workers (web)</span>
+          <span class="chip orange">Firebase (auth + FCM)</span>
+          <span class="chip orange">GitHub Actions (CI)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout success mt-1">
+      <span class="callout-icon">✔</span>
+      <div class="callout-body">
+        <div class="callout-title">Sistema estable</div>
+        <p>El sistema opera sin incidentes críticos. El componente FCM presenta latencia elevada y se encuentra en investigación. No afecta funcionalidad core.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Técnico · Pág. 2</span>
+  </div>
+</div>
+
+<!-- ANÁLISIS DE RENDIMIENTO -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Análisis de Rendimiento</div>
+      <div class="page-header-sub">Reporte Técnico · CS-TECH-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>02 · Análisis de Rendimiento</h1>
+
+    <h2>Endpoints más críticos</h2>
+    <table class="corp-table mt-1">
+      <thead>
+        <tr>
+          <th>Endpoint</th>
+          <th>Método</th>
+          <th class="center">Llamadas/día</th>
+          <th class="right">Latencia p95</th>
+          <th class="center">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>/api/auth/login</td><td>POST</td><td class="center">1,240</td><td class="right">180 ms</td><td class="center"><span class="badge badge-green">OK</span></td></tr>
+        <tr><td>/api/access/open</td><td>POST</td><td class="center">3,800</td><td class="right">95 ms</td><td class="center"><span class="badge badge-green">OK</span></td></tr>
+        <tr><td>/api/residents</td><td>GET</td><td class="center">560</td><td class="right">145 ms</td><td class="center"><span class="badge badge-green">OK</span></td></tr>
+        <tr><td>/api/notifications/send</td><td>POST</td><td class="center">2,100</td><td class="right">820 ms</td><td class="center"><span class="badge badge-orange">Lento</span></td></tr>
+        <tr><td>/api/qr/validate</td><td>POST</td><td class="center">4,200</td><td class="right">72 ms</td><td class="center"><span class="badge badge-green">OK</span></td></tr>
+        <tr><td>/api/bookings</td><td>GET</td><td class="center">380</td><td class="right">210 ms</td><td class="center"><span class="badge badge-green">OK</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Notas técnicas</h2>
+
+    <div class="code-block">
+      <span class="cm">// Endpoint problemático: /api/notifications/send</span><br/>
+      <span class="cm">// Causa: await secuencial de FCM tokens — optimizar con Promise.all</span><br/><br/>
+      <span class="cm">// Antes (lento):</span><br/>
+      <span class="kw">for</span> (<span class="kw">const</span> token <span class="kw">of</span> tokens) {<br/>
+      &nbsp;&nbsp;<span class="kw">await</span> fcm.send({ token, notification });<br/>
+      }<br/><br/>
+      <span class="cm">// Después (recomendado):</span><br/>
+      <span class="kw">await</span> Promise.all(tokens.map(token => fcm.send({ token, notification })));
+    </div>
+
+    <div class="callout warning mt-1">
+      <span class="callout-icon">⚠</span>
+      <div class="callout-body">
+        <div class="callout-title">Acción requerida</div>
+        <p>El endpoint <code>/api/notifications/send</code> tiene latencia p95 de 820ms. Refactorizar de iteración secuencial a <code>Promise.all</code> reducirá el tiempo estimado a ~180ms.</p>
+      </div>
+    </div>
+
+    <h2>Seguridad — Últimas auditorías</h2>
+    <table class="corp-table mt-1">
+      <thead>
+        <tr><th>Vulnerabilidad</th><th>Severidad</th><th>Estado</th><th>Fecha</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>JWT exp muy largo (30d)</td><td><span class="risk-medium">Medium</span></td><td><span class="badge badge-green">Corregido</span></td><td>2025-05-10</td></tr>
+        <tr><td>Rate limiting ausente en /auth</td><td><span class="risk-high">High</span></td><td><span class="badge badge-green">Corregido</span></td><td>2025-05-10</td></tr>
+        <tr><td>Logging excesivo de tokens</td><td><span class="risk-low">Low</span></td><td><span class="badge badge-orange">En revisión</span></td><td>2025-06-01</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Técnico · Pág. 3</span>
+  </div>
+</div>
+
+<!-- RECOMENDACIONES Y FIRMA -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Recomendaciones</div>
+      <div class="page-header-sub">Reporte Técnico · CS-TECH-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>03 · Recomendaciones y Próximas Acciones</h1>
+
+    <div class="card-grid cols-2 mt-2">
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Optimización de Notificaciones</div>
+        <div class="card-body">Refactorizar el envío de FCM a Promise.all. Estimado: reducción de 820ms → 180ms. Esfuerzo: 4 hrs.</div>
+        <span class="card-tag orange">Alta prioridad</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🗃️</span>
+        <div class="card-title">Índices en Base de Datos</div>
+        <div class="card-body">Agregar índices compuestos en tabla <code>access_logs</code> para consultas de historial. Reducirá latencia de reportes en ~60%.</div>
+        <span class="card-tag">Media prioridad</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">📦</span>
+        <div class="card-title">Actualización de Dependencias</div>
+        <div class="card-body">3 paquetes con vulnerabilidades conocidas (npm audit). Actualizar React Native a 0.76 para soporte de Nueva Arquitectura.</div>
+        <span class="card-tag">Media prioridad</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">📈</span>
+        <div class="card-title">Monitoreo con Datadog</div>
+        <div class="card-body">Implementar APM para trazabilidad de requests end-to-end y alertas automáticas por latencia y errores 5xx.</div>
+        <span class="card-tag">Planificado</span>
+      </div>
+    </div>
+
+    <div class="divider mt-3"><span>Validación técnica</span></div>
+
+    <div class="sig-grid">
+      <div class="sig">
+        <div class="sig-space"></div>
+        <div class="sig-name">Ing. [Nombre del responsable]</div>
+        <div class="sig-role">Líder técnico del cliente</div>
+        <div class="sig-company">[Empresa]</div>
+      </div>
+      <div class="sig">
+        <div class="sig-space"></div>
+        <div class="sig-name">Corestack Solutions</div>
+        <div class="sig-role">Equipo de Desarrollo</div>
+        <div class="sig-company">corestacksolutions.com.mx</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Técnico · Pág. 4</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+  const d = new Date().toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+  const cd = document.getElementById('cover-date');
+  if (cd) cd.textContent = d;
+</script>
+</body>
+</html>

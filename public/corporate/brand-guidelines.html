@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Guidelines — Corestack Solutions</title>
+    <link rel="stylesheet" href="shared.css" />
+    <script src="editor.js" defer></script>
+    <style>
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.75rem;
+        margin: 1rem 0;
+      }
+      .swatch {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .swatch-color {
+        height: 64px;
+      }
+      .swatch-info {
+        padding: 0.5rem 0.6rem;
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+      }
+      .swatch-name {
+        font-family: var(--font-heading);
+        font-size: 7.5pt;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .swatch-hex {
+        font-size: 7pt;
+        color: var(--gray-400);
+        font-family: monospace;
+      }
+      .swatch-use {
+        font-size: 6.5pt;
+        color: var(--gray-400);
+        margin-top: 2px;
+      }
+
+      .type-sample {
+        margin-bottom: 1.1rem;
+        padding-bottom: 1.1rem;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .type-sample:last-child {
+        border-bottom: none;
+      }
+      .type-meta {
+        font-size: 7.5pt;
+        color: var(--gray-400);
+        margin-top: 0.3rem;
+        font-family: monospace;
+      }
+
+      .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      .logo-box {
+        border: 1px solid var(--gray-200);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .logo-bg {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+      .logo-bg img {
+        height: 36px;
+        width: auto;
+      }
+      .logo-bg.dark-bg {
+        background: var(--navy);
+      }
+      .logo-bg.light-bg {
+        background: var(--white);
+      }
+      .logo-bg.gray-bg {
+        background: var(--gray-100);
+      }
+      .logo-label {
+        padding: 0.5rem 0.75rem;
+        background: var(--gray-50);
+        font-size: 7.5pt;
+        color: var(--gray-600);
+        font-weight: 500;
+        border-top: 1px solid var(--gray-200);
+      }
+
+      .do-dont {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 0.85rem 0;
+      }
+      .do-box,
+      .dont-box {
+        border-radius: 8px;
+        padding: 0.9rem;
+      }
+      .do-box {
+        background: rgba(16, 185, 129, 0.06);
+        border: 1px solid rgba(16, 185, 129, 0.25);
+      }
+      .dont-box {
+        background: rgba(239, 68, 68, 0.06);
+        border: 1px solid rgba(239, 68, 68, 0.25);
+      }
+      .do-box h3 {
+        color: var(--success) !important;
+        margin-top: 0 !important;
+        font-size: 9pt !important;
+      }
+      .dont-box h3 {
+        color: var(--danger) !important;
+        margin-top: 0 !important;
+        font-size: 9pt !important;
+      }
+      .do-box ul li,
+      .dont-box ul li {
+        font-size: 8.5pt;
+      }
+
+      .pattern-preview {
+        height: 100px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        border: 1px solid var(--gray-200);
+      }
+      .pattern-preview.dark {
+        background: var(--navy);
+      }
+      .pattern-preview.light {
+        background: var(--gray-50);
+      }
+      .pattern-preview img {
+        width: 100%;
+        height: 70px;
+        object-fit: cover;
+        object-position: bottom;
+      }
+      .pattern-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.85rem;
+        margin: 0.85rem 0;
+      }
+      .pattern-label {
+        padding: 0.5rem 0.75rem;
+        font-size: 7.5pt;
+        color: var(--gray-600);
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pages">
+      <!-- PORTADA -->
+      <div class="page cover">
+        <div class="cover-body">
+          <div class="cover-brand">
+            <img
+              src="../images/corestack.png"
+              alt="Corestack Solutions"
+              class="cover-logo"
+            />
+            <div class="cover-brand-text">
+              <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+              <div class="cover-brand-tagline">
+                Tecnología que transforma tu negocio.
+              </div>
+            </div>
+          </div>
+          <div class="cover-eyebrow">
+            Corestack Solutions · Identidad Visual
+          </div>
+          <h1 class="cover-title">
+            BRAND<br /><span class="accent">GUIDELINES</span>
+          </h1>
+          <p class="cover-subtitle">Manual de identidad corporativa</p>
+          <div class="cover-rule"></div>
+          <div class="cover-meta">
+            <div class="cover-meta-item">
+              <span class="cover-meta-icon">📅</span>
+              <span class="cover-meta-value">Versión 1.0 — 2025</span>
+            </div>
+            <div class="cover-meta-item">
+              <span class="cover-meta-icon">👥</span>
+              <span class="cover-meta-value">Uso: Interno y proveedores</span>
+            </div>
+            <div class="cover-meta-item">
+              <span class="cover-meta-icon">🎨</span>
+              <span class="cover-meta-value"
+                >Categoría: Identidad corporativa</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="cover-pattern"></div>
+        <div class="cover-footer">
+          <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+          <span class="cover-footer-contact"
+            >corestack.sol@gmail.com · +52 993 442 1347</span
+          >
+        </div>
+      </div>
+
+      <!-- PALETA DE COLORES -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Paleta de Colores</div>
+            <div class="page-header-sub">Brand Guidelines · v1.0</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>01 · Paleta de Colores</h1>
+          <p>
+            La paleta de Corestack Solutions transmite tecnología, confianza y
+            precisión. El Deep Navy es el color dominante; Core Blue y Tech
+            Orange son los acentos primarios.
+          </p>
+
+          <div class="swatch-grid">
+            <div class="swatch">
+              <div class="swatch-color" style="background: #081a2e"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Deep Navy</div>
+                <div class="swatch-hex">#081A2E</div>
+                <div class="swatch-use">Portadas · Fondos</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: #0d2240"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Navy Mid</div>
+                <div class="swatch-hex">#0D2240</div>
+                <div class="swatch-use">Secciones oscuras</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: #00aeef"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Core Blue</div>
+                <div class="swatch-hex">#00AEEF</div>
+                <div class="swatch-use">Acento principal</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: #38c8f5"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Light Blue</div>
+                <div class="swatch-hex">#38C8F5</div>
+                <div class="swatch-use">Degradados · Chips</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: #f97316"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Tech Orange</div>
+                <div class="swatch-hex">#F97316</div>
+                <div class="swatch-use">Acento secundario</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div
+                class="swatch-color"
+                style="background: #ffffff; border: 1px solid #e2e8f0"
+              ></div>
+              <div class="swatch-info">
+                <div class="swatch-name">White</div>
+                <div class="swatch-hex">#FFFFFF</div>
+                <div class="swatch-use">Documentos · Fondo</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div>
+              <h2>Colores de soporte</h2>
+              <div
+                class="swatch-grid"
+                style="grid-template-columns: repeat(3, 1fr)"
+              >
+                <div class="swatch">
+                  <div class="swatch-color" style="background: #10b981"></div>
+                  <div class="swatch-info">
+                    <div class="swatch-name">Success</div>
+                    <div class="swatch-hex">#10B981</div>
+                  </div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background: #f59e0b"></div>
+                  <div class="swatch-info">
+                    <div class="swatch-name">Warning</div>
+                    <div class="swatch-hex">#F59E0B</div>
+                  </div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background: #ef4444"></div>
+                  <div class="swatch-info">
+                    <div class="swatch-name">Danger</div>
+                    <div class="swatch-hex">#EF4444</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2>Grises</h2>
+              <div
+                class="swatch-grid"
+                style="grid-template-columns: repeat(3, 1fr)"
+              >
+                <div class="swatch">
+                  <div class="swatch-color" style="background: #f8fafc"></div>
+                  <div class="swatch-info">
+                    <div class="swatch-name">Gray 50</div>
+                    <div class="swatch-hex">#F8FAFC</div>
+                  </div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background: #94a3b8"></div>
+                  <div class="swatch-info">
+                    <div class="swatch-name">Gray 400</div>
+                    <div class="swatch-hex">#94A3B8</div>
+                  </div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background: #1e293b"></div>
+                  <div class="swatch-info">
+                    <div class="swatch-name">Gray 800</div>
+                    <div class="swatch-hex">#1E293B</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2>Uso de color</h2>
+          <div class="do-dont">
+            <div class="do-box">
+              <h3>✅ Correcto</h3>
+              <ul>
+                <li>Deep Navy en portadas y headers</li>
+                <li>Core Blue en acentos, bordes y badges</li>
+                <li>Tech Orange solo como acento puntual</li>
+                <li>Texto oscuro sobre fondos claros</li>
+                <li>Texto blanco sobre Deep Navy</li>
+              </ul>
+            </div>
+            <div class="dont-box">
+              <h3>❌ Incorrecto</h3>
+              <ul>
+                <li>Tech Orange como color de fondo principal</li>
+                <li>Core Blue como color de texto sobre blanco</li>
+                <li>Mezclar más de 3 colores en un componente</li>
+                <li>Usar grises custom fuera de la paleta</li>
+                <li>Deep Navy sobre fondos oscuros de terceros</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">BRAND GUIDELINES</span>
+          <span>Pág. 2</span>
+        </div>
+      </div>
+
+      <!-- TIPOGRAFÍA -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Tipografía</div>
+            <div class="page-header-sub">Brand Guidelines · v1.0</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>02 · Tipografía</h1>
+          <p>
+            Corestack usa tres familias tipográficas con roles específicos.
+            Siempre priorizar legibilidad y jerarquía visual clara.
+          </p>
+
+          <div class="type-sample">
+            <div
+              style="
+                font-family: &quot;Montserrat&quot;, sans-serif;
+                font-size: 26pt;
+                font-weight: 900;
+                color: var(--navy);
+                letter-spacing: -0.02em;
+                line-height: 1.1;
+              "
+            >
+              MONTSERRAT BLACK
+            </div>
+            <div class="type-meta">
+              Montserrat 900 · Títulos de portada · Display · Mayúsculas ·
+              Tracking: -0.02em
+            </div>
+          </div>
+
+          <div class="type-sample">
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-size: 18pt;
+                font-weight: 700;
+                color: var(--navy);
+                line-height: 1.2;
+              "
+            >
+              Poppins Bold — Títulos de sección
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-size: 11pt;
+                font-weight: 600;
+                color: var(--gray-600);
+                margin-top: 0.3rem;
+              "
+            >
+              Poppins SemiBold — Subtítulos y encabezados de página
+            </div>
+            <div class="type-meta">
+              Poppins 600–900 · Headings H1–H3 · Navbar · Labels
+            </div>
+          </div>
+
+          <div class="type-sample">
+            <div
+              style="
+                font-family: &quot;Inter&quot;, sans-serif;
+                font-size: 10pt;
+                color: var(--gray-600);
+                line-height: 1.75;
+              "
+            >
+              Inter Regular — Texto de cuerpo para documentos, párrafos,
+              descripciones y contenido extenso. Optimizado para legibilidad en
+              pantalla e impresión. Soporta pesos 300–800.
+            </div>
+            <div
+              style="
+                font-family: &quot;Inter&quot;, sans-serif;
+                font-size: 8pt;
+                font-weight: 700;
+                color: var(--gray-400);
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                margin-top: 0.5rem;
+              "
+            >
+              INTER 700 — EYEBROWS · LABELS · BADGES · CÁPSULAS
+            </div>
+            <div class="type-meta">
+              Inter 300–800 · Cuerpo · UI · Tablas · Formularios · Datos
+            </div>
+          </div>
+
+          <h2>Jerarquía de textos</h2>
+          <table class="corp-table mt-1">
+            <thead>
+              <tr>
+                <th>Elemento</th>
+                <th>Familia</th>
+                <th>Peso</th>
+                <th>Tamaño</th>
+                <th>Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Título portada</td>
+                <td>Montserrat</td>
+                <td>900</td>
+                <td>34–40pt</td>
+                <td>Cover h1 únicamente</td>
+              </tr>
+              <tr>
+                <td>H1 sección</td>
+                <td>Poppins</td>
+                <td>700</td>
+                <td>18–20pt</td>
+                <td>Primera línea de cada página</td>
+              </tr>
+              <tr>
+                <td>H2 subsección</td>
+                <td>Poppins</td>
+                <td>600</td>
+                <td>12–14pt</td>
+                <td>Separadores internos</td>
+              </tr>
+              <tr>
+                <td>H3 componente</td>
+                <td>Poppins</td>
+                <td>600</td>
+                <td>9.5–10pt</td>
+                <td>Cards, callouts</td>
+              </tr>
+              <tr>
+                <td>Cuerpo</td>
+                <td>Inter</td>
+                <td>400</td>
+                <td>9.5pt</td>
+                <td>Párrafos y listas</td>
+              </tr>
+              <tr>
+                <td>Labels / Badges</td>
+                <td>Inter</td>
+                <td>700</td>
+                <td>6.5–7.5pt</td>
+                <td>Etiquetas, mayúsculas</td>
+              </tr>
+              <tr>
+                <td>Datos / Tablas</td>
+                <td>Inter</td>
+                <td>400–600</td>
+                <td>8.5pt</td>
+                <td>Celdas y valores</td>
+              </tr>
+              <tr>
+                <td>KPI valores</td>
+                <td>Montserrat</td>
+                <td>900</td>
+                <td>20–28pt</td>
+                <td>Números destacados</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">BRAND GUIDELINES</span>
+          <span>Pág. 3</span>
+        </div>
+      </div>
+
+      <!-- LOGO + PATRONES -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Logo y Patrones</div>
+            <div class="page-header-sub">Brand Guidelines · v1.0</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>03 · Logo y Patrones Gráficos</h1>
+
+          <h2>Versiones del logo</h2>
+          <div class="logo-grid">
+            <div class="logo-box">
+              <div class="logo-bg dark-bg">
+                <img
+                  src="../images/corestack.png"
+                  alt="Logo"
+                  style="filter: brightness(0) invert(1)"
+                />
+              </div>
+              <div class="logo-label">
+                Versión blanca · Sobre fondos oscuros
+              </div>
+            </div>
+            <div class="logo-box">
+              <div class="logo-bg light-bg">
+                <img src="../images/corestack.png" alt="Logo" />
+              </div>
+              <div class="logo-label">
+                Versión original · Sobre fondos claros
+              </div>
+            </div>
+            <div class="logo-box">
+              <div class="logo-bg gray-bg">
+                <img src="../images/corestack.png" alt="Logo" />
+              </div>
+              <div class="logo-label">Versión original · Sobre gris claro</div>
+            </div>
+          </div>
+
+          <div class="do-dont">
+            <div class="do-box">
+              <h3>✅ Uso correcto del logo</h3>
+              <ul>
+                <li>Respetar proporciones originales (no distorsionar)</li>
+                <li>Zona de protección: mínimo igual al alto del logo</li>
+                <li>
+                  Tamaño mínimo: 24px de alto en digital, 8mm en impresión
+                </li>
+                <li>Usar versión blanca en fondos Navy o dark</li>
+              </ul>
+            </div>
+            <div class="dont-box">
+              <h3>❌ Uso incorrecto del logo</h3>
+              <ul>
+                <li>Cambiar colores del isotipo o wordmark</li>
+                <li>Agregar sombras, bordes o efectos</li>
+                <li>Colocar sobre fondos de bajo contraste</li>
+                <li>Estirar, voltear o rotar el logo</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Patrón gráfico isométrico</h2>
+          <p>
+            El patrón de cubos isométricos es el elemento gráfico distintivo de
+            Corestack. Existe en versión dark (para portadas) y light (para
+            páginas interiores). Siempre se usa en el borde inferior o superior
+            de las páginas, nunca como fondo completo.
+          </p>
+
+          <div class="pattern-grid">
+            <div>
+              <div class="pattern-preview dark">
+                <img src="../images/dark pattern.png" alt="Dark pattern" />
+              </div>
+              <div class="pattern-label">
+                Dark Pattern · Portadas · Fondos navy
+              </div>
+            </div>
+            <div>
+              <div class="pattern-preview light">
+                <img src="../images/light pattern.png" alt="Light pattern" />
+              </div>
+              <div class="pattern-label">
+                Light Pattern · Páginas interiores · Fondos blancos
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">BRAND GUIDELINES</span>
+          <span>Pág. 4</span>
+        </div>
+      </div>
+
+      <!-- VOZ Y TONO -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Voz y Tono de Marca</div>
+            <div class="page-header-sub">Brand Guidelines · v1.0</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>04 · Voz y Tono de Marca</h1>
+
+          <div class="highlight">
+            <div class="hl-eyebrow">Propuesta de valor</div>
+            <p>
+              Corestack Solutions es una empresa de desarrollo de software
+              fundamentada en la
+              <strong
+                >responsabilidad, el rigor técnico y el compromiso
+                genuino</strong
+              >
+              con cada cliente. Diseñamos y construimos aplicaciones y
+              plataformas con altos estándares de calidad, cumplimiento de
+              plazos y atención personalizada.
+            </p>
+          </div>
+
+          <div class="card-grid cols-3 mt-2">
+            <div class="card">
+              <span class="card-icon">🎯</span>
+              <div class="card-title">Directo</div>
+              <div class="card-body">
+                Comunicamos con claridad. Sin tecnicismos innecesarios. Sin
+                palabras relleno. Cada oración tiene un propósito.
+              </div>
+            </div>
+            <div class="card">
+              <span class="card-icon">⚖️</span>
+              <div class="card-title">Formal pero cercano</div>
+              <div class="card-body">
+                Profesional sin ser frío. Usamos lenguaje de respeto sin perder
+                calidez y atención personalizada.
+              </div>
+            </div>
+            <div class="card">
+              <span class="card-icon">✅</span>
+              <div class="card-title">Orientado a resultados</div>
+              <div class="card-body">
+                Hablamos de impacto, no de proceso. Nos importa lo que el
+                cliente logra, no los detalles técnicos por sí solos.
+              </div>
+            </div>
+          </div>
+
+          <h2>Ejemplos de voz</h2>
+          <table class="corp-table mt-1">
+            <thead>
+              <tr>
+                <th>❌ No decimos</th>
+                <th>✅ Sí decimos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"Realizamos la implementación del módulo..."</td>
+                <td>"Entregamos el módulo en tiempo y funcionando."</td>
+              </tr>
+              <tr>
+                <td>"Nuestra solución es de vanguardia tecnológica..."</td>
+                <td>"Construimos software que resuelve problemas reales."</td>
+              </tr>
+              <tr>
+                <td>"Ofrecemos servicios de desarrollo de apps móviles..."</td>
+                <td>
+                  "Desarrollamos aplicaciones móviles listas para producción."
+                </td>
+              </tr>
+              <tr>
+                <td>"Trabajamos con las mejores prácticas..."</td>
+                <td>"Cada línea de código tiene un estándar claro."</td>
+              </tr>
+              <tr>
+                <td>"Somos líderes en tecnología..."</td>
+                <td>"Nos respaldan proyectos en producción real."</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Valores de marca</h2>
+          <div class="kpi-grid cols-4 mt-1">
+            <div class="kpi">
+              <div
+                class="kpi-label"
+                style="
+                  font-size: 9pt;
+                  font-weight: 700;
+                  color: var(--navy);
+                  text-transform: none;
+                  letter-spacing: 0;
+                "
+              >
+                Responsabilidad
+              </div>
+              <div
+                class="kpi-sub"
+                style="font-size: 8pt; color: var(--gray-600); margin-top: 4px"
+              >
+                Cumplimos lo que prometemos, siempre.
+              </div>
+            </div>
+            <div class="kpi">
+              <div
+                class="kpi-label"
+                style="
+                  font-size: 9pt;
+                  font-weight: 700;
+                  color: var(--navy);
+                  text-transform: none;
+                  letter-spacing: 0;
+                "
+              >
+                Rigor técnico
+              </div>
+              <div
+                class="kpi-sub"
+                style="font-size: 8pt; color: var(--gray-600); margin-top: 4px"
+              >
+                Código con estándares de calidad real.
+              </div>
+            </div>
+            <div class="kpi">
+              <div
+                class="kpi-label"
+                style="
+                  font-size: 9pt;
+                  font-weight: 700;
+                  color: var(--navy);
+                  text-transform: none;
+                  letter-spacing: 0;
+                "
+              >
+                Transparencia
+              </div>
+              <div
+                class="kpi-sub"
+                style="font-size: 8pt; color: var(--gray-600); margin-top: 4px"
+              >
+                Comunicamos avances sin filtros.
+              </div>
+            </div>
+            <div class="kpi">
+              <div
+                class="kpi-label"
+                style="
+                  font-size: 9pt;
+                  font-weight: 700;
+                  color: var(--navy);
+                  text-transform: none;
+                  letter-spacing: 0;
+                "
+              >
+                Compromiso
+              </div>
+              <div
+                class="kpi-sub"
+                style="font-size: 8pt; color: var(--gray-600); margin-top: 4px"
+              >
+                El cliente como prioridad genuina.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">BRAND GUIDELINES</span>
+          <span>Pág. 5</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .querySelectorAll(".year")
+        .forEach((el) => (el.textContent = new Date().getFullYear()));
+    </script>
+  </body>
+</html>

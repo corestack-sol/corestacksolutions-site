@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contrato de Servicios — Corestack Solutions</title>
+    <link rel="stylesheet" href="shared.css" />
+    <script src="editor.js" defer></script>
+    <style>
+      .clause {
+        margin-bottom: 1.2rem;
+        page-break-inside: avoid;
+      }
+      .clause-num {
+        font-family: var(--font-heading);
+        font-size: 9.5pt;
+        font-weight: 700;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.35rem;
+        border-bottom: 1px solid var(--gray-200);
+        padding-bottom: 0.25rem;
+      }
+      .clause p {
+        font-size: 9.5pt;
+        color: var(--gray-600);
+        line-height: 1.8;
+      }
+      .clause ul {
+        margin-left: 1rem;
+        margin-top: 0.3rem;
+      }
+      .clause li {
+        font-size: 9.5pt;
+        color: var(--gray-600);
+        line-height: 1.7;
+      }
+      .parties {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.1rem;
+        margin: 1.1rem 0;
+      }
+      .party {
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+        padding: 0.9rem;
+      }
+      .party-label {
+        font-size: 6.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--blue);
+        margin-bottom: 0.4rem;
+      }
+      .party-name {
+        font-family: var(--font-heading);
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.15rem;
+      }
+      .party-detail {
+        font-size: 8pt;
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+      .party.provider {
+        background: var(--navy);
+        border-color: rgba(0, 174, 239, 0.3);
+      }
+      .party.provider .party-label {
+        color: var(--blue);
+      }
+      .party.provider .party-name {
+        color: var(--white);
+      }
+      .party.provider .party-detail {
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .field {
+        display: inline-block;
+        border-bottom: 1px solid var(--gray-400);
+        min-width: 120px;
+        color: var(--navy);
+        font-weight: 600;
+      }
+      .sig-section {
+        margin-top: 2.5rem;
+      }
+      .sig-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 1.5rem;
+      }
+      .sig-item {
+      }
+      .sig-line {
+        border-bottom: 1px solid var(--gray-400);
+        margin-bottom: 0.4rem;
+        height: 2rem;
+      }
+      .sig-name-label {
+        font-size: 8pt;
+        color: var(--gray-600);
+        margin-bottom: 2px;
+      }
+      .sig-name-val {
+        font-family: var(--font-heading);
+        font-size: 9pt;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .sig-sub {
+        font-size: 7.5pt;
+        color: var(--gray-400);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-brand">
+        <img src="../images/corestack.png" alt="Corestack" />
+        <span>Corestack</span> Solutions
+        <span class="toolbar-label">· Contrato de Servicios</span>
+      </div>
+      <div class="toolbar-actions">
+        <a href="/" class="btn btn-ghost">← Sitio web</a>
+        <button class="btn btn-primary" onclick="window.print()">
+          ⬇ Exportar PDF
+        </button>
+      </div>
+    </div>
+
+    <div class="pages">
+      <!-- PORTADA OSCURA -->
+      <div class="page cover">
+        <div class="cover-body">
+          <div class="cover-brand">
+            <img
+              src="../images/corestack.png"
+              alt="Corestack Solutions"
+              class="cover-logo"
+            />
+            <div class="cover-brand-text">
+              <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+              <div class="cover-brand-tagline">
+                Tecnología que transforma tu negocio.
+              </div>
+            </div>
+          </div>
+          <div class="cover-eyebrow">Corestack Solutions · Documento Legal</div>
+          <h1 class="cover-title">
+            CONTRATO<br /><span class="accent">DE SERVICIOS</span>
+          </h1>
+          <p class="cover-subtitle">
+            Servicios de desarrollo<br />de software a medida
+          </p>
+          <div class="cover-rule"></div>
+          <div class="cover-meta">
+            <div class="cover-meta-item">
+              <span class="cover-meta-icon">📅</span>
+              <span class="cover-meta-value" id="cover-date"></span>
+            </div>
+            <div class="cover-meta-item">
+              <span class="cover-meta-icon">👤</span>
+              <span class="cover-meta-value"
+                >Cliente: [Nombre del Cliente]</span
+              >
+            </div>
+            <div class="cover-meta-item">
+              <span class="cover-meta-icon">🏷️</span>
+              <span class="cover-meta-value"
+                >Folio: CS-CONT-001 · Confidencial</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="cover-pattern"></div>
+        <div class="cover-footer">
+          <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+          <span class="cover-footer-contact"
+            >corestack.sol@gmail.com · +52 993 442 1347</span
+          >
+        </div>
+      </div>
+
+      <!-- PÁGINA 2 — PARTES Y DECLARACIONES -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Contrato de Servicios</div>
+            <div class="page-header-sub">Confidencial · CS-CONT-001</div>
+          </div>
+        </div>
+
+        <div class="content">
+          <h1>Contrato de Prestación de Servicios</h1>
+
+          <p>
+            En Villahermosa, Tabasco, México, a
+            <span class="field" id="doc-date">____ de ________ de ____</span>,
+            las partes que a continuación se describen celebran el presente
+            Contrato de Prestación de Servicios de Desarrollo de Software,
+            conforme a las siguientes cláusulas:
+          </p>
+
+          <h2>Partes Contratantes</h2>
+          <div class="parties">
+            <div class="party provider">
+              <div class="party-label">Prestador de Servicios</div>
+              <div class="party-name">Corestack Solutions</div>
+              <div class="party-detail">
+                Empresa de desarrollo de software<br />
+                Villahermosa, Tabasco, México<br />
+                corestack.sol@gmail.com<br />
+                +52 993 442 1347<br />
+                corestacksolutions.com.mx
+              </div>
+            </div>
+            <div class="party">
+              <div class="party-label">Cliente</div>
+              <div class="party-name">[Nombre completo o razón social]</div>
+              <div class="party-detail">
+                [RFC o identificación fiscal]<br />
+                [Dirección completa]<br />
+                [Correo electrónico]<br />
+                [Teléfono de contacto]<br />
+                Representado por: [Nombre del representante]
+              </div>
+            </div>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">Cláusula Primera — Objeto del Contrato</div>
+            <p>
+              Corestack Solutions se obliga a prestar al Cliente los servicios
+              de diseño, desarrollo e implementación de software descritos en el
+              Anexo A (Propuesta Técnica y Comercial, folio
+              <span class="field">CS-PROP-____</span>), que forma parte integral
+              del presente contrato.
+            </p>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">Cláusula Segunda — Vigencia</div>
+            <p>
+              El presente contrato entrará en vigor en la fecha de su firma y
+              permanecerá vigente hasta la entrega y aceptación formal de los
+              entregables descritos en el Anexo A, o hasta su terminación
+              anticipada conforme a lo establecido en la Cláusula Novena.
+            </p>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">
+              Cláusula Tercera — Contraprestación y Forma de Pago
+            </div>
+            <p>
+              El Cliente se obliga a pagar a Corestack Solutions la cantidad
+              total de
+              <strong><span class="field">$_______ MXN</span></strong>
+              (_____________________________ pesos mexicanos), más IVA si
+              aplica, en los siguientes parciales:
+            </p>
+            <ul>
+              <li>
+                <strong>Primer pago (30%):</strong> al momento de la firma del
+                presente contrato.
+              </li>
+              <li>
+                <strong>Segundo pago (40%):</strong> a la aprobación formal del
+                Sprint 2.
+              </li>
+              <li>
+                <strong>Tercer y último pago (30%):</strong> a la entrega y
+                aceptación formal de los entregables.
+              </li>
+            </ul>
+            <p>
+              Los pagos se realizarán mediante transferencia bancaria o depósito
+              directo a la cuenta indicada por Corestack Solutions.
+            </p>
+          </div>
+        </div>
+
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+          <span>Contrato · Pág. 2</span>
+        </div>
+      </div>
+
+      <!-- PÁGINA 3 — CLÁUSULAS -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Contrato de Servicios</div>
+            <div class="page-header-sub">Confidencial · CS-CONT-001</div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="clause">
+            <div class="clause-num">
+              Cláusula Cuarta — Obligaciones de Corestack Solutions
+            </div>
+            <p>Corestack Solutions se compromete a:</p>
+            <ul>
+              <li>
+                Desarrollar los entregables conforme al Anexo A, con los
+                estándares técnicos acordados.
+              </li>
+              <li>
+                Mantener comunicación activa con el Cliente mediante reportes de
+                avance semanales.
+              </li>
+              <li>
+                Responder a consultas del Cliente en un plazo máximo de 24 horas
+                hábiles.
+              </li>
+              <li>
+                Entregar el código fuente completo al cierre del proyecto.
+              </li>
+              <li>
+                Mantener la confidencialidad de toda información proporcionada
+                por el Cliente.
+              </li>
+              <li>
+                Proveer 1 mes de soporte post-lanzamiento sin costo adicional.
+              </li>
+            </ul>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">
+              Cláusula Quinta — Obligaciones del Cliente
+            </div>
+            <p>El Cliente se compromete a:</p>
+            <ul>
+              <li>
+                Realizar los pagos en los plazos acordados en la Cláusula
+                Tercera.
+              </li>
+              <li>
+                Proporcionar a Corestack Solutions la información, accesos y
+                recursos necesarios para el desarrollo.
+              </li>
+              <li>
+                Designar a un responsable de proyecto con autoridad para aprobar
+                entregables.
+              </li>
+              <li>
+                Revisar y aprobar (o rechazar con comentarios) cada entregable
+                en un plazo máximo de <strong>3 días hábiles</strong>.
+              </li>
+              <li>
+                Notificar por escrito cualquier cambio en los requerimientos.
+              </li>
+            </ul>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">Cláusula Sexta — Cambios de Alcance</div>
+            <p>
+              Cualquier modificación al alcance acordado en el Anexo A deberá
+              solicitarse por escrito. Corestack Solutions presentará una adenda
+              con el impacto en tiempo y costo. Los cambios entrarán en vigor
+              únicamente con la firma de la adenda por ambas partes.
+            </p>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">
+              Cláusula Séptima — Propiedad Intelectual
+            </div>
+            <p>
+              Una vez liquidada la totalidad del precio acordado, el Cliente
+              será propietario del código fuente desarrollado exclusivamente
+              para su proyecto. Corestack Solutions conserva el derecho de
+              referir el proyecto como caso de uso en su portafolio, sin
+              divulgar información confidencial del Cliente.
+            </p>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">Cláusula Octava — Confidencialidad</div>
+            <p>
+              Ambas partes se obligan a mantener la más estricta
+              confidencialidad sobre la información intercambiada durante la
+              vigencia del contrato y por un período de
+              <strong>2 años</strong> posteriores a su terminación. Esta
+              obligación sobrevive a la terminación del contrato.
+            </p>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">
+              Cláusula Novena — Terminación Anticipada
+            </div>
+            <p>
+              Cualquiera de las partes podrá dar por terminado el contrato
+              mediante aviso escrito con 15 días de anticipación. En caso de
+              terminación por causas imputables al Cliente, Corestack Solutions
+              retendrá los pagos recibidos y el Cliente pagará los trabajos
+              realizados hasta la fecha de terminación. En caso de terminación
+              por causas imputables a Corestack Solutions, se reembolsará al
+              Cliente la parte proporcional no ejecutada.
+            </p>
+          </div>
+
+          <div class="clause">
+            <div class="clause-num">Cláusula Décima — Jurisdicción</div>
+            <p>
+              Para la interpretación y cumplimiento del presente contrato, las
+              partes se someten a la jurisdicción de los tribunales competentes
+              de Villahermosa, Tabasco, México, renunciando a cualquier otro
+              fuero que pudiera corresponderles.
+            </p>
+          </div>
+
+          <div class="callout info mt-2">
+            <span class="callout-icon">⚖</span>
+            <div class="callout-body">
+              <div class="callout-title">Anexos</div>
+              <p>
+                El Anexo A (Propuesta Técnica y Comercial) y cualquier adenda
+                firmada forman parte integral del presente contrato y tienen la
+                misma validez legal que este documento.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+          <span>Contrato · Pág. 3</span>
+        </div>
+      </div>
+
+      <!-- PÁGINA 4 — FIRMAS -->
+      <div class="page">
+        <div class="page-header">
+          <img
+            src="../images/corestack.png"
+            class="page-header-logo"
+            alt="Corestack"
+          />
+          <div class="page-header-info">
+            <div class="page-header-doc">Firmas de Conformidad</div>
+            <div class="page-header-sub">
+              Contrato de Servicios · CS-CONT-001
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <h1>Firmas de Conformidad</h1>
+
+          <p>
+            Leído el presente contrato y estando conformes con su contenido, las
+            partes lo firman en la ciudad de Villahermosa, Tabasco, México, a
+            <span class="field" id="sig-date">____ de ________ de ____</span>.
+          </p>
+
+          <div class="highlight mt-3">
+            <div class="hl-eyebrow">Corestack Solutions · Compromiso</div>
+            <p>
+              Al firmar este contrato, Corestack Solutions reafirma su
+              compromiso de
+              <strong
+                >entregar resultados de calidad, en tiempo y con total
+                transparencia</strong
+              >, respaldados por años de experiencia en desarrollo de software
+              para empresas en México.
+            </p>
+          </div>
+
+          <div class="sig-block mt-3">
+            <div class="sig-item">
+              <div class="sig-line"></div>
+              <div class="sig-name-label">Nombre y firma del Cliente</div>
+              <div class="sig-name-val">[Nombre completo]</div>
+              <div class="sig-sub">[Cargo] · [Empresa]</div>
+            </div>
+            <div class="sig-item">
+              <div class="sig-line"></div>
+              <div class="sig-name-label">Corestack Solutions</div>
+              <div class="sig-name-val">Director de Proyecto</div>
+              <div class="sig-sub">corestacksolutions.com.mx</div>
+            </div>
+          </div>
+
+          <div class="sig-block mt-3">
+            <div class="sig-item">
+              <div class="sig-line"></div>
+              <div class="sig-name-label">Testigo (opcional)</div>
+              <div class="sig-name-val">[Nombre del testigo]</div>
+              <div class="sig-sub">[RFC / Identificación]</div>
+            </div>
+            <div class="sig-item">
+              <div class="sig-line"></div>
+              <div class="sig-name-label">Testigo (opcional)</div>
+              <div class="sig-name-val">[Nombre del testigo]</div>
+              <div class="sig-sub">[RFC / Identificación]</div>
+            </div>
+          </div>
+
+          <p class="small c-muted tc" style="margin-top: 2.5rem">
+            Contrato confidencial · Corestack Solutions ©
+            <span class="year"></span> · Folio CS-CONT-001<br />
+            Cualquier reproducción sin autorización expresa de ambas partes es
+            nula.
+          </p>
+        </div>
+
+        <div class="page-pattern-bottom"></div>
+        <div class="page-footer">
+          <span>Corestack Solutions © <span class="year"></span></span>
+          <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+          <span>Contrato · Pág. 4</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .querySelectorAll(".year")
+        .forEach((el) => (el.textContent = new Date().getFullYear()));
+      const d = new Date().toLocaleDateString("es-MX", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      ["cover-date", "doc-date", "sig-date"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = d;
+      });
+    </script>
+  </body>
+</html>

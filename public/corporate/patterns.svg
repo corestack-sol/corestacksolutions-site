@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <!-- Cubo isométrico oscuro -->
+    <g id="cube-dark">
+      <!-- Cara superior -->
+      <polygon points="40,0 80,20 40,40 0,20" fill="none" stroke="#00AEEF" stroke-width="0.8"/>
+      <!-- Cara izquierda -->
+      <polygon points="0,20 40,40 40,80 0,60" fill="rgba(0,174,239,0.06)" stroke="#00AEEF" stroke-width="0.8"/>
+      <!-- Cara derecha -->
+      <polygon points="80,20 40,40 40,80 80,60" fill="rgba(0,174,239,0.03)" stroke="#00AEEF" stroke-width="0.8"/>
+    </g>
+    <!-- Cubo isométrico con acento naranja -->
+    <g id="cube-orange">
+      <polygon points="40,0 80,20 40,40 0,20" fill="none" stroke="#F97316" stroke-width="0.8"/>
+      <polygon points="0,20 40,40 40,80 0,60" fill="rgba(249,115,22,0.06)" stroke="#F97316" stroke-width="0.8"/>
+      <polygon points="80,20 40,40 40,80 80,60" fill="rgba(249,115,22,0.03)" stroke="#00AEEF" stroke-width="0.8"/>
+    </g>
+    <!-- Cubo isométrico claro -->
+    <g id="cube-light">
+      <polygon points="40,0 80,20 40,40 0,20" fill="none" stroke="#00AEEF" stroke-width="0.7" stroke-opacity="0.5"/>
+      <polygon points="0,20 40,40 40,80 0,60" fill="rgba(0,174,239,0.04)" stroke="#00AEEF" stroke-width="0.7" stroke-opacity="0.5"/>
+      <polygon points="80,20 40,40 40,80 80,60" fill="rgba(0,174,239,0.02)" stroke="#00AEEF" stroke-width="0.7" stroke-opacity="0.5"/>
+    </g>
+  </defs>
+
+  <!-- ── DARK PATTERN row 1 (bottom) ── -->
+  <g transform="translate(0, 110)">
+    <use href="#cube-dark"  transform="translate(0,0)"/>
+    <use href="#cube-dark"  transform="translate(80,0)"/>
+    <use href="#cube-orange" transform="translate(160,0)"/>
+    <use href="#cube-dark"  transform="translate(240,0)"/>
+    <use href="#cube-dark"  transform="translate(320,0)"/>
+    <use href="#cube-orange" transform="translate(400,0)"/>
+    <use href="#cube-dark"  transform="translate(480,0)"/>
+    <use href="#cube-dark"  transform="translate(560,0)"/>
+    <use href="#cube-dark"  transform="translate(640,0)"/>
+    <use href="#cube-orange" transform="translate(720,0)"/>
+    <use href="#cube-dark"  transform="translate(800,0)"/>
+    <use href="#cube-dark"  transform="translate(880,0)"/>
+    <use href="#cube-orange" transform="translate(960,0)"/>
+    <use href="#cube-dark"  transform="translate(1040,0)"/>
+    <use href="#cube-dark"  transform="translate(1120,0)"/>
+  </g>
+
+  <!-- Row 2 (offset) -->
+  <g transform="translate(40, 70)">
+    <use href="#cube-dark"  transform="translate(0,0)"/>
+    <use href="#cube-dark"  transform="translate(80,0)"/>
+    <use href="#cube-dark"  transform="translate(160,0)"/>
+    <use href="#cube-orange" transform="translate(240,0)"/>
+    <use href="#cube-dark"  transform="translate(320,0)"/>
+    <use href="#cube-dark"  transform="translate(400,0)"/>
+    <use href="#cube-dark"  transform="translate(480,0)"/>
+    <use href="#cube-orange" transform="translate(560,0)"/>
+    <use href="#cube-dark"  transform="translate(640,0)"/>
+    <use href="#cube-dark"  transform="translate(720,0)"/>
+    <use href="#cube-dark"  transform="translate(800,0)"/>
+    <use href="#cube-orange" transform="translate(880,0)"/>
+    <use href="#cube-dark"  transform="translate(960,0)"/>
+    <use href="#cube-dark"  transform="translate(1040,0)"/>
+    <use href="#cube-dark"  transform="translate(1120,0)"/>
+  </g>
+
+  <!-- Row 3 (taller, fade) -->
+  <g transform="translate(0, 30)" opacity="0.45">
+    <use href="#cube-dark"  transform="translate(80,0)"/>
+    <use href="#cube-dark"  transform="translate(160,0)"/>
+    <use href="#cube-orange" transform="translate(240,0)"/>
+    <use href="#cube-dark"  transform="translate(320,0)"/>
+    <use href="#cube-dark"  transform="translate(480,0)"/>
+    <use href="#cube-orange" transform="translate(640,0)"/>
+    <use href="#cube-dark"  transform="translate(720,0)"/>
+    <use href="#cube-dark"  transform="translate(880,0)"/>
+    <use href="#cube-orange" transform="translate(960,0)"/>
+    <use href="#cube-dark"  transform="translate(1040,0)"/>
+  </g>
+
+  <!-- Fade gradient overlay (for dark) -->
+  <defs>
+    <linearGradient id="fade-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#081A2E" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#081A2E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade-light" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

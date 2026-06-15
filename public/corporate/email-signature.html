@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Signature Kit — Corestack Solutions</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="editor.js" defer></script>
+  <style>
+    .sig-kit-grid { display: grid; gap: 1.5rem; margin: 1rem 0; }
+
+    /* Firma 1 — Horizontal completa */
+    .email-sig {
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .email-sig-preview {
+      background: #fff;
+      padding: 1.25rem 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .email-sig-label {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .email-sig-label span { font-size: 8pt; color: var(--gray-500); font-weight: 500; }
+    .email-sig-label button {
+      background: var(--blue); color: #fff;
+      border: none; border-radius: 5px;
+      padding: 3px 10px; font-size: 7.5pt;
+      font-weight: 700; cursor: pointer;
+    }
+    .email-sig-label button:hover { background: #0099D6; }
+
+    /* Estilos internos de la firma (inline para compatibilidad con correo) */
+    .sig-table { border-collapse: collapse; font-family: Arial, Helvetica, sans-serif; }
+    .sig-divider { width: 3px; background: #00AEEF; }
+    .sig-left { padding-right: 14px; vertical-align: middle; }
+    .sig-right { padding-left: 14px; vertical-align: middle; }
+    .sig-logo-img { display: block; height: 42px; width: auto; }
+    .sig-name { font-size: 13px; font-weight: 700; color: #081A2E; margin: 0 0 1px 0; white-space: nowrap; }
+    .sig-role { font-size: 10px; color: #64748B; margin: 0 0 6px 0; white-space: nowrap; }
+    .sig-company { font-size: 11px; font-weight: 700; color: #00AEEF; margin: 0 0 6px 0; white-space: nowrap; }
+    .sig-contact { font-size: 10px; color: #64748B; margin: 0 0 2px 0; white-space: nowrap; }
+    .sig-contact a { color: #00AEEF; text-decoration: none; }
+    .sig-web a { font-size: 10px; color: #F97316; text-decoration: none; font-weight: 700; }
+    .sig-tagline { font-size: 9px; color: #94A3B8; font-style: italic; margin-top: 6px; }
+
+    /* Firma oscura */
+    .sig-preview-dark {
+      background: #081A2E;
+      padding: 1.25rem 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Banner inferior opcional */
+    .sig-banner {
+      display: block;
+      background: linear-gradient(90deg, #081A2E 0%, #0D2240 100%);
+      padding: 6px 16px;
+      border-top: 2px solid #00AEEF;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9px;
+      color: rgba(255,255,255,0.5);
+    }
+    .sig-banner strong { color: #00AEEF; }
+
+    .instruction-box {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+      margin: 1rem 0;
+    }
+    .instruction-step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+      color: rgba(255,255,255,0.75);
+      font-size: 9pt;
+    }
+    .instruction-step:last-child { margin-bottom: 0; }
+    .step-num {
+      background: var(--blue);
+      color: #fff;
+      font-size: 7.5pt;
+      font-weight: 700;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="pages">
+
+<!-- PORTADA -->
+<div class="page cover">
+  <div class="cover-body">
+    <div class="cover-brand">
+      <img src="../images/corestack.png" alt="Corestack Solutions" class="cover-logo"/>
+      <div class="cover-brand-text">
+        <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+        <div class="cover-brand-tagline">Tecnología que transforma tu negocio.</div>
+      </div>
+    </div>
+    <div class="cover-eyebrow">Corestack Solutions · Comunicación</div>
+    <h1 class="cover-title">EMAIL<br/><span class="accent">SIGNATURE KIT</span></h1>
+    <p class="cover-subtitle">Firmas corporativas para<br/>correo electrónico</p>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">✉️</span>
+        <span class="cover-meta-value">3 variaciones de firma</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">💻</span>
+        <span class="cover-meta-value">Gmail · Outlook · Apple Mail</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-pattern"></div>
+  <div class="cover-footer">
+    <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+    <span class="cover-footer-contact">corestack.sol@gmail.com · +52 993 442 1347</span>
+  </div>
+</div>
+
+<!-- FIRMAS -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Firmas de Correo</div>
+      <div class="page-header-sub">Email Signature Kit · v1.0</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Firmas Corporativas</h1>
+    <p>Tres variaciones de firma para distintos contextos. Edita el nombre, cargo y teléfono antes de copiar.</p>
+
+    <!-- FIRMA 1 — COMPLETA CLARA -->
+    <h2>Firma 1 — Estándar (fondo claro)</h2>
+    <div class="email-sig" id="sig1-wrapper">
+      <div class="email-sig-preview">
+        <table class="sig-table" cellpadding="0" cellspacing="0" id="sig1">
+          <tr>
+            <td class="sig-left">
+              <img src="../images/corestack.png" class="sig-logo-img" alt="Corestack Solutions"/>
+            </td>
+            <td class="sig-divider" width="3">&nbsp;</td>
+            <td class="sig-right">
+              <p class="sig-name" contenteditable="false">[Tu nombre completo]</p>
+              <p class="sig-role" contenteditable="false">[Cargo · Área]</p>
+              <p class="sig-company">Corestack Solutions</p>
+              <p class="sig-contact" contenteditable="false">📞 <a href="tel:+529934421347">+52 993 442 1347</a></p>
+              <p class="sig-contact">✉ <a href="mailto:corestack.sol@gmail.com">corestack.sol@gmail.com</a></p>
+              <p class="sig-web"><a href="https://corestacksolutions.com.mx">corestacksolutions.com.mx</a></p>
+              <p class="sig-tagline">Responsabilidad · Rigor técnico · Compromiso genuino</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="email-sig-label">
+        <span>Firma 1 · Estándar clara · Para uso diario</span>
+        <button onclick="copySig('sig1')">Copiar firma</button>
+      </div>
+    </div>
+
+    <!-- FIRMA 2 — COMPACTA -->
+    <h2>Firma 2 — Compacta</h2>
+    <div class="email-sig" id="sig2-wrapper">
+      <div class="email-sig-preview">
+        <table class="sig-table" cellpadding="0" cellspacing="0" id="sig2">
+          <tr>
+            <td style="padding-right:12px; vertical-align:middle; border-right:2px solid #00AEEF;">
+              <img src="../images/corestack.png" style="height:32px; width:auto; display:block;" alt="Corestack"/>
+            </td>
+            <td style="padding-left:12px; vertical-align:middle;">
+              <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:#081A2E;margin:0 0 2px 0" contenteditable="false">[Tu nombre] &nbsp;<span style="font-weight:400;color:#94A3B8;font-size:10px" contenteditable="false">[Cargo]</span></p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#64748B;margin:0;">
+                <span style="color:#00AEEF;font-weight:700;">Corestack Solutions</span>
+                &nbsp;·&nbsp; <a href="tel:+529934421347" style="color:#64748B;text-decoration:none" contenteditable="false">+52 993 [número]</a>
+                &nbsp;·&nbsp; <a href="https://corestacksolutions.com.mx" style="color:#F97316;text-decoration:none;font-weight:700;">corestacksolutions.com.mx</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="email-sig-label">
+        <span>Firma 2 · Compacta · Para respuestas y cadenas de correo</span>
+        <button onclick="copySig('sig2')">Copiar firma</button>
+      </div>
+    </div>
+
+    <!-- FIRMA 3 — OSCURA -->
+    <h2>Firma 3 — Dark (para fondos oscuros o fondo HTML)</h2>
+    <div class="email-sig" id="sig3-wrapper">
+      <div class="sig-preview-dark">
+        <table class="sig-table" cellpadding="0" cellspacing="0" id="sig3" style="background:#081A2E;">
+          <tr>
+            <td style="padding:12px 16px 12px 0; vertical-align:middle; border-right:2px solid #00AEEF;">
+              <img src="../images/corestack.png" style="height:38px;width:auto;display:block;filter:brightness(0) invert(1);" alt="Corestack Solutions"/>
+            </td>
+            <td style="padding:12px 0 12px 16px; vertical-align:middle;">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;margin:0 0 2px 0" contenteditable="false">[Tu nombre completo]</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.5);margin:0 0 6px 0" contenteditable="false">[Cargo] · Corestack Solutions</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.55);margin:0 0 2px 0">
+                📞 <a href="tel:+529934421347" style="color:#00AEEF;text-decoration:none" contenteditable="false">+52 993 442 1347</a>
+                &nbsp;·&nbsp;
+                ✉ <a href="mailto:corestack.sol@gmail.com" style="color:#00AEEF;text-decoration:none">corestack.sol@gmail.com</a>
+              </p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;margin:0;">
+                <a href="https://corestacksolutions.com.mx" style="color:#F97316;text-decoration:none;font-weight:700;">corestacksolutions.com.mx</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="email-sig-label">
+        <span>Firma 3 · Dark · Para presentaciones y correos formales</span>
+        <button onclick="copySig('sig3')">Copiar firma</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">EMAIL SIGNATURE KIT</span>
+    <span>Pág. 2</span>
+  </div>
+</div>
+
+<!-- INSTRUCCIONES -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Instrucciones de Instalación</div>
+      <div class="page-header-sub">Email Signature Kit · v1.0</div>
+    </div>
+  </div>
+  <div class="content">
+    <h1>Cómo instalar tu firma</h1>
+
+    <h2>Gmail</h2>
+    <div class="instruction-box">
+      <div class="instruction-step"><div class="step-num">1</div><span>Abre este documento en el navegador y haz clic en <strong style="color:#00AEEF">✏️ Editar documento</strong> para personalizar tu nombre y cargo.</span></div>
+      <div class="instruction-step"><div class="step-num">2</div><span>Haz clic en <strong style="color:#00AEEF">Copiar firma</strong> debajo de la variación que quieras usar.</span></div>
+      <div class="instruction-step"><div class="step-num">3</div><span>En Gmail: abre <strong style="color:#00AEEF">Configuración → Ver toda la configuración → General → Firma</strong>.</span></div>
+      <div class="instruction-step"><div class="step-num">4</div><span>Haz clic en el área de texto de la firma y pega con <strong style="color:#00AEEF">Ctrl+V</strong> (la firma se pega con formato HTML conservado).</span></div>
+      <div class="instruction-step"><div class="step-num">5</div><span>Guarda los cambios al final de la página. La firma aparecerá automáticamente en todos tus correos.</span></div>
+    </div>
+
+    <h2>Outlook</h2>
+    <div class="instruction-box">
+      <div class="instruction-step"><div class="step-num">1</div><span>Personaliza e copia la firma con el botón <strong style="color:#00AEEF">Copiar firma</strong>.</span></div>
+      <div class="instruction-step"><div class="step-num">2</div><span>En Outlook: <strong style="color:#00AEEF">Archivo → Opciones → Correo → Firmas</strong>.</span></div>
+      <div class="instruction-step"><div class="step-num">3</div><span>Crea una nueva firma, haz clic en el área de texto y pega con <strong style="color:#00AEEF">Ctrl+V</strong>.</span></div>
+      <div class="instruction-step"><div class="step-num">4</div><span>Asigna la firma como predeterminada para mensajes nuevos y respuestas.</span></div>
+    </div>
+
+    <h2>Apple Mail</h2>
+    <div class="instruction-box">
+      <div class="instruction-step"><div class="step-num">1</div><span>Personaliza y copia la firma.</span></div>
+      <div class="instruction-step"><div class="step-num">2</div><span>En Mail: <strong style="color:#00AEEF">Mail → Preferencias → Firmas</strong>.</span></div>
+      <div class="instruction-step"><div class="step-num">3</div><span>Crea una nueva firma con el botón <strong style="color:#00AEEF">+</strong> y pega el contenido copiado.</span></div>
+      <div class="instruction-step"><div class="step-num">4</div><span>Arrastra la firma a la cuenta de correo que quieras.</span></div>
+    </div>
+
+    <div class="callout info mt-2">
+      <span class="callout-icon">💡</span>
+      <div class="callout-body">
+        <div class="callout-title">Tip: campos editables</div>
+        <p>Usa el botón <strong>✏️ Editar documento</strong> (esquina inferior derecha) para modificar tu nombre, cargo y teléfono directamente en la firma antes de copiarla. El texto se actualiza en tiempo real.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">EMAIL SIGNATURE KIT</span>
+    <span>Pág. 3</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+
+  function copySig(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const range = document.createRange();
+    range.selectNode(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    try {
+      document.execCommand('copy');
+      const btn = el.closest('.email-sig')?.querySelector('button');
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        btn.style.background = '#10B981';
+        setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 2000);
+      }
+    } catch (e) {
+      alert('Selecciona la firma manualmente y copia con Ctrl+C');
+    }
+    sel.removeAllRanges();
+  }
+</script>
+</body>
+</html>

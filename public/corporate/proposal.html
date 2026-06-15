@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Propuesta Comercial — Corestack Solutions</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="editor.js" defer></script>
+  <style>
+    /* Estilos específicos de este documento */
+    .exec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin: 1rem 0; }
+    .exec-col { padding: 1.1rem; border-radius: 10px; }
+    .exec-col.dark { background: var(--navy); }
+    .exec-col.light { background: var(--gray-50); border: 1px solid var(--gray-200); }
+    .exec-col h3 { font-size: 7pt !important; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue) !important; margin-top: 0 !important; margin-bottom: 0.65rem !important; }
+    .exec-col.dark p { color: rgba(255,255,255,0.7) !important; font-size: 9pt; line-height: 1.7; }
+    .exec-col.light p { font-size: 9pt; }
+    .exec-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+    .exec-list li { padding: 0.3rem 0 !important; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 8.5pt; color: rgba(255,255,255,0.7) !important; display: flex; gap: 0.45rem; align-items: flex-start; }
+    .exec-list li::before { display: none !important; }
+    .exec-list .dot { color: var(--blue); font-size: 8pt; flex-shrink: 0; margin-top: 1px; }
+  </style>
+</head>
+<body>
+
+<!-- ── TOOLBAR ── -->
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <img src="../images/corestack.png" alt="Corestack"/>
+    <span>Corestack</span> Solutions
+    <span class="toolbar-label">· Propuesta Comercial</span>
+  </div>
+  <div class="toolbar-actions">
+    <a href="/" class="btn btn-ghost">← Sitio web</a>
+    <a href="../corporate/" class="btn btn-ghost">Mis documentos</a>
+    <button class="btn btn-primary" onclick="window.print()">⬇ Exportar PDF</button>
+  </div>
+</div>
+
+<div class="pages">
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 1 — PORTADA (DARK)
+     ════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-body">
+    <div class="cover-brand">
+      <img src="../images/corestack.png" alt="Corestack Solutions" class="cover-logo"/>
+      <div class="cover-brand-text">
+        <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+        <div class="cover-brand-tagline">Tecnología que transforma tu negocio.</div>
+      </div>
+    </div>
+
+    <div class="cover-eyebrow">Corestack Solutions · Documento Comercial</div>
+
+    <h1 class="cover-title">
+      PROPUESTA<br/>
+      <span class="accent">COMERCIAL</span>
+    </h1>
+
+    <p class="cover-subtitle">Soluciones Tecnológicas<br/>para Empresas Innovadoras</p>
+
+    <div class="cover-rule"></div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">📅</span>
+        <span class="cover-meta-value" id="cover-date"></span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">👤</span>
+        <span class="cover-meta-value">Cliente: [Nombre del Cliente]</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">🏷️</span>
+        <span class="cover-meta-value">Folio: CS-PROP-001 · Vigencia: 30 días</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-pattern"></div>
+
+  <div class="cover-footer">
+    <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+    <span class="cover-footer-contact">corestack.sol@gmail.com · +52 993 442 1347</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 2 — TABLA DE CONTENIDO (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Propuesta Comercial</div>
+      <div class="page-header-sub">Confidencial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Índice</h1>
+
+    <div style="margin-top:1.5rem">
+      <div class="toc-item"><span class="toc-num">01</span><span class="toc-label">Resumen Ejecutivo</span><span class="toc-dots"></span><span class="toc-pg">3</span></div>
+      <div class="toc-item"><span class="toc-num">02</span><span class="toc-label">Alcance del Proyecto</span><span class="toc-dots"></span><span class="toc-pg">4</span></div>
+      <div class="toc-item sub"><span class="toc-num">2.1</span><span class="toc-label">Módulos y Entregables</span><span class="toc-dots"></span><span class="toc-pg">4</span></div>
+      <div class="toc-item sub"><span class="toc-num">2.2</span><span class="toc-label">Dentro y Fuera del Alcance</span><span class="toc-dots"></span><span class="toc-pg">4</span></div>
+      <div class="toc-item"><span class="toc-num">03</span><span class="toc-label">Arquitectura Técnica</span><span class="toc-dots"></span><span class="toc-pg">5</span></div>
+      <div class="toc-item"><span class="toc-num">04</span><span class="toc-label">Cronograma de Trabajo</span><span class="toc-dots"></span><span class="toc-pg">6</span></div>
+      <div class="toc-item"><span class="toc-num">05</span><span class="toc-label">Inversión y Presupuesto</span><span class="toc-dots"></span><span class="toc-pg">7</span></div>
+      <div class="toc-item sub"><span class="toc-num">5.1</span><span class="toc-label">Desglose por Módulo</span><span class="toc-dots"></span><span class="toc-pg">7</span></div>
+      <div class="toc-item sub"><span class="toc-num">5.2</span><span class="toc-label">Condiciones de Pago</span><span class="toc-dots"></span><span class="toc-pg">7</span></div>
+      <div class="toc-item"><span class="toc-num">06</span><span class="toc-label">Casos de Éxito</span><span class="toc-dots"></span><span class="toc-pg">8</span></div>
+      <div class="toc-item"><span class="toc-num">07</span><span class="toc-label">Condiciones Comerciales y Próximos Pasos</span><span class="toc-dots"></span><span class="toc-pg">9</span></div>
+      <div class="toc-item"><span class="toc-num">08</span><span class="toc-label">Firma de Aceptación</span><span class="toc-dots"></span><span class="toc-pg">10</span></div>
+    </div>
+
+    <div class="highlight mt-3">
+      <div class="hl-eyebrow">Acerca de esta propuesta</div>
+      <p>
+        Corestack Solutions es una empresa de desarrollo de software fundamentada en la
+        <strong>responsabilidad, el rigor técnico y el compromiso genuino</strong> con cada cliente.
+        Diseñamos y construimos aplicaciones móviles y plataformas web con altos estándares
+        de calidad, cumplimiento de plazos y atención personalizada.
+      </p>
+    </div>
+
+    <div class="callout info mt-2">
+      <span class="callout-icon">🔒</span>
+      <div class="callout-body">
+        <div class="callout-title">Confidencialidad</div>
+        <p>Este documento contiene información confidencial de Corestack Solutions. Su contenido no
+        debe reproducirse ni distribuirse sin autorización expresa por escrito.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 2/10</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 3 — RESUMEN EJECUTIVO (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Resumen Ejecutivo</div>
+      <div class="page-header-sub">Propuesta Comercial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>01 · Resumen Ejecutivo</h1>
+
+    <div class="kpi-grid cols-4 mt-2">
+      <div class="kpi">
+        <div class="kpi-val"><span class="u">+</span>5</div>
+        <div class="kpi-label">Años de experiencia técnica</div>
+      </div>
+      <div class="kpi orange">
+        <div class="kpi-val">100<span class="u">%</span></div>
+        <div class="kpi-label">Entrega en tiempo y forma</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">24<span class="u">h</span></div>
+        <div class="kpi-label">Respuesta máxima garantizada</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val"><span class="u">+</span>2</div>
+        <div class="kpi-label">Apps en producción activa</div>
+      </div>
+    </div>
+
+    <div class="exec-grid">
+      <div class="exec-col dark">
+        <h3>Propuesta de Valor</h3>
+        <p>Corestack Solutions propone el diseño, desarrollo e implementación de una solución tecnológica a medida que resuelva los desafíos operativos de su organización con resultados medibles y sostenibles.</p>
+        <ul class="exec-list">
+          <li><span class="dot">▸</span>Desarrollo React Native / React 19 + TypeScript</li>
+          <li><span class="dot">▸</span>Backend Node.js + REST API + MySQL</li>
+          <li><span class="dot">▸</span>Firebase, Railway, Cloudflare Workers</li>
+          <li><span class="dot">▸</span>Publicación App Store y Google Play</li>
+          <li><span class="dot">▸</span>Soporte post-lanzamiento incluido</li>
+        </ul>
+      </div>
+      <div class="exec-col light">
+        <h3>Objetivo del Proyecto</h3>
+        <p>[Describir el objetivo principal: qué problema resuelve la solución, para quién y en qué plazo.]</p>
+        <p><strong>Resultado esperado:</strong> plataforma funcional, escalable y lista para producción, entregada en el plazo acordado con capacitación incluida.</p>
+        <div class="callout info mt-1">
+          <span class="callout-icon">ℹ</span>
+          <div class="callout-body">
+            <div class="callout-title">Alcance</div>
+            <p>Cualquier requerimiento adicional se cotizará mediante adenda firmada por ambas partes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 3/10</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 4 — ALCANCE (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Alcance del Proyecto</div>
+      <div class="page-header-sub">Propuesta Comercial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>02 · Alcance del Proyecto</h1>
+
+    <h2>2.1 Módulos y Entregables</h2>
+    <div class="card-grid cols-3">
+      <div class="card"><span class="card-icon">📱</span><div class="card-title">App Móvil (iOS & Android)</div><div class="card-body">React Native + TypeScript. Navegación multi-rol, autenticación segura y módulos funcionales acordados.</div><span class="card-tag">Principal</span></div>
+      <div class="card"><span class="card-icon">🔌</span><div class="card-title">Backend y API REST</div><div class="card-body">Node.js + Express + MySQL. Endpoints documentados, lógica de negocio y control de acceso.</div><span class="card-tag">Principal</span></div>
+      <div class="card"><span class="card-icon">☁️</span><div class="card-title">Despliegue en la Nube</div><div class="card-body">Firebase, Railway o AWS. CI/CD básico, dominios y certificados SSL incluidos.</div><span class="card-tag">Infraestructura</span></div>
+      <div class="card"><span class="card-icon">🔔</span><div class="card-title">Notificaciones Push</div><div class="card-body">Firebase Cloud Messaging + Notifee. Configuración de tópicos y segmentación por rol.</div><span class="card-tag">Módulo</span></div>
+      <div class="card"><span class="card-icon">📊</span><div class="card-title">Panel Administrativo</div><div class="card-body">Dashboard web React 19 para gestión de usuarios, reportes y configuración del sistema.</div><span class="card-tag">Módulo</span></div>
+      <div class="card"><span class="card-icon">🧪</span><div class="card-title">QA y Pruebas</div><div class="card-body">Testing funcional en dispositivos reales. 2 ciclos de revisión antes del lanzamiento.</div><span class="card-tag">Calidad</span></div>
+    </div>
+
+    <h2>2.2 Dentro y Fuera del Alcance</h2>
+    <div class="scope-grid">
+      <div class="scope-box in">
+        <div class="scope-title">✅ Incluido</div>
+        <ul>
+          <li><span>✔</span>Diseño UX/UI de pantallas acordadas</li>
+          <li><span>✔</span>Configuración inicial de Firebase</li>
+          <li><span>✔</span>Publicación en Google Play y App Store</li>
+          <li><span>✔</span>Documentación técnica de API</li>
+          <li><span>✔</span>1 mes de soporte post-lanzamiento</li>
+          <li><span>✔</span>Capacitación remota a usuarios clave</li>
+        </ul>
+      </div>
+      <div class="scope-box out">
+        <div class="scope-title">❌ No incluido</div>
+        <ul>
+          <li><span>✘</span>Integraciones con ERP/CRM de terceros</li>
+          <li><span>✘</span>Hardware físico (sensores, barreras)</li>
+          <li><span>✘</span>Mantenimiento mensual continuo</li>
+          <li><span>✘</span>Migración de datos de sistemas legados</li>
+          <li><span>✘</span>Cambios de alcance post-aprobación</li>
+          <li><span>✘</span>Soporte fuera de horario (sin contrato)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 4/10</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 5 — ARQUITECTURA (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Arquitectura Técnica</div>
+      <div class="page-header-sub">Propuesta Comercial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>03 · Arquitectura Técnica</h1>
+    <p>Arquitectura cliente-servidor desacoplada con comunicación asíncrona en tiempo real. Cada capa es independientemente escalable.</p>
+
+    <div class="arch-box">
+      <div class="arch-layer">
+        <div class="arch-layer-title">Presentación</div>
+        <div class="arch-chips">
+          <span class="chip">React Native (iOS/Android)</span>
+          <span class="chip">React 19 (Web)</span>
+          <span class="chip">TypeScript Strict</span>
+          <span class="chip">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-title">Estado y Datos</div>
+        <div class="arch-chips">
+          <span class="chip">Zustand</span>
+          <span class="chip">TanStack Query</span>
+          <span class="chip">AsyncStorage</span>
+          <span class="chip">SecureStore</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-title">Comunicación</div>
+        <div class="arch-chips">
+          <span class="chip">Axios + Interceptors</span>
+          <span class="chip">Socket.IO</span>
+          <span class="chip">REST API</span>
+          <span class="chip">Firebase SDK</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-title">Backend</div>
+        <div class="arch-chips">
+          <span class="chip orange">Node.js + Express</span>
+          <span class="chip orange">MySQL</span>
+          <span class="chip orange">JWT Auth</span>
+          <span class="chip orange">Nodemailer</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-title">Infraestructura Cloud</div>
+        <div class="arch-chips">
+          <span class="chip orange">Firebase Auth + FCM</span>
+          <span class="chip orange">Railway / AWS</span>
+          <span class="chip orange">Cloudflare Workers</span>
+          <span class="chip orange">SSL/TLS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col mt-2">
+      <div>
+        <h3>Seguridad</h3>
+        <ul>
+          <li>JWT con refresh tokens y expiración corta</li>
+          <li>HTTPS en todos los endpoints</li>
+          <li>Validación server-side con express-validator</li>
+          <li>Rate limiting anti-fuerza bruta</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Escalabilidad</h3>
+        <ul>
+          <li>Arquitectura desacoplada por módulos</li>
+          <li>Soporte multitenancy desde v1</li>
+          <li>Deploy horizontal en Railway/AWS</li>
+          <li>Base de datos con particionado por cliente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 5/10</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 6 — CRONOGRAMA (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Cronograma</div>
+      <div class="page-header-sub">Propuesta Comercial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>04 · Cronograma de Trabajo</h1>
+
+    <div class="kpi-grid cols-3 mt-1">
+      <div class="kpi"><div class="kpi-val">14<span class="u">sem</span></div><div class="kpi-label">Duración total</div></div>
+      <div class="kpi orange"><div class="kpi-val">3</div><div class="kpi-label">Sprints de desarrollo</div></div>
+      <div class="kpi"><div class="kpi-val">2</div><div class="kpi-label">Ciclos de revisión QA</div></div>
+    </div>
+
+    <div class="timeline mt-2">
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-date">Semana 1–2</div>
+        <div class="tl-title">Análisis y Diseño <span class="badge badge-green">Kickoff</span></div>
+        <div class="tl-body">Levantamiento de requerimientos, wireframes UX, definición de API y arquitectura. Aprobación del cliente antes de iniciar desarrollo.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Semana 3–6</div>
+        <div class="tl-title">Sprint 1 — Módulo Core <span class="badge badge-blue">Activo</span></div>
+        <div class="tl-body">Autenticación, roles de usuario, navegación base, conexión con API. Demo funcional al cierre del sprint.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Semana 7–10</div>
+        <div class="tl-title">Sprint 2 — Módulos Principales <span class="badge badge-orange">Planificado</span></div>
+        <div class="tl-body">Desarrollo de los módulos de negocio acordados. Integración Firebase FCM. Pruebas unitarias y revisión parcial.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Semana 11–12</div>
+        <div class="tl-title">Sprint 3 — Integraciones y Cloud <span class="badge badge-orange">Planificado</span></div>
+        <div class="tl-body">Despliegue en la nube, configuración de dominios, pruebas de carga y seguridad, ajustes finales.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot orange"></div>
+        <div class="tl-date">Semana 13</div>
+        <div class="tl-title">QA y Revisión Final <span class="badge badge-orange">QA</span></div>
+        <div class="tl-body">2 ciclos de revisión con el cliente. Corrección de bugs. Preparación para publicación en tiendas.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot orange"></div>
+        <div class="tl-date">Semana 14</div>
+        <div class="tl-title">Lanzamiento y Entrega <span class="badge badge-blue">Entrega</span></div>
+        <div class="tl-body">Publicación en App Store y Google Play. Capacitación de usuarios clave. Inicio del período de soporte.</div>
+      </div>
+    </div>
+
+    <div class="callout warning mt-1">
+      <span class="callout-icon">⚠</span>
+      <div class="callout-body">
+        <div class="callout-title">Nota sobre el cronograma</div>
+        <p>Los plazos son estimaciones. Cambios de alcance aprobados por ambas partes ajustarán las fechas proporcionalmente mediante adenda firmada.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 6/10</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 7 — PRESUPUESTO (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Presupuesto</div>
+      <div class="page-header-sub">Propuesta Comercial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>05 · Inversión y Presupuesto</h1>
+
+    <h2>5.1 Desglose por Módulo</h2>
+    <p class="small c-muted">Precios expresados en MXN. No incluye IVA (16% adicional si aplica).</p>
+
+    <table class="corp-table mt-1">
+      <thead>
+        <tr>
+          <th>Módulo / Entregable</th>
+          <th class="center">Estimación</th>
+          <th class="right">Tarifa/hr</th>
+          <th class="right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Diseño UX/UI</td><td class="center">40 hrs</td><td class="right">$350</td><td class="right fw7">$14,000</td></tr>
+        <tr><td>Sprint 1 — Estructura base y autenticación</td><td class="center">80 hrs</td><td class="right">$350</td><td class="right fw7">$28,000</td></tr>
+        <tr><td>Sprint 2 — Módulos principales</td><td class="center">120 hrs</td><td class="right">$350</td><td class="right fw7">$42,000</td></tr>
+        <tr><td>Sprint 3 — Integraciones y cloud</td><td class="center">60 hrs</td><td class="right">$350</td><td class="right fw7">$21,000</td></tr>
+        <tr><td>QA y pruebas funcionales</td><td class="center">30 hrs</td><td class="right">$300</td><td class="right fw7">$9,000</td></tr>
+        <tr><td>Despliegue y publicación en tiendas</td><td class="center">16 hrs</td><td class="right">$300</td><td class="right fw7">$4,800</td></tr>
+        <tr><td>Documentación técnica</td><td class="center">10 hrs</td><td class="right">$300</td><td class="right fw7">$3,000</td></tr>
+        <tr><td>Soporte post-lanzamiento (1 mes)</td><td class="center">20 hrs</td><td class="right">$300</td><td class="right fw7">$6,000</td></tr>
+        <tr class="total">
+          <td colspan="2">TOTAL DEL PROYECTO</td>
+          <td></td>
+          <td class="right highlight-val">$127,800 MXN</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5.2 Condiciones de Pago</h2>
+    <div class="kpi-grid cols-3 mt-1">
+      <div class="kpi"><div class="kpi-val">30<span class="u">%</span></div><div class="kpi-label">Anticipo para inicio</div><div class="kpi-sub">$38,340 MXN</div></div>
+      <div class="kpi orange"><div class="kpi-val">40<span class="u">%</span></div><div class="kpi-label">Al aprobar Sprint 2</div><div class="kpi-sub">$51,120 MXN</div></div>
+      <div class="kpi"><div class="kpi-val">30<span class="u">%</span></div><div class="kpi-label">Entrega final</div><div class="kpi-sub">$38,340 MXN</div></div>
+    </div>
+
+    <div class="callout info mt-1">
+      <span class="callout-icon">ℹ</span>
+      <div class="callout-body">
+        <div class="callout-title">Forma de pago</div>
+        <p>Transferencia bancaria o depósito directo. Propuesta válida por 30 días. Los precios pueden ajustarse si el alcance cambia después de la firma del contrato.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 7/10</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PÁGINA 8 — FIRMA (LIGHT)
+     ════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Aceptación</div>
+      <div class="page-header-sub">Propuesta Comercial · CS-PROP-001</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>08 · Firma de Aceptación</h1>
+
+    <div class="highlight mt-2">
+      <div class="hl-eyebrow">Compromiso Corestack Solutions</div>
+      <p>
+        Nos comprometemos a entregar una solución tecnológica <strong>robusta, escalable y diseñada
+        para crecer</strong> junto con su organización. Cada línea de código está respaldada por
+        responsabilidad técnica, comunicación transparente y foco absoluto en resultados medibles.
+      </p>
+    </div>
+
+    <h2>Próximos Pasos</h2>
+    <div class="timeline mt-1">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Paso 1</div><div class="tl-title">Revisión de la propuesta</div><div class="tl-body">El cliente revisa alcance, presupuesto y condiciones. Se resuelven dudas en reunión de 45 min.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Paso 2</div><div class="tl-title">Firma y anticipo</div><div class="tl-body">Se firma el contrato de servicios y se realiza el pago del anticipo del 30%. Corestack inicia configuración.</div></div>
+      <div class="tl-item"><div class="tl-dot orange"></div><div class="tl-date">Paso 3</div><div class="tl-title">Kickoff meeting</div><div class="tl-body">Reunión de inicio. Se confirman requerimientos detallados y se acuerda canal de comunicación oficial.</div></div>
+      <div class="tl-item"><div class="tl-dot orange"></div><div class="tl-date">Paso 4</div><div class="tl-title">Inicio del desarrollo</div><div class="tl-body">Comienza Sprint 1 con reportes de avance semanales. Demo funcional al cierre de cada sprint.</div></div>
+    </div>
+
+    <div class="divider">
+      <span>Firma de aceptación</span>
+    </div>
+
+    <div class="sig-grid">
+      <div class="sig">
+        <div class="sig-space"></div>
+        <div class="sig-name">[Nombre del representante]</div>
+        <div class="sig-role">Representante Legal / Directivo</div>
+        <div class="sig-company">[Empresa del Cliente]</div>
+      </div>
+      <div class="sig">
+        <div class="sig-space"></div>
+        <div class="sig-name">Corestack Solutions</div>
+        <div class="sig-role">Director de Proyecto</div>
+        <div class="sig-company">corestacksolutions.com.mx</div>
+      </div>
+    </div>
+
+    <p class="small c-muted tc" style="margin-top:2rem">
+      Documento confidencial · Corestack Solutions © <span class="year"></span> ·
+      corestack.sol@gmail.com · +52 993 442 1347
+    </p>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CORESTACK SOLUTIONS</span>
+    <span>Propuesta · Pág. 10/10</span>
+  </div>
+</div>
+
+</div><!-- /pages -->
+
+<script>
+  const y = new Date().getFullYear();
+  document.querySelectorAll('.year').forEach(el => el.textContent = y);
+  const d = new Date().toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+  const cd = document.getElementById('cover-date');
+  if (cd) cd.textContent = d;
+</script>
+</body>
+</html>
