@@ -35,6 +35,18 @@
     '.type-meta', '.sig-name-val', '.sig-sub', '.sig-name-label',
     '.status-card .val', '.status-card .lbl', '.status-card .unit',
     '.risk-high', '.risk-medium', '.risk-low',
+    // contract.html
+    '.field', '.party-label',
+    // executive-report.html
+    '.progress-label', '.progress-pct',
+    '.sprint-head-title', '.sprint-head-sub', '.sprint-item', '.sprint-pct',
+    '.budget-legend-item',
+    // brand-guidelines.html
+    '.swatch-hex', '.pattern-label',
+    // logo-pack.html
+    '.size-label', '.icon-label',
+    // email-signature.html
+    '.sig-tagline', '.sig-contact', '.sig-web',
   ].join(', ');
 
   // Bloques que se pueden eliminar completos
