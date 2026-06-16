@@ -1070,7 +1070,13 @@ body {
 /* ──────────────────────────────────────────────────────────────
    IMPRESIÓN / PDF
    ────────────────────────────────────────────────────────────── */
-@page { size: A4; margin: 0; }
+/*
+  @page margins = zona segura de la impresora (~1cm).
+  El área imprimible resultante = 29.7cm - 2*1cm = 27.7cm de alto
+                                  21cm   - 2*1cm = 19cm   de ancho
+  El .page en print debe coincidir exactamente con esa área.
+*/
+@page { size: A4; margin: 1cm; }
 
 @media print {
   body { background: transparent !important; }
@@ -1084,20 +1090,19 @@ body {
     background: transparent !important;
   }
 
-  /* Cada .page = exactamente una hoja A4 */
+  /* Cada .page = área imprimible exacta (A4 menos los márgenes @page) */
   .page {
     margin: 0 !important;
     box-shadow: none !important;
-    width: 21cm !important;
-    height: 29.7cm !important;
+    width: 100% !important;
+    height: calc(29.7cm - 2cm) !important;   /* 27.7 cm */
     min-height: 0 !important;
-    max-height: 29.7cm !important;
+    max-height: calc(29.7cm - 2cm) !important;
     overflow: hidden !important;
     page-break-after: always;
     break-after: page;
     page-break-inside: avoid;
     break-inside: avoid;
-    /* Flex column para que margin-top:auto del footer funcione */
     display: flex !important;
     flex-direction: column !important;
   }
