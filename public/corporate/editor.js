@@ -321,6 +321,7 @@
     document.querySelectorAll('.cs-page-actions').forEach(el => el.remove());
     document.querySelectorAll('.cs-dragging').forEach(el => el.classList.remove('cs-dragging'));
     clearDropMarkers();
+    stopAutoScroll();
     draggedPage = null;
 
     document.body.classList.remove('cs-editable-on');
@@ -372,6 +373,7 @@
     dragBtn.addEventListener('dragend', () => {
       page.classList.remove('cs-dragging');
       clearDropMarkers();
+      stopAutoScroll();
       draggedPage = null;
     });
 
@@ -400,9 +402,58 @@
     });
   }
 
+  // Auto-scroll: si el cursor se acerca al borde superior/inferior de la
+  // ventana mientras se arrastra, la página se desplaza sola para poder
+  // alcanzar hojas que no entran en pantalla.
+  const SCROLL_EDGE = 130;      // px desde el borde donde se activa el scroll
+  const SCROLL_MAX_SPEED = 22;  // px por frame en el punto más cercano al borde
+  let lastDragClientY = null;
+  let autoScrollRAF = null;
+
+  function autoScrollStep() {
+    if (!draggedPage || lastDragClientY === null) {
+      autoScrollRAF = null;
+      return;
+    }
+    const vh = window.innerHeight;
+    let dy = 0;
+
+    if (lastDragClientY < SCROLL_EDGE) {
+      const intensity = (SCROLL_EDGE - lastDragClientY) / SCROLL_EDGE;
+      dy = -Math.ceil(intensity * SCROLL_MAX_SPEED);
+    } else if (lastDragClientY > vh - SCROLL_EDGE) {
+      const intensity = (lastDragClientY - (vh - SCROLL_EDGE)) / SCROLL_EDGE;
+      dy = Math.ceil(intensity * SCROLL_MAX_SPEED);
+    }
+
+    if (dy !== 0) window.scrollBy(0, dy);
+    autoScrollRAF = requestAnimationFrame(autoScrollStep);
+  }
+
+  function startAutoScroll() {
+    if (autoScrollRAF === null) autoScrollRAF = requestAnimationFrame(autoScrollStep);
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollRAF !== null) {
+      cancelAnimationFrame(autoScrollRAF);
+      autoScrollRAF = null;
+    }
+    lastDragClientY = null;
+  }
+
   function setupPageReorder() {
     const container = document.querySelector('.pages');
     if (!container) return;
+
+    // Seguimiento de posición a nivel documento — funciona sin importar
+    // qué elemento esté justo debajo del cursor (toolbar, hueco entre
+    // páginas, etc.), para que el auto-scroll sea confiable.
+    document.addEventListener('dragover', e => {
+      if (!draggedPage) return;
+      lastDragClientY = e.clientY;
+      startAutoScroll();
+    });
 
     container.addEventListener('dragover', e => {
       if (!draggedPage) return;
@@ -427,6 +478,7 @@
       targetPage.parentNode.insertBefore(draggedPage, before ? targetPage : targetPage.nextSibling);
 
       clearDropMarkers();
+      stopAutoScroll();
       renumberPages();
       showToast('Página reordenada');
     });
