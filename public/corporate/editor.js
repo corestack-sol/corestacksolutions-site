@@ -33,6 +33,8 @@
     '.lp-name', '.lp-specs', '.lp-use', '.logo-label',
     '.swatch-name', '.swatch-use',
     '.type-meta', '.sig-name-val', '.sig-sub', '.sig-name-label',
+    '.status-card .val', '.status-card .lbl', '.status-card .unit',
+    '.risk-high', '.risk-medium', '.risk-low',
   ].join(', ');
 
   // Bloques que se pueden eliminar completos
