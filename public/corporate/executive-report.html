@@ -38,6 +38,12 @@
     .legend-dot.blue { background: var(--blue); }
     .legend-dot.orange { background: var(--orange); opacity: 0.7; }
     .legend-dot.gray { background: var(--gray-300); }
+
+    @media screen and (max-width: 640px) {
+      .sprint-grid { grid-template-columns: 1fr; }
+      .progress-label { min-width: 90px; font-size: 7.5pt; }
+      .budget-legend { flex-wrap: wrap; gap: 0.75rem; }
+    }
   </style>
 </head>
 <body>

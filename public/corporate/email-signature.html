@@ -95,6 +95,13 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
+
+    @media screen and (max-width: 640px) {
+      /* La tabla de firma mantiene su ancho fijo (debe pegarse igual
+         en clientes de correo); su contenedor de vista previa scrollea. */
+      .email-sig-preview, .sig-preview-dark { overflow-x: auto; }
+      .email-sig-label { flex-wrap: wrap; gap: 0.5rem; }
+    }
   </style>
 </head>
 <body>

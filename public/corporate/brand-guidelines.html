@@ -165,6 +165,17 @@
         color: var(--gray-600);
         font-weight: 500;
       }
+
+      @media screen and (max-width: 640px) {
+        .swatch-grid { grid-template-columns: repeat(3, 1fr); }
+        .logo-grid { grid-template-columns: 1fr 1fr; }
+        .do-dont { grid-template-columns: 1fr; }
+        .pattern-grid { grid-template-columns: 1fr; }
+      }
+      @media screen and (max-width: 420px) {
+        .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+        .logo-grid { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>

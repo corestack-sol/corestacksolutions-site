@@ -1005,6 +1005,69 @@ body {
 .no-break { page-break-inside: avoid; }
 
 /* ──────────────────────────────────────────────────────────────
+   RESPONSIVE — VISUALIZACIÓN EN PANTALLA (tablet / móvil)
+   No afecta @media print ni la exportación a PDF.
+   ────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 900px) {
+  :root {
+    --margin-x: 1.1cm;
+    --margin-y: 0.8cm;
+  }
+
+  .pages { padding: 1rem 0.5rem 2.5rem; gap: 1.25rem; }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    overflow-x: auto;
+  }
+
+  /* ── Toolbar: apila marca y acciones ── */
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+  }
+  .toolbar-brand { font-size: 9pt; }
+  .toolbar-brand img { height: 24px; }
+  .toolbar-actions { flex-wrap: wrap; gap: 0.4rem; }
+  .btn { font-size: 7.5pt; padding: 0.4rem 0.9rem; }
+
+  /* ── Portada ── */
+  .cover-body { padding: 1.5cm var(--margin-x) 0; }
+  .cover-brand { margin-bottom: 1.6cm; }
+  .cover-logo { height: 44px; }
+  .cover-title { font-size: 26pt; }
+  .cover-subtitle { max-width: 100%; margin-bottom: 1.4cm; }
+  .cover-footer { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+
+  /* ── Encabezado / pie de página interior ── */
+  .page-header { flex-wrap: wrap; gap: 0.5rem; }
+  .page-header-info { text-align: left; }
+  .page-footer { flex-wrap: wrap; gap: 0.3rem; text-align: left; }
+
+  /* ── Contenido ── */
+  .content { padding: 0.9cm var(--margin-x) 0.8cm; }
+
+  /* ── Grids compartidos → menos columnas ── */
+  .kpi-grid.cols-3, .kpi-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .card-grid.cols-2, .card-grid.cols-3 { grid-template-columns: 1fr; }
+  .two-col, .col-6040, .col-4060 { grid-template-columns: 1fr; gap: 1rem; }
+  .scope-grid { grid-template-columns: 1fr; }
+  .sig-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* ── Tablas: scroll horizontal dentro de la página ── */
+  .corp-table { min-width: 480px; }
+}
+
+@media screen and (max-width: 480px) {
+  .kpi-grid.cols-2, .kpi-grid.cols-3, .kpi-grid.cols-4 { grid-template-columns: 1fr; }
+  .cover-title { font-size: 21pt; }
+}
+
+/* ──────────────────────────────────────────────────────────────
    IMPRESIÓN / PDF
    ────────────────────────────────────────────────────────────── */
 @page { size: A4; margin: 0; }

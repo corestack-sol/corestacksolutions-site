@@ -44,6 +44,15 @@
     .icon-preview { height: 72px; display: flex; align-items: center; justify-content: center; }
     .icon-preview img { height: 42px; width: 42px; object-fit: contain; }
     .icon-label { padding: 0.4rem 0.6rem; background: var(--gray-50); font-size: 7pt; color: var(--gray-500); border-top: 1px solid var(--gray-200); text-align: center; }
+
+    @media screen and (max-width: 640px) {
+      .lp-grid { grid-template-columns: 1fr; }
+      .size-grid { grid-template-columns: repeat(3, 1fr); }
+      .icon-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media screen and (max-width: 420px) {
+      .size-grid { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
 <body>

@@ -30,6 +30,11 @@
     .status-card.ok .val { color: var(--success); }
     .status-card.warn { border-color: rgba(249,115,22,0.3); }
     .status-card.warn .val { color: var(--orange); }
+
+    @media screen and (max-width: 640px) {
+      .status-grid { grid-template-columns: repeat(2, 1fr); }
+      .code-block { overflow-x: auto; white-space: pre; }
+    }
   </style>
 </head>
 <body>

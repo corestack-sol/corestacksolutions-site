@@ -19,6 +19,10 @@
     .exec-list li { padding: 0.3rem 0 !important; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 8.5pt; color: rgba(255,255,255,0.7) !important; display: flex; gap: 0.45rem; align-items: flex-start; }
     .exec-list li::before { display: none !important; }
     .exec-list .dot { color: var(--blue); font-size: 8pt; flex-shrink: 0; margin-top: 1px; }
+
+    @media screen and (max-width: 640px) {
+      .exec-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>

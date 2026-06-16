@@ -119,6 +119,12 @@
         font-size: 7.5pt;
         color: var(--gray-400);
       }
+
+      @media screen and (max-width: 640px) {
+        .parties { grid-template-columns: 1fr; }
+        .sig-block { grid-template-columns: 1fr; gap: 1.75rem; }
+        .field { min-width: 90px; }
+      }
     </style>
   </head>
   <body>

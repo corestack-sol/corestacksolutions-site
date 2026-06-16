@@ -13,6 +13,8 @@ import Footer from './Components/Footer'
 import PolicyQRResidence from './Components/PolicyQRResidence'
 import DeleteAccount from './Components/DeleteAccount'
 import ProposalTemplate from './Components/ProposalTemplate'
+import DashboardHome from './Components/Dashboard/DashboardHome'
+import ProjectDetail from './Components/Dashboard/ProjectDetail'
 
 function MainPage() {
   const [language, setLanguage] = useState<Language>('ES')
@@ -50,6 +52,8 @@ function App() {
         <Route path="/privacy-policy" element={<PolicyQRResidence />} />
         <Route path="/delete-account" element={<DeleteAccount />} />
         <Route path="/propuesta" element={<ProposalTemplate />} />
+        <Route path="/dashboard" element={<DashboardHome />} />
+        <Route path="/dashboard/:id" element={<ProjectDetail />} />
       </Routes>
     </BrowserRouter>
   )

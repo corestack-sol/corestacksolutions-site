@@ -53,6 +53,7 @@
   let editMode = false;
   let editableEls = [];
   const undoStack = []; // { el, parent, nextSibling }
+  let draggedPage = null;
 
   // ── Estilos ────────────────────────────────────────────────────────
   const style = document.createElement('style');
@@ -199,11 +200,32 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       transition: all 0.15s; color: #fff; white-space: nowrap;
     }
+    .cs-page-drag-btn { background: rgba(100,116,139,0.88); cursor: grab; }
+    .cs-page-drag-btn:hover { background: #64748B; transform: scale(1.04); }
+    .cs-page-drag-btn:active { cursor: grabbing; }
     .cs-page-dup-btn { background: rgba(0,174,239,0.88); }
     .cs-page-dup-btn:hover { background: #00AEEF; transform: scale(1.04); }
     .cs-page-del-btn { background: rgba(239,68,68,0.88); }
     .cs-page-del-btn:hover { background: #EF4444; transform: scale(1.04); }
     @media print { .cs-page-actions { display: none !important; } }
+
+    /* Reordenar páginas por arrastre */
+    .cs-editable-on .page.cs-dragging { opacity: 0.35; }
+    .cs-editable-on .page.cs-drop-before,
+    .cs-editable-on .page.cs-drop-after { position: relative; }
+    .cs-editable-on .page.cs-drop-before::before,
+    .cs-editable-on .page.cs-drop-after::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 5px;
+      background: #00AEEF;
+      z-index: 300;
+      box-shadow: 0 0 14px 2px rgba(0,174,239,0.7);
+      pointer-events: none;
+    }
+    .cs-editable-on .page.cs-drop-before::before { top: 0; }
+    .cs-editable-on .page.cs-drop-after::after { bottom: 0; }
 
     /* Tooltip */
     .cs-tooltip {
@@ -297,6 +319,9 @@
     });
     document.querySelectorAll('.cs-block-actions').forEach(btn => btn.remove());
     document.querySelectorAll('.cs-page-actions').forEach(el => el.remove());
+    document.querySelectorAll('.cs-dragging').forEach(el => el.classList.remove('cs-dragging'));
+    clearDropMarkers();
+    draggedPage = null;
 
     document.body.classList.remove('cs-editable-on');
     editMode = false;
@@ -333,6 +358,23 @@
     const wrap = document.createElement('div');
     wrap.className = 'cs-page-actions';
 
+    const dragBtn = document.createElement('button');
+    dragBtn.className = 'cs-page-btn cs-page-drag-btn';
+    dragBtn.title = 'Arrastrar para reordenar';
+    dragBtn.textContent = '⠿ Mover';
+    dragBtn.setAttribute('draggable', 'true');
+    dragBtn.addEventListener('dragstart', e => {
+      draggedPage = page;
+      page.classList.add('cs-dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', 'cs-page'); // requerido por Firefox
+    });
+    dragBtn.addEventListener('dragend', () => {
+      page.classList.remove('cs-dragging');
+      clearDropMarkers();
+      draggedPage = null;
+    });
+
     const dupBtn = document.createElement('button');
     dupBtn.className = 'cs-page-btn cs-page-dup-btn';
     dupBtn.title = 'Duplicar página completa';
@@ -345,9 +387,49 @@
     delBtn.textContent = '✕ Eliminar página';
     delBtn.addEventListener('click', e => { e.stopPropagation(); deletePage(page); });
 
+    wrap.appendChild(dragBtn);
     wrap.appendChild(dupBtn);
     wrap.appendChild(delBtn);
     page.appendChild(wrap);
+  }
+
+  // ── Reordenar páginas por arrastre ─────────────────────────────────
+  function clearDropMarkers() {
+    document.querySelectorAll('.cs-drop-before, .cs-drop-after').forEach(el => {
+      el.classList.remove('cs-drop-before', 'cs-drop-after');
+    });
+  }
+
+  function setupPageReorder() {
+    const container = document.querySelector('.pages');
+    if (!container) return;
+
+    container.addEventListener('dragover', e => {
+      if (!draggedPage) return;
+      const targetPage = e.target.closest('.page');
+      if (!targetPage || targetPage === draggedPage) return;
+      e.preventDefault();
+
+      clearDropMarkers();
+      const rect = targetPage.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      targetPage.classList.add(before ? 'cs-drop-before' : 'cs-drop-after');
+    });
+
+    container.addEventListener('drop', e => {
+      if (!draggedPage) return;
+      const targetPage = e.target.closest('.page');
+      if (!targetPage || targetPage === draggedPage) return;
+      e.preventDefault();
+
+      const rect = targetPage.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      targetPage.parentNode.insertBefore(draggedPage, before ? targetPage : targetPage.nextSibling);
+
+      clearDropMarkers();
+      renumberPages();
+      showToast('Página reordenada');
+    });
   }
 
   // ── Duplicar página completa ───────────────────────────────────────
@@ -653,6 +735,7 @@
 
   // ── Numeración inicial de páginas ────────────────────────────────────
   renumberPages();
+  setupPageReorder();
 
   // ── Fechas automáticas ───────────────────────────────────────────────
   document.querySelectorAll('#cover-date').forEach(el => {
