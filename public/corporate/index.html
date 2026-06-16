@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="shared.css"/>
   <style>
     body { min-height: 100vh; display: flex; flex-direction: column; background: var(--navy); }
-    .index-page { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 1.5rem; position: relative; overflow: hidden; }
-    .index-bg { position: absolute; inset: 0; background: url('../images/dark pattern.png') bottom center / cover no-repeat; opacity: 0.18; pointer-events: none; }
-    .index-content { position: relative; z-index: 1; width: 100%; max-width: 860px; }
+    .index-page { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 1.5rem; }
+    .index-content { width: 100%; max-width: 860px; }
     .index-logo { height: 42px; margin-bottom: 2rem; }
     .index-eyebrow { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
     .index-title { font-family: 'Montserrat', sans-serif; font-size: 28pt; font-weight: 900; color: var(--white); letter-spacing: -0.02em; margin-bottom: 0.35rem; }
@@ -22,7 +21,27 @@
     .doc-name { font-family: 'Poppins', sans-serif; font-size: 11pt; font-weight: 700; color: var(--white); }
     .doc-desc { font-size: 8.5pt; color: rgba(255,255,255,0.45); line-height: 1.55; }
     .doc-tag { display: inline-block; background: var(--blue-dim); color: var(--blue); font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.25rem; }
-    .index-footer { text-align: center; padding: 1.25rem; border-top: 1px solid rgba(0,174,239,0.1); background: rgba(0,0,0,0.2); font-size: 8pt; color: rgba(255,255,255,0.25); }
+    .index-footer {
+      position: relative;
+      text-align: center;
+      padding: 1.5rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0,174,239,0.1);
+      background: rgba(0,0,0,0.25);
+      font-size: 8pt;
+      color: rgba(255,255,255,0.25);
+      overflow: hidden;
+    }
+    .index-footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('../images/dark pattern.png') bottom center / cover no-repeat;
+      opacity: 0.22;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 40%, #000 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 40%, #000 100%);
+    }
+    .index-footer > * { position: relative; z-index: 1; }
     .index-footer a { color: rgba(0,174,239,0.6); text-decoration: none; }
     .index-footer a:hover { color: var(--blue); }
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;700&display=swap');
@@ -37,7 +56,6 @@
 <body>
 
 <div class="index-page">
-  <div class="index-bg"></div>
   <div class="index-content">
     <img src="../images/corestack.png" alt="Corestack Solutions" class="index-logo"/>
     <div class="index-eyebrow">Sistema de Documentos Corporativos</div>
