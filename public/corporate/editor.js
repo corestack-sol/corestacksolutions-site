@@ -780,7 +780,7 @@
     const text = document.createElement('div');
     text.innerHTML = `
       <div class="page-header-brand-name">CORESTACK SOLUTIONS</div>
-      <div class="page-header-brand-sub">Convertimos tus procesos en software: menos gasto, mayor producción y tu operación visible en tiempo real.</div>
+      <div class="page-header-brand-sub">Convertimos tus procesos en software: operación visible en tiempo real.</div>
     `;
     wrapper.appendChild(text);
   });
