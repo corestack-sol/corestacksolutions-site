@@ -6,6 +6,13 @@
   <title>Propuesta — Control de Acceso Digital · Villa Universitaria</title>
   <link rel="stylesheet" href="shared.css"/>
   <script src="editor.js" defer></script>
+  <style>
+    /* Página 3 compacta — tarjetas reducidas */
+    .card-sm .card { padding: 0.6rem 0.8rem; }
+    .card-sm .card-icon { font-size: 13pt; margin-bottom: 0.2rem; }
+    .card-sm .card-title { font-size: 9pt; margin-bottom: 0.2rem; }
+    .card-sm .card-body { font-size: 8.5pt; line-height: 1.5; }
+  </style>
 </head>
 <body>
 
@@ -127,46 +134,44 @@
 
   <div class="content">
     <h1>05 · La Plataforma</h1>
-    <p>Aplicación web y móvil diseñada para el control de acceso en instalaciones con múltiples perfiles de usuario. No requiere hardware especializado más allá de un dispositivo con cámara para la lectura de QR.</p>
 
-    <div class="card-grid cols-2 mt-1">
+    <div class="card-grid cols-3 mt-1 card-sm">
       <div class="card">
         <span class="card-icon">📲</span>
         <div class="card-title">Acceso por código QR</div>
-        <div class="card-body">Cada usuario tiene un QR único vinculado a su perfil. El registro de entrada y salida es automático al momento del escaneo, sin pasos adicionales para el usuario ni para el personal de vigilancia.</div>
+        <div class="card-body">QR único por usuario. Registro automático de entrada y salida al escanear, sin intervención manual.</div>
       </div>
       <div class="card">
         <span class="card-icon">📊</span>
         <div class="card-title">Reportes en tiempo real</div>
-        <div class="card-body">Afluencia por hora, por día, por semana y por tipo de usuario. Los reportes se generan de forma automática y se pueden exportar. No hay que pedirlos ni esperar que alguien los consolide.</div>
+        <div class="card-body">Afluencia por hora, día y perfil. Se generan automáticamente y se pueden exportar sin solicitud previa.</div>
       </div>
       <div class="card">
         <span class="card-icon">🔔</span>
         <div class="card-title">Alertas automáticas</div>
-        <div class="card-body">El sistema notifica accesos fuera de horario, intentos con credenciales no autorizadas o patrones inusuales. Las alertas llegan en tiempo real al administrador designado.</div>
+        <div class="card-body">Notificaciones por accesos fuera de horario o credenciales no autorizadas, en tiempo real.</div>
       </div>
       <div class="card">
         <span class="card-icon">👥</span>
         <div class="card-title">Perfiles y permisos</div>
-        <div class="card-body">Estudiantes, personal docente, administrativos y visitantes tienen niveles de acceso diferenciados. Los cambios se aplican en línea, sin reemitir credenciales físicas.</div>
+        <div class="card-body">Niveles de acceso diferenciados por tipo de usuario. Cambios aplicados en línea sin reemitir credenciales.</div>
       </div>
       <div class="card">
         <span class="card-icon">🖥️</span>
         <div class="card-title">Panel de administración</div>
-        <div class="card-body">Acceso desde cualquier navegador, sin instalar software. El administrador gestiona usuarios, consulta el historial y descarga reportes desde una sola pantalla, desde cualquier lugar.</div>
+        <div class="card-body">Acceso desde cualquier navegador. Gestión de usuarios, historial y reportes desde una sola pantalla.</div>
       </div>
       <div class="card">
         <span class="card-icon">⚡</span>
-        <div class="card-title">Operación sin mantenimiento diario</div>
-        <div class="card-body">El sistema funciona de forma autónoma una vez configurado. Las actualizaciones se aplican en línea sin interrupciones. No requiere supervisión permanente para mantener el registro activo.</div>
+        <div class="card-title">Operación autónoma</div>
+        <div class="card-body">Funciona sin supervisión permanente. Las actualizaciones se aplican en línea sin interrumpir la operación.</div>
       </div>
     </div>
 
-    <div class="highlight mt-2">
+    <div class="highlight mt-1">
       <div class="hl-eyebrow">¿Le interesa esta propuesta?</div>
-      <p>Estamos disponibles para resolver dudas, profundizar en cualquier punto de esta propuesta o ajustar el alcance según las necesidades específicas del edificio. El contacto es directo — sin intermediarios ni formularios.</p>
-      <p>La plataforma es completamente ajustable: los perfiles de usuario, los horarios de acceso, los tipos de reporte y las alertas se configuran según cómo opera Villa Universitaria, no al revés. Si durante la implementación o el uso surgen requerimientos adicionales —otro módulo, una integración, un proceso distinto— también podemos desarrollarlo. No estamos limitados a un producto cerrado.</p>
-      <div class="two-col mt-2" style="gap:1rem">
+      <p>Estamos disponibles para resolver dudas o profundizar en cualquier punto. La plataforma es completamente ajustable a cómo opera Villa Universitaria, y si durante el uso surgen requerimientos adicionales —otro módulo, una integración, un proceso distinto— también podemos desarrollarlo. No estamos limitados a un producto cerrado. El contacto es directo.</p>
+      <div class="two-col mt-1" style="gap:1rem">
         <div>
           <p style="margin:0"><strong>Correo</strong><br/>corestack.sol@gmail.com</p>
         </div>
