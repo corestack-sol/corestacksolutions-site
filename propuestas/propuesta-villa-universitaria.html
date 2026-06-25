@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Propuesta — Control de Acceso Digital · Villa Universitaria</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="editor.js" defer></script>
+  <style>
+    /* Tarjetas compactas para página 4 */
+    .card-sm .card { padding: 0.6rem 0.8rem; }
+    .card-sm .card-icon { font-size: 13pt; margin-bottom: 0.2rem; }
+    .card-sm .card-title { font-size: 9pt; margin-bottom: 0.2rem; }
+    .card-sm .card-body { font-size: 8.5pt; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <img src="../images/corestack.png" alt="Corestack"/>
+    <span>Corestack</span> Solutions
+    <span class="toolbar-label">· Propuesta Villa Universitaria</span>
+  </div>
+  <div class="toolbar-actions">
+    <a href="/" class="btn btn-ghost">← Sitio web</a>
+    <a href="../corporate/" class="btn btn-ghost">Documentos Corporativos</a>
+    <button class="btn btn-primary" onclick="window.print()">⬇ Exportar PDF</button>
+  </div>
+</div>
+
+<div class="pages">
+
+<!-- ── PÁGINA 1 — PORTADA ───────────────────────────────────── -->
+<div class="page cover">
+  <div class="cover-body">
+    <div class="cover-brand">
+      <img src="../images/corestack.png" alt="Corestack Solutions" class="cover-logo"/>
+      <div class="cover-brand-text">
+        <div class="cover-brand-name">CORESTACK SOLUTIONS</div>
+        <div class="cover-brand-tagline">Convertimos tus procesos en software: operación visible en tiempo real.</div>
+      </div>
+    </div>
+    <div class="cover-eyebrow">Corestack Solutions · Propuesta Ejecutiva</div>
+    <h1 class="cover-title">CONTROL DE<br/><span class="accent">ACCESO DIGITAL</span></h1>
+    <p class="cover-subtitle">Propuesta para Villa Universitaria<br/>Registro, trazabilidad y reportes de acceso en tiempo real</p>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">🏢</span>
+        <span class="cover-meta-value">Villa Universitaria · Tabasco, México</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">📅</span>
+        <span class="cover-meta-value" id="cover-date"></span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-icon">🏷️</span>
+        <span class="cover-meta-value">Folio: CS-PROP-VU-001 · Confidencial</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-pattern"></div>
+  <div class="cover-footer">
+    <span class="cover-footer-brand">corestacksolutions.com.mx</span>
+    <span class="cover-footer-contact">corestack.sol@gmail.com · +52 993 442 1347</span>
+  </div>
+</div>
+
+<!-- ── PÁGINA 2 — CONTEXTO Y SOLUCIÓN ──────────────────────── -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Contexto y Solución</div>
+      <div class="page-header-sub">CS-PROP-VU-001 · Villa Universitaria</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>01 · Punto de Partida</h1>
+    <p>Villa Universitaria opera sin un mecanismo formal de registro de accesos. Los ingresos y salidas de estudiantes, personal y visitantes ocurren sin dejar constancia verificable: no existe un historial que permita saber quién estuvo en el edificio, cuándo ni por cuánto tiempo.</p>
+    <p>Cuando esa información se necesita —por un incidente, una auditoría o una decisión sobre el uso del espacio— sencillamente no está disponible. Los reportes, cuando existen, se construyen a posteriori con información incompleta. Esta no es una limitación particular del edificio: es la condición habitual de instalaciones que nunca contaron con la herramienta adecuada.</p>
+
+    <h2>02 · La Solución</h2>
+    <p>El sistema digitaliza el control de acceso mediante códigos QR vinculados a la identidad de cada usuario. Cada ingreso y salida queda registrado de forma automática —con hora, fecha y perfil— sin intervención manual. La plataforma genera reportes de afluencia en tiempo real, disponibles desde cualquier dispositivo con acceso autorizado.</p>
+    <p>El sistema diferencia entre perfiles de usuario y genera alertas cuando detecta accesos fuera de horario o fuera del perfil esperado. Funciona de fondo y escala según la demanda del edificio sin requerir supervisión permanente.</p>
+
+    <div class="callout info mt-1">
+      <span class="callout-icon">📋</span>
+      <div class="callout-body">
+        <div class="callout-title">El resultado inmediato</div>
+        <p>La administración cuenta, por primera vez, con un registro continuo y verificable de quién accede al edificio y en qué momento. Ese registro existe sin que nadie tenga que producirlo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CS-PROP-VU-001</span>
+    <span>Pág. 2</span>
+  </div>
+</div>
+
+<!-- ── PÁGINA 3 — QUÉ RESUELVE · SOPORTE LOCAL ─────────────── -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">Qué Resuelve · Soporte Local</div>
+      <div class="page-header-sub">CS-PROP-VU-001 · Villa Universitaria</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>03 · Qué Resuelve por Área</h2>
+    <div class="two-col mt-1">
+      <div>
+        <h3>Administración del edificio</h3>
+        <p>Las decisiones sobre apertura de espacios, horarios y capacidad se basan en datos reales de uso. Los incidentes de acceso quedan documentados sin depender de testigos ni de memoria institucional.</p>
+        <h3>Trazabilidad y seguridad</h3>
+        <p>Cualquier acceso deja registro. Ante un incidente, la información está disponible de inmediato. Los accesos no autorizados generan alertas sin necesidad de revisión manual de cámaras.</p>
+      </div>
+      <div>
+        <h3>Autoridades universitarias</h3>
+        <p>Los reportes de afluencia son insumos directos para la planificación institucional. En auditorías o revisiones, los registros son evidencia verificable, no estimaciones.</p>
+        <h3>Toma de decisiones</h3>
+        <p>¿El edificio está subutilizado en ciertos turnos? ¿Hay picos de afluencia que generan problemas de capacidad? Estas preguntas tienen respuesta con datos, no con percepciones.</p>
+      </div>
+    </div>
+
+    <h2>04 · Soporte Local</h2>
+    <p>Corestack Solutions es una empresa radicada en Tabasco. El soporte no está detrás de un número de atención nacional ni sujeto a tiempos de respuesta genéricos. Conocemos el ritmo de operación de las instituciones en la región y podemos estar presentes cuando se necesite, no solo en la entrega inicial. Para un proyecto de esta naturaleza, esa cercanía no es un detalle menor: es parte de lo que garantiza que la solución funcione más allá del primer mes.</p>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CS-PROP-VU-001</span>
+    <span>Pág. 3</span>
+  </div>
+</div>
+
+<!-- ── PÁGINA 4 — LA PLATAFORMA ─────────────────────────────── -->
+<div class="page">
+  <div class="page-header">
+    <img src="../images/corestack.png" class="page-header-logo" alt="Corestack"/>
+    <div class="page-header-info">
+      <div class="page-header-doc">La Plataforma</div>
+      <div class="page-header-sub">CS-PROP-VU-001 · Villa Universitaria</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>05 · La Plataforma</h1>
+
+    <div class="card-grid cols-3 mt-1 card-sm">
+      <div class="card">
+        <span class="card-icon">📲</span>
+        <div class="card-title">Acceso por código QR</div>
+        <div class="card-body">QR único por usuario. Registro automático de entrada y salida al escanear, sin intervención manual.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">📊</span>
+        <div class="card-title">Reportes en tiempo real</div>
+        <div class="card-body">Afluencia por hora, día y perfil. Se generan automáticamente y se pueden exportar sin solicitud previa.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔔</span>
+        <div class="card-title">Alertas automáticas</div>
+        <div class="card-body">Notificaciones por accesos fuera de horario o credenciales no autorizadas, en tiempo real.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">👥</span>
+        <div class="card-title">Perfiles y permisos</div>
+        <div class="card-body">Niveles de acceso diferenciados por tipo de usuario. Cambios aplicados en línea sin reemitir credenciales.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🖥️</span>
+        <div class="card-title">Panel de administración</div>
+        <div class="card-body">Acceso desde cualquier navegador. Gestión de usuarios, historial y reportes desde una sola pantalla.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Operación autónoma</div>
+        <div class="card-body">Funciona sin supervisión permanente. Las actualizaciones se aplican en línea sin interrumpir la operación.</div>
+      </div>
+    </div>
+
+    <h2>06 · Contacto</h2>
+    <div class="highlight mt-1">
+      <div class="hl-eyebrow">¿Le interesa esta propuesta?</div>
+      <p>Estamos disponibles para resolver dudas o profundizar en cualquier punto. La plataforma es completamente ajustable a cómo opera Villa Universitaria, y si durante el uso surgen requerimientos adicionales —otro módulo, una integración, un proceso distinto— también podemos desarrollarlo. No estamos limitados a un producto cerrado. El contacto es directo.</p>
+      <div class="two-col mt-1" style="gap:1rem">
+        <div>
+          <p style="margin:0"><strong>Correo</strong><br/>corestack.sol@gmail.com</p>
+        </div>
+        <div>
+          <p style="margin:0"><strong>Teléfono / WhatsApp</strong><br/>+52 993 442 1347</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-pattern-bottom"></div>
+  <div class="page-footer">
+    <span>Corestack Solutions © <span class="year"></span></span>
+    <span class="page-footer-brand">CS-PROP-VU-001</span>
+    <span>Pág. 4</span>
+  </div>
+</div>
+
+</div><!-- /pages -->
+
+<script>
+  document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+  document.getElementById('cover-date').textContent = new Date().toLocaleDateString('es-MX', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+</script>
+</body>
+</html>
