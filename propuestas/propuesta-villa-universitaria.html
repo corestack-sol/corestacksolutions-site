@@ -32,18 +32,23 @@
     @media print {
       body { background: #fff; }
       .page {
-        width: 100%;
-        margin: 0;
-        box-shadow: none;
-        height: calc(11in - 2cm);
-        max-height: calc(11in - 2cm);
-        overflow: hidden;
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        /* min-height debe ser 0 — si no, anula height y el div queda más alto que la hoja */
+        min-height: 0 !important;
+        height: 25.94cm !important;
+        max-height: 25.94cm !important;
+        overflow: hidden !important;
         page-break-after: always;
         break-after: page;
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
       }
-      .page:last-child { page-break-after: auto; break-after: auto; }
+      .page:last-child {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
       h1, h2, h3 { page-break-after: avoid; break-after: avoid; }
       a { color: inherit; text-decoration: none; }
     }
@@ -151,9 +156,12 @@
 <div class="page">
 
   <div class="doc-header">
-    <div>
-      <div class="brand-name">Corestack Solutions</div>
-      <div class="brand-sub">Desarrollo · Infraestructura · Soporte Local</div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <img src="../public/images/corestack.png" alt="Corestack" style="height:38px;filter:brightness(0) invert(1);flex-shrink:0;"/>
+      <div>
+        <div class="brand-name">Corestack Solutions</div>
+        <div class="brand-sub">Desarrollo · Infraestructura · Soporte Local</div>
+      </div>
     </div>
     <div class="doc-meta">
       <strong>CS-PROP-VU-001 · Propuesta Ejecutiva</strong>
