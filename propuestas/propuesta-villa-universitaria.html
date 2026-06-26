@@ -15,10 +15,10 @@
       background: #f1f5f9;
     }
 
-    /* ── Páginas ── */
+    /* ── Páginas — tamaño carta (8.5" × 11") ── */
     .page {
-      width: 210mm;
-      min-height: 297mm;
+      width: 8.5in;
+      min-height: 11in;
       margin: 20px auto;
       background: #fff;
       box-shadow: 0 4px 24px rgba(0,0,0,0.12);
@@ -26,7 +26,8 @@
       flex-direction: column;
     }
 
-    @page { size: A4; margin: 1cm; }
+    /* Carta: área imprimible = 11in − 2×1cm = 25.94 cm */
+    @page { size: letter; margin: 1cm; }
 
     @media print {
       body { background: #fff; }
@@ -34,8 +35,8 @@
         width: 100%;
         margin: 0;
         box-shadow: none;
-        height: calc(29.7cm - 2cm);
-        max-height: calc(29.7cm - 2cm);
+        height: calc(11in - 2cm);
+        max-height: calc(11in - 2cm);
         overflow: hidden;
         page-break-after: always;
         break-after: page;
@@ -224,7 +225,7 @@
   <div class="doc-footer">
     <span><span class="footer-brand">Corestack Solutions</span> · corestacksolutions.com.mx</span>
     <span class="doc-id">CS-PROP-VU-001</span>
-    <span>Pág. 1 / 5</span>
+    <span>Pág. 1 / 4</span>
   </div>
 </div>
 
@@ -270,7 +271,7 @@
   <div class="doc-footer">
     <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
     <span class="doc-id">CS-PROP-VU-001</span>
-    <span>Pág. 2 / 5</span>
+    <span>Pág. 2 / 4</span>
   </div>
 </div>
 
@@ -325,20 +326,20 @@
   <div class="doc-footer">
     <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
     <span class="doc-id">CS-PROP-VU-001</span>
-    <span>Pág. 3 / 5</span>
+    <span>Pág. 3 / 4</span>
   </div>
 </div>
 
 
 <!-- ═══════════════════════════════════════════════════
-     PÁGINA 4 — SOPORTE LOCAL
+     PÁGINA 4 — SOPORTE LOCAL + CONTACTO
      ═══════════════════════════════════════════════════ -->
 <div class="page">
 
   <div class="page-header">
     <div class="ph-brand">Corestack <span>Solutions</span></div>
     <div>
-      <div class="ph-doc">Soporte Local</div>
+      <div class="ph-doc">Soporte Local y Contacto</div>
       <div class="ph-folio">CS-PROP-VU-001 · Villa Universitaria</div>
     </div>
   </div>
@@ -347,9 +348,8 @@
 
     <div class="section">
       <div class="section-title">Por Qué el Soporte Local es Relevante</div>
-      <p>Una plataforma digital en un entorno universitario no es un producto que se entrega y se abandona. Requiere acompañamiento en la puesta en marcha, capacitación al personal que lo opera, y respuesta oportuna cuando algo no funciona como se espera.</p>
-      <p>Corestack Solutions es una empresa radicada en Tabasco. El soporte no está del otro lado de un número de atención nacional ni sujeto a tiempos de respuesta genéricos. Conocemos el ritmo de operación de las instituciones en la región y podemos estar presentes cuando se necesite —no solo en la entrega inicial.</p>
-      <p>Para un proyecto de esta naturaleza, esa cercanía no es un detalle menor: es parte de lo que garantiza que la solución funcione más allá del primer mes.</p>
+      <p>Una plataforma digital en un entorno universitario requiere acompañamiento en la puesta en marcha, capacitación al personal y respuesta oportuna cuando algo no funciona como se espera. Corestack Solutions opera desde Tabasco: el soporte no está del otro lado de un número de atención nacional ni sujeto a tiempos genéricos.</p>
+      <p>Podemos estar presentes cuando se necesite —no solo en la entrega inicial— y conocemos el ritmo de operación de las instituciones en la región. Para un proyecto de esta naturaleza, esa cercanía es parte de lo que garantiza que la solución funcione a largo plazo.</p>
     </div>
 
     <hr class="divider"/>
@@ -371,43 +371,12 @@
     <hr class="divider"/>
 
     <div class="section">
-      <div class="section-title">Nuestro Compromiso</div>
-      <p>Cada proyecto que tomamos implica un compromiso con el resultado, no solo con la entrega. La propuesta para Villa Universitaria no termina cuando el sistema queda instalado: termina cuando el equipo que lo opera tiene la herramienta y la confianza para usar los datos que genera.</p>
-    </div>
-
-  </div>
-
-  <div class="doc-footer">
-    <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
-    <span class="doc-id">CS-PROP-VU-001</span>
-    <span>Pág. 4 / 5</span>
-  </div>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════════
-     PÁGINA 5 — CONTACTO
-     ═══════════════════════════════════════════════════ -->
-<div class="page">
-
-  <div class="page-header">
-    <div class="ph-brand">Corestack <span>Solutions</span></div>
-    <div>
-      <div class="ph-doc">Contacto</div>
-      <div class="ph-folio">CS-PROP-VU-001 · Villa Universitaria</div>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <div class="section">
       <div class="section-title">Contacto Directo</div>
-      <p>Para dar continuidad a esta propuesta, resolver dudas sobre el alcance o solicitar una demostración de la plataforma, el equipo de Corestack está disponible de forma directa. No hay intermediarios ni formularios de soporte.</p>
-      <p>Si durante la revisión surge un requerimiento que esta propuesta no contempla —otro módulo, una integración, un proceso distinto— también podemos evaluarlo. No estamos limitados a lo descrito en este documento.</p>
+      <p>Para dar continuidad a esta propuesta, resolver dudas o solicitar una demostración, el equipo de Corestack está disponible de forma directa. Si surge algún requerimiento adicional —otro módulo, una integración, un proceso distinto— también podemos evaluarlo sin necesidad de iniciar un contrato nuevo desde cero.</p>
 
       <div class="contact-block">
         <div class="contact-eyebrow">¿Le interesa esta propuesta?</div>
-        <p>Estamos disponibles para resolver dudas, mostrar la plataforma en funcionamiento o ajustar el alcance según las necesidades específicas de Villa Universitaria. El contacto es directo.</p>
+        <p>Estamos disponibles para mostrar la plataforma en funcionamiento o ajustar el alcance según las necesidades de Villa Universitaria. El contacto es directo.</p>
         <div class="contact-grid">
           <div>
             <div class="ci-label">Correo electrónico</div>
@@ -434,7 +403,7 @@
   <div class="doc-footer">
     <span><span class="footer-brand">Corestack Solutions</span> · corestack.sol@gmail.com · +52 993 442 1347</span>
     <span class="doc-id">CS-PROP-VU-001 · Confidencial</span>
-    <span>Pág. 5 / 5</span>
+    <span>Pág. 4 / 4</span>
   </div>
 </div>
 
