@@ -27,14 +27,14 @@
       position: relative;
     }
 
-    /* ── Marca de agua — esquina inferior derecha ── */
+    /* ── Marca de agua — esquina inferior derecha, sangra al borde ── */
     .page::after {
       content: '';
       position: absolute;
-      bottom: 32px;
-      right: 32px;
-      width: 108px;
-      height: 108px;
+      bottom: 36px;   /* toca la línea superior del footer */
+      right: 0;       /* sangra hasta el borde derecho de la página */
+      width: 220px;
+      height: 220px;
       background: url('../public/images/watermark.png') no-repeat right bottom / contain;
       pointer-events: none;
       z-index: 0;
