@@ -16,136 +16,136 @@ interface ServicesProps {
 
 const CONTENT = {
   EN: {
-    label: 'What We Do',
-    title: 'Solutions That Drive Business Results',
+    label: 'What We Solve',
+    title: 'Business results, not just technology',
     subtitle:
-      'We build technology that works — on time, on budget, and designed to scale with your business.',
+      'Before writing a single line of code, we diagnose the real problem. Every solution is designed around a measurable outcome.',
     services: [
       {
         icon: <FaMobileAlt size={24} />,
-        title: 'Mobile App Development',
+        title: 'Mobile Operations',
         description:
-          'Native and cross-platform apps for iOS and Android, published on App Store and Google Play. From concept to launch.',
+          'Your team operates from anywhere — logs, approvals, alerts and reports from their phone. No spreadsheets, no calls to confirm data.',
       },
       {
         icon: <FaGlobe size={24} />,
-        title: 'Web Platforms & Portals',
+        title: 'Operational Control Panel',
         description:
-          'Modern web applications and business portals built with the latest technologies — fast, secure, and responsive.',
+          'Complete visibility of your operation from a browser. Real-time data, automatic reports, and user management — no software to install on every device.',
       },
       {
         icon: <FaLock size={24} />,
-        title: 'Access Control Systems',
+        title: 'Access Control & Traceability',
         description:
-          'Smart access management solutions for residential and commercial properties — QR codes, barriers, real-time monitoring.',
+          'Eliminate the risk of operating without verifiable records. Every access is logged automatically — with timestamp, date, and profile — without depending on anyone to record it.',
       },
       {
         icon: <FaCogs size={24} />,
-        title: 'Process Automation',
+        title: 'Manual Work Elimination',
         description:
-          'Digitize and automate your manual workflows to reduce errors, cut costs, and free up your team for what matters.',
+          'We identify which processes consume the most time and convert them into automatic flows. Fewer errors, fewer operational hours, and records that generate themselves.',
       },
       {
         icon: <FaPlug size={24} />,
-        title: 'Cloud Service Integrations',
+        title: 'Integration with Existing Systems',
         description:
-          'We connect your apps to cloud platforms like Firebase, AWS, and Google Cloud — enabling real-time data, storage, authentication, and scalable infrastructure.',
+          'We connect the new solution to what you already use. No replacing your entire operation: we build on what works and remove what creates friction.',
       },
       {
         icon: <FaLightbulb size={24} />,
-        title: 'Tech Consulting',
+        title: 'Free Operational Diagnosis',
         description:
-          'Not sure where to start? We assess your needs and build a clear technology roadmap aligned with your business goals.',
+          'Before any proposal, we analyze how your business operates today. We identify where the losses are and what solution generates the highest return. No cost, no commitment.',
       },
     ],
-    whyTitle: 'Why Companies Choose Corestack',
+    whyTitle: 'What Sets Us Apart',
     reasons: [
       {
-        stat: '2+',
-        label: 'Apps on App Store & Google Play',
-        detail: 'Published and actively maintained mobile applications.',
+        stat: 'Local',
+        label: 'Based in Tabasco',
+        detail: 'On-site support when needed — no national response times, no third parties.',
+      },
+      {
+        stat: 'Direct',
+        label: 'No Intermediaries',
+        detail: 'The team that builds your solution is the one that supports it. No call centers, no tickets.',
+      },
+      {
+        stat: 'Custom',
+        label: 'No Templates',
+        detail: 'Every solution starts from a real diagnosis. What we build today grows with you — no starting over.',
       },
       {
         stat: '100%',
-        label: 'Results-Focused',
-        detail: 'Every project is scoped around measurable business outcomes.',
-      },
-      {
-        stat: 'Full',
-        label: 'End-to-End Development',
-        detail: 'From design and development to deployment and support.',
-      },
-      {
-        stat: 'Fast',
-        label: 'Agile Delivery',
-        detail: 'Short cycles, frequent releases, and constant communication.',
+        label: 'Post-Delivery Support',
+        detail: 'The project ends when the client operates with full autonomy, not when we deliver.',
       },
     ],
   },
   ES: {
-    label: 'Lo Que Hacemos',
-    title: 'Soluciones que impulsan resultados para tu empresa',
+    label: 'Lo Que Resolvemos',
+    title: 'Resultados de negocio, no solo tecnología',
     subtitle:
-      'Construimos tecnología que funciona — a tiempo, dentro del presupuesto y diseñada para crecer con tu negocio.',
+      'Antes de escribir una línea de código, diagnosticamos el problema real. Cada solución se diseña en torno a un resultado medible.',
     services: [
       {
         icon: <FaMobileAlt size={24} />,
-        title: 'Desarrollo de Apps Móviles',
+        title: 'Operación Móvil',
         description:
-          'Apps nativas y multiplataforma para iOS y Android, publicadas en App Store y Google Play. Del concepto al lanzamiento.',
+          'Tu equipo opera desde cualquier lugar — registros, aprobaciones, alertas y reportes desde el celular. Sin hojas de cálculo, sin llamadas para confirmar datos.',
       },
       {
         icon: <FaGlobe size={24} />,
-        title: 'Plataformas Web Empresariales',
+        title: 'Panel de Control Operativo',
         description:
-          'Aplicaciones web y portales de gestión modernos, construidos con tecnologías de vanguardia — rápidos, seguros y responsivos.',
+          'Visibilidad completa de tu operación desde un navegador. Datos en tiempo real, reportes automáticos y gestión de usuarios — sin instalar nada en cada equipo.',
       },
       {
         icon: <FaLock size={24} />,
-        title: 'Sistemas de Control de Acceso',
+        title: 'Control y Trazabilidad de Accesos',
         description:
-          'Soluciones inteligentes para residenciales y negocios — códigos QR, barreras vehiculares y monitoreo en tiempo real.',
+          'Elimina el riesgo de operar sin registros verificables. Cada acceso queda documentado automáticamente — con hora, fecha y perfil — sin depender de nadie que lo registre.',
       },
       {
         icon: <FaCogs size={24} />,
-        title: 'Automatización de Procesos',
+        title: 'Eliminación de Trabajo Manual',
         description:
-          'Digitaliza y automatiza tus procesos manuales para reducir errores, bajar costos y liberar a tu equipo para lo que importa.',
+          'Identificamos qué procesos consumen más tiempo y los convertimos en flujos automáticos. Menos errores, menos horas operativas y registros que se generan solos.',
       },
       {
         icon: <FaPlug size={24} />,
-        title: 'Integraciones con servicios en la nube',
+        title: 'Integración con lo que ya tienes',
         description:
-          'Conectamos tus apps a plataformas como Firebase, AWS y Google Cloud — habilitando datos en tiempo real, almacenamiento, autenticación e infraestructura escalable.',
+          'Conectamos la nueva solución con los sistemas que ya usas. Sin reemplazar toda la operación: sumamos sobre lo que funciona y eliminamos lo que genera fricción.',
       },
       {
         icon: <FaLightbulb size={24} />,
-        title: 'Consultoría Tecnológica',
+        title: 'Diagnóstico Operativo sin Costo',
         description:
-          '¿No sabes por dónde empezar? Analizamos tus necesidades y construimos una hoja de ruta tecnológica clara alineada a tus metas.',
+          'Antes de cualquier propuesta, analizamos cómo opera tu negocio hoy. Identificamos dónde están las pérdidas y qué solución genera el mayor retorno. Sin costo, sin compromiso.',
       },
     ],
-    whyTitle: 'Por qué las empresas eligen Corestack',
+    whyTitle: 'Lo que nos diferencia',
     reasons: [
       {
-        stat: '2+',
-        label: 'Apps en App Store y Google Play',
-        detail: 'Aplicaciones móviles publicadas y en mantenimiento activo.',
+        stat: 'Local',
+        label: 'Presencia en Tabasco',
+        detail: 'Soporte en sitio cuando se necesita — sin tiempos de respuesta nacionales ni terceros.',
+      },
+      {
+        stat: 'Directo',
+        label: 'Sin Intermediarios',
+        detail: 'El equipo que desarrolla tu solución es quien responde. Sin call centers, sin tickets.',
+      },
+      {
+        stat: 'A Medida',
+        label: 'Sin Plantillas',
+        detail: 'Cada solución parte del diagnóstico real. Lo que se construye crece contigo sin empezar de cero.',
       },
       {
         stat: '100%',
-        label: 'Enfoque en resultados',
-        detail: 'Cada proyecto se define en torno a objetivos de negocio medibles.',
-      },
-      {
-        stat: 'Full',
-        label: 'Desarrollo integral',
-        detail: 'Desde diseño y desarrollo hasta despliegue y soporte.',
-      },
-      {
-        stat: 'Ágil',
-        label: 'Entregas rápidas',
-        detail: 'Ciclos cortos, entregas frecuentes y comunicación constante.',
+        label: 'Acompañamiento Post-Entrega',
+        detail: 'El proyecto termina cuando el cliente opera con autonomía, no cuando entregamos.',
       },
     ],
   },

@@ -1,20 +1,20 @@
 {
   "main": {
     "name": "Corestack Solutions",
-    "occupation": "Empresa de Soluciones Tecnológicas",
-    "description": "Desarrollamos aplicaciones y soluciones tecnológicas que integran innovación, eficiencia y calidad. Nos especializamos en stacks tecnológicos robustos y personalizados.",
+    "occupation": "Automatización · Control Operativo · Software a Medida",
+    "description": "Identificamos qué procesos manuales le cuestan tiempo y dinero a tu empresa, y los convertimos en operaciones automatizadas con visibilidad en tiempo real.",
     "image": "corestack.png",
-    "bio": "Corestack Solutions es una empresa de desarrollo de software fundamentada en la responsabilidad, el rigor técnico y el compromiso genuino con cada cliente. Diseñamos y construimos aplicaciones móviles y plataformas web con altos estándares de calidad, cumplimiento de plazos y atención personalizada — acompañando a las organizaciones en cada etapa de su evolución digital.",
-    "contactmessage": "Ponte en contacto con nosotros para conocer más sobre cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
+    "bio": "Corestack Solutions diseña e implementa sistemas que eliminan pérdidas operativas, reducen riesgos y generan información accionable para quien toma decisiones. No ofrecemos soluciones genéricas: cada proyecto parte del análisis real del cliente, y el acompañamiento continúa hasta que la solución produce el retorno para el que fue diseñada.",
+    "contactmessage": "¿Hay un proceso en tu operación que está generando pérdidas, errores o falta de visibilidad? Cuéntanos cómo funciona hoy y hacemos un diagnóstico sin costo.",
     "email": "corestack.sol@gmail.com",
-    "phone": "+52 993 442 1347, +52 993 289 2836",
+    "phone": "+52 993 442 1347",
     "address": {
-      "city": "Centro.Villahermosa, Tabasco, México",
+      "city": "Villahermosa, Tabasco, México",
       "state": "MX",
       "zip": "86030"
     },
-    "website": "http://www.timbakerdev.com",
-    "resumedownload": "http://timbakerdev.com",
+    "website": "https://corestacksolutions.com.mx",
+    "resumedownload": "https://corestacksolutions.com.mx",
     "social": [
       {
         "name": "facebook",
@@ -32,88 +32,53 @@
     "skillmessage": "",
     "education": [
       {
-        "school": "Desarrollo Móvil",
-        "degree": "React Native · TypeScript · Zustand · TanStack Query",
-        "graduated": "iOS & Android",
-        "description": "Desarrollo completo de apps móviles multiplataforma con capacidades en tiempo real, escaneo QR con Vision Camera, notificaciones push con Firebase + Notifee, y navegación multi-rol con React Navigation."
+        "school": "Diagnóstico Operativo",
+        "degree": "Entender el problema antes de proponer una solución",
+        "graduated": "Paso 1",
+        "description": "Analizamos cómo opera el cliente hoy: qué procesos son manuales, dónde se generan errores, qué información no está disponible y cuánto cuesta ese estado actual. La solución nace del problema, no al revés."
       },
       {
-        "school": "Desarrollo Web",
-        "degree": "React 19 · Vite · TypeScript · Tailwind CSS",
-        "graduated": "Plataforma Web",
-        "description": "Arquitectura frontend moderna con diseño responsivo, animaciones con Framer Motion, gestión de contenido bilingüe EN/ES e integración de formulario de contacto con EmailJS."
+        "school": "Diseño de Solución",
+        "degree": "La solución correcta, no la más sofisticada",
+        "graduated": "Paso 2",
+        "description": "Definimos el alcance, los resultados esperados y la arquitectura que resuelve el problema de fondo. Cada decisión técnica tiene una razón de negocio detrás."
       },
       {
-        "school": "Backend & Cloud",
-        "degree": "REST API · Railway · Firebase · Socket.IO",
-        "graduated": "Nube y Tiempo Real",
-        "description": "Integración de APIs con interceptores Axios, despliegue en Railway, comunicación en tiempo real con Socket.IO y notificaciones push con Firebase Messaging."
+        "school": "Implementación",
+        "degree": "Desarrollo con entregas verificables y comunicación constante",
+        "graduated": "Paso 3",
+        "description": "Ciclos cortos, entregas revisables y comunicación directa en cada etapa. Sin sorpresas al final: el cliente ve el avance antes de la entrega definitiva."
       },
       {
-        "school": "Desarrollo Backend",
-        "degree": "Node.js · Express · MySQL · REST API",
-        "graduated": "Servidor e Integraciones",
-        "description": "Diseño y desarrollo de APIs REST con Node.js y Express: lógica de negocio, envío de correos, procesamiento de pagos, gestión de base de datos MySQL e integración con hardware para control automatizado de barreras vehiculares."
+        "school": "Acompañamiento",
+        "degree": "El proyecto termina cuando el cliente opera con autonomía",
+        "graduated": "Paso 4",
+        "description": "Capacitación al personal, soporte en sitio y ajustes posteriores incluidos. Presencia local en Tabasco para respuesta rápida cuando se necesite, no solo al momento de la entrega."
       }
     ],
     "work": [
       {
-        "company": "Corestack Solutions",
-        "title": "Desarrollador de Apps Móviles — React Native",
+        "company": "Residential Access",
+        "title": "Control de acceso residencial · App iOS y Android · En producción",
         "years": "2024 – Presente",
-        "description": "Desarrollo de Residence – QR Residential Access Control desde cero. App multi-rol (residente/guardia) con escaneo QR vía Vision Camera, automatización de barreras en tiempo real con Socket.IO, notificaciones push con Firebase + Notifee, y estado persistente con Zustand + TanStack Query. Publicada en App Store y Google Play."
+        "description": "Sistema de control de accesos para residenciales y condominios: registro automático de entradas y salidas, pases QR para visitantes, automatización de barreras vehiculares y monitoreo en tiempo real. Publicado en App Store y Google Play."
       },
       {
-        "company": "Corestack Solutions",
-        "title": "Desarrollador Frontend — Web",
+        "company": "QR Residential Access Control",
+        "title": "Plataforma avanzada de control operativo · App iOS y Android · En producción",
         "years": "2024 – Presente",
-        "description": "Desarrollo del sitio corporativo con React 19, Vite, TypeScript strict, Tailwind CSS y Framer Motion. Implementación de arquitectura bilingüe EN/ES, React Router v6 y envío de correo en cliente con EmailJS."
+        "description": "Control de accesos con gestión de pagos integrada, reservación de espacios comunes, alertas clasificadas con chat en hilo y accesos diferenciados por perfil de usuario. En uso activo por comunidades residenciales."
       }
     ],
-    "skills": [
-      { "name": "React Native", "level": "95%" },
-      { "name": "TypeScript", "level": "90%" },
-      { "name": "React 19", "level": "95%" },
-      { "name": "Zustand", "level": "85%" },
-      { "name": "TanStack Query", "level": "85%" },
-      { "name": "Firebase / FCM", "level": "80%" },
-      { "name": "Socket.IO", "level": "75%" },
-      { "name": "Tailwind CSS", "level": "90%" },
-      { "name": "REST API / Axios", "level": "85%" },
-      { "name": "React Navigation", "level": "90%" }
-    ]
+    "skills": []
   },
   "portfolio": {
     "projects": [
       {
-        "title": "Clon de WhatsApp con MERN Stack",
-        "category": "Clon de WhatsApp construido con MERN (MongoDB, ExpressJS, ReactJS, NodeJS)",
-        "image": "whatsapp-mern.jpeg",
-        "url": "https://www.youtube.com/watch?v=gzdQDxzW2Tw"
-      },
-      {
-        "title": "Clon de TikTok con MERN Stack",
-        "category": "Clon de TikTok construido con MERN (MongoDB, ExpressJS, ReactJS, NodeJS)",
-        "image": "tiktok-mern.jpeg",
-        "url": "https://www.youtube.com/watch?v=g8yGxDMyGiE"
-      },
-      {
-        "title": "Clon de Facebook con React",
-        "category": "Clon de Facebook construido con ReactJS",
-        "image": "facebook-clone.png",
-        "url": "https://www.youtube.com/watch?v=B-kxUMHBxNo"
-      },
-      {
-        "title": "Clon de Airbnb",
-        "category": "Clon de Airbnb construido con ReactJS",
-        "image": "airbnb-clone.jpeg",
-        "url": "https://www.youtube.com/watch?v=BtJeH_-XYaA"
-      },
-      {
-        "title": "Clon de Netflix",
-        "category": "Clon de Netflix construido con ReactJS",
-        "image": "netflix-clone.jpeg",
-        "url": "https://www.youtube.com/watch?v=XtMThy8QKqU&t=9358s"
+        "title": "Residential Access Control",
+        "category": "Control de acceso · App iOS y Android · En producción",
+        "image": "scrn1.jpg",
+        "url": "https://apps.apple.com/mx/app/qr-residential-access-control/id6760604908"
       }
     ]
   },

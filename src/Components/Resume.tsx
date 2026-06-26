@@ -8,9 +8,9 @@ interface ResumeProps {
 
 const Resume = ({ data, language }: ResumeProps) => {
   const t = {
-    title: language === 'EN' ? 'Experience & Skills' : 'Experiencia y Habilidades',
-    specializations: language === 'EN' ? 'Specializations' : 'Especialidades',
-    work: language === 'EN' ? 'Work Experience' : 'Experiencia',
+    title: language === 'EN' ? 'How We Work' : 'Cómo Trabajamos',
+    specializations: language === 'EN' ? 'Our Process' : 'Nuestro Proceso',
+    work: language === 'EN' ? 'Live Projects' : 'Proyectos en Producción',
     skills: language === 'EN' ? 'Tech Stack' : 'Stack Tecnológico',
   }
 
@@ -24,7 +24,7 @@ const Resume = ({ data, language }: ResumeProps) => {
           className="text-center mb-16"
         >
           <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">
-            {t.title}
+            {language === 'EN' ? 'Our Approach' : 'Nuestra Metodología'}
           </span>
           <h2 className="text-3xl font-bold text-gray-900 mt-2">{t.title}</h2>
         </motion.div>
