@@ -15,6 +15,11 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   whatsapp: <FaWhatsapp size={22} />,
 }
 
+const SECTORS: Record<string, string[]> = {
+  EN: ['Restaurants', 'Agriculture', 'Industry', 'Residential', 'Education', 'Healthcare', 'Logistics', 'Retail', 'Construction'],
+  ES: ['Restaurantes', 'Agricultura', 'Industria', 'Residenciales', 'Educación', 'Salud', 'Logística', 'Comercio', 'Construcción'],
+}
+
 const Header = ({ data, language, toggleLanguage }: HeaderProps) => (
   <section id="home" className="relative min-h-screen bg-slate-900 flex flex-col">
     <Navbar language={language} toggleLanguage={toggleLanguage} />
@@ -38,7 +43,18 @@ const Header = ({ data, language, toggleLanguage }: HeaderProps) => (
           {data.description}
         </p>
 
-        <div className="flex items-center gap-5 mt-2">
+        <div className="flex flex-wrap justify-center gap-2">
+          {SECTORS[language].map(sector => (
+            <span
+              key={sector}
+              className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-400 text-xs font-medium tracking-wide"
+            >
+              {sector}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-5">
           {data.social.map(network => (
             <a
               key={network.name}
