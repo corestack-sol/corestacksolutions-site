@@ -52,6 +52,9 @@ const Header = ({ data, language, toggleLanguage }: HeaderProps) => (
               {sector}
             </span>
           ))}
+          <span className="px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800/50 text-blue-400 text-xs font-medium tracking-wide">
+            {language === 'EN' ? 'more...' : 'más...'}
+          </span>
         </div>
 
         <div className="flex items-center gap-5">

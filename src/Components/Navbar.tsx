@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FaBars, FaTimes, FaLock, FaBuilding } from 'react-icons/fa'
+import { FaBars, FaTimes, FaLock, FaBuilding, FaSignOutAlt } from 'react-icons/fa'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { useAuth } from '../contexts/AuthContext'
 import type { Language } from '../types'
@@ -102,10 +102,10 @@ const Navbar = ({ language, toggleLanguage }: NavbarProps) => {
               <span className="text-xs text-slate-500 max-w-[120px] truncate">{user?.email}</span>
               <button
                 onClick={logout}
-                title="Cerrar sesión"
-                className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 hover:border-red-500/50 hover:text-red-400 text-slate-400 flex items-center justify-center transition-all"
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-400 transition-colors border border-slate-700 hover:border-red-500/50 rounded-lg px-3 py-1.5"
               >
-                <FaTimes size={12} />
+                <FaSignOutAlt size={11} />
+                Salir
               </button>
             </div>
           ) : (

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { FaSignOutAlt, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaSignOutAlt, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa'
 import { useAuth } from '../contexts/AuthContext'
 import corestackLogo from '../assets/corestack.png'
 
@@ -112,11 +112,18 @@ export default function CorporateIndex() {
               Documentos Corporativos
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors border border-slate-700 hover:border-slate-500 rounded-lg px-3 py-1.5"
+            >
+              <FaArrowLeft size={10} />
+              Home
+            </button>
             <span className="text-xs text-slate-500 hidden sm:block">{user?.email}</span>
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors border border-slate-700 hover:border-slate-500 rounded-lg px-3 py-1.5"
+              className="flex items-center gap-2 text-xs text-slate-400 hover:text-red-400 transition-colors border border-slate-700 hover:border-red-500/50 rounded-lg px-3 py-1.5"
             >
               <FaSignOutAlt size={11} />
               Salir
