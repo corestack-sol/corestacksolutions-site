@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotización — Residential Access · Corestack Solutions</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.65;
+      color: #1e293b;
+      background: #f1f5f9;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 20px auto;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .page::after {
+      content: '';
+      position: absolute;
+      bottom: 36px;
+      right: 0;
+      width: 220px;
+      height: 220px;
+      background: url('../public/images/watermark.png') no-repeat right bottom / contain;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @page { size: letter; margin: 1cm; }
+
+    @media print {
+      body { background: #fff; overflow: hidden; }
+      .page {
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        min-height: 0 !important;
+        height: 25.94cm !important;
+        max-height: 25.94cm !important;
+        overflow: hidden !important;
+        page-break-after: always;
+        break-after: page;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      h1, h2, h3 { page-break-after: avoid; break-after: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── Header (pág. 1) ── */
+    .doc-header {
+      background: #0f1f3d;
+      padding: 20px 36px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .brand-name { font-size: 13pt; font-weight: 700; letter-spacing: 0.02em; color: #fff; }
+    .brand-sub { font-size: 7pt; color: #94a3b8; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+    .doc-meta { text-align: right; font-size: 7.5pt; color: #94a3b8; line-height: 1.5; }
+    .doc-meta strong { color: #e2e8f0; font-size: 8.5pt; display: block; margin-bottom: 2px; }
+
+    .accent-bar { height: 4px; background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%); flex-shrink: 0; }
+
+    /* ── Title block ── */
+    .title-block { padding: 18px 36px 13px; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
+    .doc-type { font-size: 7pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2563eb; margin-bottom: 4px; }
+    .doc-title { font-size: 22pt; font-weight: 800; color: #0f1f3d; line-height: 1.1; margin-bottom: 3px; }
+    .doc-subtitle { font-size: 9.5pt; color: #475569; font-style: italic; }
+
+    /* ── Info row ── */
+    .info-row { display: flex; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; flex-shrink: 0; }
+    .info-cell { flex: 1; padding: 8px 18px; border-right: 1px solid #e2e8f0; font-size: 8pt; }
+    .info-cell:last-child { border-right: none; }
+    .info-cell .label { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; display: block; margin-bottom: 1px; }
+    .info-cell .value { font-weight: 600; color: #1e293b; }
+
+    /* ── Page header (págs. 2–6) ── */
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 36px;
+      border-bottom: 2px solid #2563eb;
+      flex-shrink: 0;
+    }
+    .ph-brand { font-size: 9pt; font-weight: 700; color: #0f1f3d; }
+    .ph-brand span { color: #2563eb; }
+    .ph-right { text-align: right; }
+    .ph-doc { font-size: 7pt; font-weight: 700; color: #0f1f3d; text-transform: uppercase; letter-spacing: 0.06em; }
+    .ph-folio { font-size: 6pt; color: #94a3b8; margin-top: 1px; }
+
+    /* ── Contenido ── */
+    .content { padding: 16px 36px 12px; flex: 1; }
+
+    .section { margin-bottom: 14px; }
+    .section-title {
+      font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: #2563eb; padding-left: 9px; border-left: 3px solid #2563eb; margin-bottom: 8px;
+    }
+    p { margin-bottom: 7px; color: #334155; font-size: 9.5pt; line-height: 1.7; }
+    .divider { border: none; border-top: 1px solid #e2e8f0; margin: 12px 0; }
+
+    /* ── Callout ── */
+    .callout { border-radius: 0 4px 4px 0; padding: 9px 13px; margin: 9px 0; display: flex; gap: 9px; align-items: flex-start; }
+    .callout.info { background: #eff6ff; border-left: 4px solid #2563eb; }
+    .callout.warning { background: #fff7ed; border-left: 4px solid #f97316; }
+    .callout-icon { font-size: 11pt; flex-shrink: 0; margin-top: 1px; }
+    .callout p { margin: 0; font-size: 8.5pt; line-height: 1.55; }
+    .callout.info p { color: #1e3a5f; }
+    .callout.warning p { color: #7c2d12; }
+    .callout-title { font-size: 7.5pt; font-weight: 700; margin-bottom: 2px; }
+    .callout.info .callout-title { color: #1d4ed8; }
+    .callout.warning .callout-title { color: #c2410c; }
+
+    /* ── Cards 2 col ── */
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+    .card { background: #f8fafc; border: 1px solid #e2e8f0; border-top: 3px solid #0f1f3d; border-radius: 4px; padding: 10px 12px; }
+    .card.blue { border-top-color: #2563eb; }
+    .card-title { font-size: 8.5pt; font-weight: 700; color: #0f1f3d; margin-bottom: 4px; }
+    .card p { font-size: 8.5pt; color: #475569; margin: 0; line-height: 1.55; }
+
+    /* ── Feature grid ── */
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 12px; margin: 8px 0; }
+    .feat-item { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; border-bottom: 1px solid #f1f5f9; }
+    .feat-icon { font-size: 12pt; flex-shrink: 0; line-height: 1; margin-top: 1px; }
+    .feat-body { flex: 1; }
+    .feat-name { font-size: 8.5pt; font-weight: 700; color: #0f1f3d; }
+    .feat-desc { font-size: 7.5pt; color: #64748b; line-height: 1.45; margin-top: 1px; }
+
+    /* ── Check lists ── */
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+    .check-block { border: 1px solid #e2e8f0; border-left: 3px solid #2563eb; border-radius: 0 4px 4px 0; padding: 9px 12px; }
+    .check-block-title { font-size: 8.5pt; font-weight: 700; color: #2563eb; margin-bottom: 6px; }
+    .check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 3px; }
+    .check-list li { font-size: 8.5pt; color: #334155; padding-left: 14px; position: relative; line-height: 1.45; }
+    .check-list li::before { content: '✓'; position: absolute; left: 0; color: #2563eb; font-weight: 700; }
+
+    /* ══════════════════════════════════════════
+       PLAN BADGES
+       ══════════════════════════════════════════ */
+    .plan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+
+    .plan-card {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 11px 12px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: visible;
+    }
+    .plan-card.std  { border-color: #2563eb; }
+    .plan-card.prem { border-color: #f97316; border-width: 2px; }
+    .plan-card.ent  { background: #0f1f3d; border-color: #0f1f3d; }
+
+    .plan-pill {
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 2px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .plan-pill.orange { background: #f97316; color: #fff; }
+    .plan-pill.blue   { background: #2563eb; color: #fff; }
+
+    .plan-name {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0f1f3d;
+      line-height: 1;
+      margin-bottom: 1px;
+    }
+    .plan-card.prem .plan-name { color: #f97316; }
+    .plan-card.ent  .plan-name { color: #38bdf8; }
+
+    .plan-range { font-size: 7pt; color: #94a3b8; margin-bottom: 8px; }
+
+    .plan-price { font-size: 20pt; font-weight: 900; color: #0f1f3d; line-height: 1; }
+    .plan-card.prem .plan-price { color: #f97316; }
+    .plan-card.ent  .plan-price { color: #fff; }
+    .plan-custom { font-size: 13pt; font-weight: 900; color: #38bdf8; line-height: 1.2; }
+
+    .plan-unit { font-size: 7pt; color: #64748b; margin-top: 1px; }
+    .plan-card.ent .plan-unit { color: #94a3b8; }
+    .plan-iva  { font-size: 7.5pt; color: #94a3b8; margin-bottom: 8px; }
+
+    .plan-sep { border: none; border-top: 1px solid #e2e8f0; margin: 7px 0; }
+    .plan-card.ent .plan-sep { border-color: rgba(255,255,255,0.12); }
+
+    .plan-feat { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 3px; }
+    .plan-feat li { font-size: 7.5pt; color: #475569; padding-left: 12px; position: relative; line-height: 1.4; }
+    .plan-feat li::before { content: '✓'; position: absolute; left: 0; color: #94a3b8; font-weight: 700; }
+    .plan-card.std  .plan-feat li::before { color: #2563eb; }
+    .plan-card.prem .plan-feat li::before { color: #f97316; }
+    .plan-card.ent  .plan-feat li { color: #cbd5e1; }
+    .plan-card.ent  .plan-feat li::before { color: #38bdf8; }
+
+    /* ══════════════════════════════════════════
+       CONDITION BADGES
+       ══════════════════════════════════════════ */
+    .cond-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+    .cond-badge { border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px 12px 12px; text-align: center; }
+    .cond-num { font-size: 28pt; font-weight: 900; color: #0f1f3d; line-height: 1; }
+    .cond-unit { font-size: 14pt; font-weight: 700; color: #0f1f3d; }
+    .cond-label { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: #334155; margin: 5px 0 3px; line-height: 1.35; }
+    .cond-sub { font-size: 7pt; color: #94a3b8; line-height: 1.4; }
+
+    /* ── Detail cards 2×2 ── */
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 9px 0; }
+    .detail-card { border: 1px solid #e2e8f0; border-radius: 5px; padding: 10px 13px; }
+    .detail-label { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2563eb; margin-bottom: 5px; }
+    .detail-card p { font-size: 8.5pt; color: #334155; margin: 0; line-height: 1.6; }
+
+    /* ── Enterprise table ── */
+    .ent-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 8px 0; }
+    .ent-table th { background: #0f1f3d; color: #fff; padding: 6px 10px; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; text-align: right; }
+    .ent-table th:first-child { text-align: left; }
+    .ent-table td { padding: 5px 10px; border-bottom: 1px solid #f1f5f9; text-align: right; }
+    .ent-table td:first-child { text-align: left; color: #64748b; }
+
+    /* ── Comparison table ── */
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 8pt; margin: 9px 0; }
+    .comp-table th { background: #0f1f3d; color: #fff; padding: 6px 8px; font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
+    .comp-table th:first-child { text-align: left; width: 44%; }
+    .comp-table th:not(:first-child) { text-align: center; }
+    .comp-table td { padding: 5px 8px; border-bottom: 1px solid #f1f5f9; font-size: 8pt; color: #334155; }
+    .comp-table td:not(:first-child) { text-align: center; }
+    .comp-table tr.grp td { background: #f1f5f9; font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; padding: 4px 8px; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .ck { color: #2563eb; font-weight: 700; font-size: 10pt; }
+    .da { color: #cbd5e1; }
+
+    /* ── Summary table ── */
+    .sum-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 9px 0; }
+    .sum-table th { background: #0f1f3d; color: #fff; padding: 7px 12px; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .sum-table th:not(:first-child) { text-align: right; }
+    .sum-table td { padding: 7px 12px; border-bottom: 1px solid #f1f5f9; }
+    .sum-table td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+    .sum-table tr.disc td { color: #059669; }
+    .sum-table tr.zero td { color: #94a3b8; }
+    .sum-table tr.total td { background: #0f1f3d; color: #fff; font-weight: 700; border-bottom: none; }
+    .sum-table tr.total td:last-child { color: #38bdf8; font-size: 10pt; }
+
+    /* ── Steps ── */
+    .steps { display: flex; flex-direction: column; gap: 10px; margin: 10px 0; }
+    .step { display: flex; gap: 12px; align-items: flex-start; }
+    .step-num { width: 22px; height: 22px; border-radius: 50%; background: #2563eb; color: #fff; font-size: 8pt; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+    .step-lbl { font-size: 6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2563eb; margin-bottom: 1px; }
+    .step-title { font-size: 9.5pt; font-weight: 700; color: #0f1f3d; margin-bottom: 2px; }
+    .step-desc { font-size: 8.5pt; color: #475569; line-height: 1.55; }
+
+    /* ── Signature ── */
+    .sig-ruler { display: flex; align-items: center; gap: 12px; margin: 14px 0 12px; }
+    .sig-ruler hr { flex: 1; border: none; border-top: 1px solid #e2e8f0; }
+    .sig-ruler span { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #94a3b8; white-space: nowrap; }
+    .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 14px; }
+    .sig-block { display: flex; flex-direction: column; }
+    .sig-line { border-bottom: 1.5px solid #cbd5e1; height: 32px; margin-bottom: 7px; }
+    .sig-name { font-size: 9.5pt; font-weight: 700; color: #0f1f3d; }
+    .sig-role { font-size: 8pt; color: #64748b; }
+    .sig-org  { font-size: 8pt; color: #2563eb; }
+
+    /* ── Contact block ── */
+    .contact-block { background: #0f1f3d; border-radius: 6px; padding: 14px 18px; margin-top: 10px; }
+    .contact-eyebrow { font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #38bdf8; margin-bottom: 5px; }
+    .contact-block p { color: #cbd5e1; font-size: 9pt; line-height: 1.6; margin-bottom: 10px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+    .ci-label { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; margin-bottom: 2px; }
+    .ci-value { font-size: 9.5pt; font-weight: 600; color: #fff; }
+
+    /* ── Footer ── */
+    .doc-footer {
+      margin-top: auto;
+      padding: 9px 36px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7pt;
+      color: #94a3b8;
+      flex-shrink: 0;
+    }
+    .footer-brand { font-weight: 700; color: #64748b; }
+    .doc-id { font-family: 'Courier New', monospace; font-size: 6.5pt; }
+  </style>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 1 — PRESENTACIÓN + QUÉ ES + BENEFICIOS
+     ═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="doc-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <img src="../public/images/corestack.png" alt="Corestack" style="height:38px;flex-shrink:0;"/>
+      <div>
+        <div class="brand-name">Corestack Solutions</div>
+        <div class="brand-sub">Desarrollo · Infraestructura · Soporte Local</div>
+      </div>
+    </div>
+    <div class="doc-meta">
+      <strong>CS-RA-001 · Cotización</strong>
+      Tabasco, México · <span id="doc-date-header"></span><br>
+      Confidencial
+    </div>
+  </div>
+  <div class="accent-bar"></div>
+
+  <div class="title-block">
+    <div class="doc-type">Cotización · Documento Comercial</div>
+    <div class="doc-title">Residential Access</div>
+    <div class="doc-subtitle">Planes y precios para comunidades y privadas — control de acceso moderno desde el primer día</div>
+  </div>
+
+  <div class="info-row">
+    <div class="info-cell">
+      <span class="label">Dirigido a</span>
+      <span class="value">César</span>
+    </div>
+    <div class="info-cell">
+      <span class="label">Presentado por</span>
+      <span class="value">Corestack Solutions</span>
+    </div>
+    <div class="info-cell">
+      <span class="label">Tipo de propuesta</span>
+      <span class="value">Cotización comercial</span>
+    </div>
+    <div class="info-cell">
+      <span class="label">Folio</span>
+      <span class="value">CS-RA-001</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title">Qué es Residential Access</div>
+      <p>Sistema digital completo que permite a administradores, residentes y personal de seguridad gestionar de forma moderna y eficiente el acceso a la comunidad — todo desde una aplicación móvil, sin tarjetas físicas ni llaveros.</p>
+      <p>Corestack Solutions desarrolla y mantiene Residential Access con base en Tabasco, con soporte directo y sin intermediarios. La solución se configura según las necesidades de cada comunidad y puede crecer sin necesidad de empezar desde cero.</p>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="section">
+      <div class="section-title">Lo que genera para su comunidad</div>
+      <div class="card-grid">
+        <div class="card blue">
+          <div class="card-title">Acceso sin tarjetas físicas ni llaveros</div>
+          <p>Residentes y visitas operan con pases QR digitales desde el celular. Sin plásticos, sin pérdidas, sin duplicados que gestionar ni revocar manualmente.</p>
+        </div>
+        <div class="card blue">
+          <div class="card-title">Visibilidad total en tiempo real</div>
+          <p>La administración tiene acceso completo a quién entra, cuándo y por qué punto — desde cualquier dispositivo, sin depender de registros manuales.</p>
+        </div>
+        <div class="card blue">
+          <div class="card-title">Reportes automáticos sin trabajo manual</div>
+          <p>Los reportes se generan solos. La información está disponible de inmediato para auditorías, decisiones operativas o ante cualquier incidente.</p>
+        </div>
+        <div class="card blue">
+          <div class="card-title">Comunicación inmediata con residentes</div>
+          <p>Alertas y notificaciones push para toda la comunidad — aunque la app esté cerrada. Sin intermediarios ni retrasos en la comunicación.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span><span class="footer-brand">Corestack Solutions</span> · corestacksolutions.com.mx</span>
+    <span class="doc-id">CS-RA-001</span>
+    <span>Pág. 1 / 6</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 2 — FUNCIONALIDADES
+     ═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header">
+    <div class="ph-brand">Corestack <span>Solutions</span></div>
+    <div class="ph-right">
+      <div class="ph-doc">Residential Access</div>
+      <div class="ph-folio">CS-RA-001 · Cotización</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title">Funcionalidades principales</div>
+      <p style="margin-bottom:10px;">Todo lo que la comunidad necesita para operar de forma moderna y segura, sin tarjetas físicas ni registros manuales — disponible en Android e iOS desde el primer día.</p>
+
+      <div class="feat-grid">
+        <div class="feat-item">
+          <div class="feat-icon">🔲</div>
+          <div class="feat-body">
+            <div class="feat-name">Pases de acceso con código QR</div>
+            <div class="feat-desc">Generación de pases digitales para visitas. Configurable: número de usos y días de validez. Cancelación inmediata en cualquier momento.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">📊</div>
+          <div class="feat-body">
+            <div class="feat-name">Panel de administración</div>
+            <div class="feat-desc">KPIs en tiempo real: residentes, pases, escaneos. Historial completo con filtros. Hora pico y día pico de movimiento.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">🚧</div>
+          <div class="feat-body">
+            <div class="feat-name">Control de acceso físico</div>
+            <div class="feat-desc">Integración directa con plumas y barreras. Apertura automática al validar el QR. Estado en tiempo real del dispositivo.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">💼</div>
+          <div class="feat-body">
+            <div class="feat-name">Gestión de guardias</div>
+            <div class="feat-desc">Cuentas independientes para el personal. Escaneo de QR desde dispositivo en caseta.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">👥</div>
+          <div class="feat-body">
+            <div class="feat-name">Gestión de residentes</div>
+            <div class="feat-desc">Alta por invitación — sin registro público. Datos completos: módulo, lote, bloque, casa. Activación / desactivación inmediata.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">🎨</div>
+          <div class="feat-body">
+            <div class="feat-name">Personalización</div>
+            <div class="feat-desc">Logo y colores propios de la comunidad. Diseño personalizado del pase QR. Activación de módulos: mercado, alberca, pagos.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">🔔</div>
+          <div class="feat-body">
+            <div class="feat-name">Alertas y notificaciones</div>
+            <div class="feat-desc">Envío masivo a todos los residentes. Push notification aunque la app esté cerrada.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">🔐</div>
+          <div class="feat-body">
+            <div class="feat-name">Seguridad</div>
+            <div class="feat-desc">Roles diferenciados: admin, residente, guardia. Sesiones con expiración automática. Límite de intentos de acceso.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">🎉</div>
+          <div class="feat-body">
+            <div class="feat-name">Eventos y reuniones</div>
+            <div class="feat-desc">El residente genera un link de evento. Los invitados reciben su QR personal. Control de aforo y escaneo en puerta.</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">🏘</div>
+          <div class="feat-body">
+            <div class="feat-name">Multi-comunidad</div>
+            <div class="feat-desc">Múltiples comunidades desde una sola plataforma. Datos completamente aislados. Soporte para sub-zonas: fases, torres, condominios.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="check-grid">
+      <div class="check-block">
+        <div class="check-block-title">Para la administración</div>
+        <ul class="check-list">
+          <li>Control total del acceso desde cualquier celular</li>
+          <li>Elimina tarjetas físicas y llaveros</li>
+          <li>Comunicación inmediata con todos los residentes</li>
+          <li>Reportes en tiempo real, sin registros manuales</li>
+          <li>Alta de residentes sencilla por invitación</li>
+        </ul>
+      </div>
+      <div class="check-block">
+        <div class="check-block-title">Para los residentes</div>
+        <ul class="check-list">
+          <li>Acceso con el celular, sin tarjetas ni llaveros</li>
+          <li>Notificaciones importantes al instante</li>
+          <li>Generación de pases para sus visitas</li>
+          <li>Creación de eventos con QR para cada invitado</li>
+          <li>Registro de sus propios accesos y movimientos</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
+    <span class="doc-id">CS-RA-001</span>
+    <span>Pág. 2 / 6</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 3 — PLANES Y PRECIOS
+     ═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header">
+    <div class="ph-brand">Corestack <span>Solutions</span></div>
+    <div class="ph-right">
+      <div class="ph-doc">Planes y Precios</div>
+      <div class="ph-folio">CS-RA-001 · Cotización</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title">Planes disponibles</div>
+      <p style="margin-bottom:14px;">Todos los planes incluyen las mismas funcionalidades. Precios en MXN mostrados sin IVA y con IVA (16%).</p>
+
+      <div class="plan-grid">
+
+        <!-- Básico -->
+        <div class="plan-card">
+          <div class="plan-name">Básico</div>
+          <div class="plan-range">30 – 80 casas</div>
+          <div class="plan-price">$4,900</div>
+          <div class="plan-unit">MXN / mes sin IVA</div>
+          <div class="plan-iva">$5,684 con IVA</div>
+          <hr class="plan-sep"/>
+          <ul class="plan-feat">
+            <li>Hasta 80 unidades</li>
+            <li>1er dispositivo de acceso incluido</li>
+            <li>Gestión de 1 punto de acceso</li>
+            <li>App Android e iOS</li>
+            <li>Soporte por correo</li>
+            <li>Actualizaciones incluidas</li>
+          </ul>
+        </div>
+
+        <!-- Estándar -->
+        <div class="plan-card std">
+          <div class="plan-name">Estándar</div>
+          <div class="plan-range">80 – 250 casas</div>
+          <div class="plan-price">$7,900</div>
+          <div class="plan-unit">MXN / mes sin IVA</div>
+          <div class="plan-iva">$9,164 con IVA</div>
+          <hr class="plan-sep"/>
+          <ul class="plan-feat">
+            <li>Hasta 250 unidades</li>
+            <li>1er dispositivo de acceso incluido</li>
+            <li>Gestión de hasta 3 puntos de acceso</li>
+            <li>App Android e iOS</li>
+            <li>Soporte por correo</li>
+            <li>Actualizaciones incluidas</li>
+          </ul>
+        </div>
+
+        <!-- Premium -->
+        <div class="plan-card prem">
+          <div class="plan-pill orange">Más popular</div>
+          <div class="plan-name">Premium</div>
+          <div class="plan-range">250 – 800 casas</div>
+          <div class="plan-price">$10,900</div>
+          <div class="plan-unit">MXN / mes sin IVA</div>
+          <div class="plan-iva">$12,644 con IVA</div>
+          <hr class="plan-sep"/>
+          <ul class="plan-feat">
+            <li>Hasta 800 unidades</li>
+            <li>1er dispositivo de acceso incluido</li>
+            <li>Gestión de hasta 8 puntos de acceso</li>
+            <li>App Android e iOS</li>
+            <li>Soporte prioritario</li>
+            <li>Actualizaciones incluidas</li>
+          </ul>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="plan-card ent">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-range" style="color:#64748b;">800+ casas</div>
+          <div class="plan-custom">Cotización<br/>personalizada</div>
+          <div class="plan-unit" style="margin-top:4px;">Precios con y sin IVA</div>
+          <div class="plan-iva">&nbsp;</div>
+          <hr class="plan-sep"/>
+          <ul class="plan-feat">
+            <li>Unidades ilimitadas</li>
+            <li>Puntos de acceso ilimitados</li>
+            <li>App Android e iOS</li>
+            <li>SLA garantizado</li>
+            <li>Onboarding dedicado</li>
+            <li>Contrato mínimo 6 meses</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="section">
+      <div class="section-title">Plan Enterprise — Fórmula de precio</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;">
+        <div>
+          <p>Desde <strong>$13,500 MXN/mes sin IVA</strong> ($15,660 con IVA) para 800 casas · <strong>+$500 MXN</strong> por cada 100 casas adicionales · Setup fee a convenir.</p>
+          <table class="ent-table">
+            <thead>
+              <tr><th>Casas</th><th>Sin IVA</th><th>Con IVA</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>900</td><td>$14,000</td><td>$16,240</td></tr>
+              <tr><td>1,000</td><td>$14,500</td><td>$16,820</td></tr>
+              <tr><td>1,200</td><td>$15,500</td><td>$17,980</td></tr>
+              <tr><td>1,500</td><td>$17,000</td><td>$19,720</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="callout info">
+            <div class="callout-icon">ℹ</div>
+            <div>
+              <div class="callout-title">Plan seleccionado para esta cotización</div>
+              <p>Plan: <strong>[Indicar plan seleccionado]</strong><br/>
+              Número de casas: [___]<br/>
+              Puntos de acceso: [___]<br/>
+              Total mensual sin IVA: <strong>$[___] MXN</strong><br/>
+              Total mensual con IVA: <strong>$[___] MXN</strong></p>
+            </div>
+          </div>
+          <div class="callout warning">
+            <div class="callout-icon">⚠</div>
+            <div>
+              <div class="callout-title">Cotización válida por 30 días</div>
+              <p>Los precios pueden ajustarse al vencimiento de la vigencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
+    <span class="doc-id">CS-RA-001</span>
+    <span>Pág. 3 / 6</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 4 — COMPARATIVA DE PLANES
+     ═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header">
+    <div class="ph-brand">Corestack <span>Solutions</span></div>
+    <div class="ph-right">
+      <div class="ph-doc">Comparativa de Planes</div>
+      <div class="ph-folio">CS-RA-001 · Cotización</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title">Qué incluye cada plan</div>
+      <p style="margin-bottom:10px;">Todos los planes incluyen las mismas funcionalidades base. Las diferencias son en capacidad y nivel de soporte.</p>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Funcionalidad</th>
+            <th>Básico</th>
+            <th>Estándar</th>
+            <th>Premium</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="5">Capacidad</td></tr>
+          <tr>
+            <td>Número de unidades (casas)</td>
+            <td>Hasta 80</td>
+            <td>Hasta 250</td>
+            <td>Hasta 800</td>
+            <td>Ilimitadas</td>
+          </tr>
+          <tr>
+            <td>Puntos de acceso gestionados</td>
+            <td>1</td>
+            <td>Hasta 3</td>
+            <td>Hasta 8</td>
+            <td>Ilimitados</td>
+          </tr>
+          <tr>
+            <td>1er dispositivo de acceso incluido</td>
+            <td><span class="ck">✓</span></td>
+            <td><span class="ck">✓</span></td>
+            <td><span class="ck">✓</span></td>
+            <td><span class="ck">✓</span></td>
+          </tr>
+
+          <tr class="grp"><td colspan="5">Funcionalidades</td></tr>
+          <tr>
+            <td>App móvil Android e iOS</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Pases QR para visitas</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Gestión de puntos de acceso</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Gestión de residentes y guardias</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Alertas y push notifications</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Eventos con QR masivo</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Panel de reportes y estadísticas</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Personalización (logo, colores, QR)</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Actualizaciones de la plataforma</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+
+          <tr class="grp"><td colspan="5">Soporte y servicios</td></tr>
+          <tr>
+            <td>Soporte por correo</td>
+            <td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Soporte prioritario y SLA</td>
+            <td><span class="da">—</span></td><td><span class="da">—</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td>
+          </tr>
+          <tr>
+            <td>Onboarding dedicado</td>
+            <td><span class="da">—</span></td><td><span class="da">—</span></td><td><span class="da">—</span></td><td><span class="ck">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout info" style="margin-top:10px;">
+        <div class="callout-icon">ℹ</div>
+        <div>
+          <div class="callout-title">Dispositivos adicionales</div>
+          <p>El primer dispositivo de acceso está incluido en todos los planes. Los dispositivos adicionales se cotizan por separado según el punto de instalación y configuración requerida.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
+    <span class="doc-id">CS-RA-001</span>
+    <span>Pág. 4 / 6</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 5 — CONDICIONES Y PROMOCIONES
+     ═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header">
+    <div class="ph-brand">Corestack <span>Solutions</span></div>
+    <div class="ph-right">
+      <div class="ph-doc">Condiciones Comerciales</div>
+      <div class="ph-folio">CS-RA-001 · Cotización</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title">Condiciones y Promociones</div>
+
+      <div class="cond-grid">
+        <div class="cond-badge">
+          <div class="cond-num">50<span style="font-size:16pt;">%</span></div>
+          <div class="cond-label">Descuento<br/>Primer Mes</div>
+          <div class="cond-sub">Precio especial de lanzamiento</div>
+        </div>
+        <div class="cond-badge">
+          <div class="cond-num">3<span style="font-size:14pt;font-weight:700;">m</span></div>
+          <div class="cond-label">Contrato Mínimo<br/>Recomendado</div>
+          <div class="cond-sub">Para planes Básico y Estándar</div>
+        </div>
+        <div class="cond-badge">
+          <div class="cond-num">6<span style="font-size:14pt;font-weight:700;">m</span></div>
+          <div class="cond-label">Contrato Mínimo<br/>Enterprise</div>
+          <div class="cond-sub">Incluye setup fee acordado</div>
+        </div>
+        <div class="cond-badge">
+          <div class="cond-num">30<span style="font-size:14pt;font-weight:700;">d</span></div>
+          <div class="cond-label">Vigencia de<br/>esta Cotización</div>
+          <div class="cond-sub">Sujeto a disponibilidad</div>
+        </div>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-card">
+          <div class="detail-label">Primer mes</div>
+          <p>Precio especial de lanzamiento: <strong>50% de descuento</strong> en la primera mensualidad para nuevos clientes que contraten antes del vencimiento de esta cotización.</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-label">Contrato mínimo</div>
+          <p>Se recomienda contrato de <strong>3 meses</strong> para amortizar la configuración inicial y la capacitación del administrador. Plan Enterprise requiere mínimo <strong>6 meses</strong>.</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-label">Facturación</div>
+          <p>Facturación <strong>mensual anticipada</strong>. Precios en MXN mostrados sin IVA y con IVA (16%). Pago vía <strong>transferencia bancaria</strong>. Factura fiscal emitida al recibir el pago.</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-label">Instalación inicial</div>
+          <p><strong>Primer dispositivo incluido</strong> en todos los planes. Dispositivos adicionales se cotizan por separado según el punto de instalación y la configuración requerida.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="section">
+      <div class="section-title">Resumen de inversión</div>
+      <table class="sum-table">
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Detalle</th>
+            <th>Sin IVA</th>
+            <th>Con IVA (16%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plan seleccionado</td>
+            <td>[Plan] — [N] casas</td>
+            <td>$[___] MXN</td>
+            <td>$[___] MXN</td>
+          </tr>
+          <tr class="disc">
+            <td>Primer mes (50% descuento)</td>
+            <td>Promoción de lanzamiento</td>
+            <td>−$[___] MXN</td>
+            <td>−$[___] MXN</td>
+          </tr>
+          <tr class="zero">
+            <td>Dispositivos adicionales</td>
+            <td>A cotizar por separado</td>
+            <td>$0</td>
+            <td>$0</td>
+          </tr>
+          <tr class="total">
+            <td colspan="3">Primer mes (con descuento)</td>
+            <td>$[___] MXN</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning" style="margin-top:8px;">
+        <div class="callout-icon">⚠</div>
+        <div>
+          <div class="callout-title">Nota sobre cambios de plan</div>
+          <p>Es posible cambiar de plan durante la vigencia del contrato. Los cambios aplican a partir del siguiente ciclo de facturación, previa confirmación por escrito.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span><span class="footer-brand">Corestack Solutions</span> · Tabasco, México</span>
+    <span class="doc-id">CS-RA-001</span>
+    <span>Pág. 5 / 6</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 6 — ACEPTACIÓN Y PRÓXIMOS PASOS
+     ═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header">
+    <div class="ph-brand">Corestack <span>Solutions</span></div>
+    <div class="ph-right">
+      <div class="ph-doc">Aceptación</div>
+      <div class="ph-folio">CS-RA-001 · Cotización</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title">Aceptación de Cotización</div>
+
+      <div class="contact-block">
+        <div class="contact-eyebrow">Compromiso Corestack Solutions</div>
+        <p>Residential Access es una solución desarrollada y mantenida por Corestack Solutions con <strong style="color:#fff;">altos estándares de seguridad, disponibilidad y soporte</strong>. Al aceptar esta cotización, su comunidad accede a una plataforma moderna, escalable y en constante evolución — sin tarjetas físicas, sin registros manuales, con visibilidad total en tiempo real.</p>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="section">
+      <div class="section-title">Próximos pasos</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-lbl">Paso 1</div>
+            <div class="step-title">Revisión de la cotización</div>
+            <div class="step-desc">El cliente revisa planes, precios y condiciones. Se resuelven dudas en reunión de 30 min vía videollamada o presencial.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-lbl">Paso 2</div>
+            <div class="step-title">Selección de plan y firma</div>
+            <div class="step-desc">Se confirma el plan seleccionado, se firma el contrato de servicios y se realiza el primer pago (con 50% de descuento de lanzamiento).</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-lbl">Paso 3</div>
+            <div class="step-title">Configuración e instalación</div>
+            <div class="step-desc">Corestack configura la plataforma con logo, colores y datos de la comunidad. Se instala el primer dispositivo de acceso.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-lbl">Paso 4</div>
+            <div class="step-title">Capacitación y lanzamiento</div>
+            <div class="step-desc">Sesión de capacitación para administradores y guardias. Alta de los primeros residentes. Inicio de operación en la comunidad.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-ruler">
+      <hr/><span>Firma de Aceptación</span><hr/>
+    </div>
+
+    <div class="sig-grid">
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <div class="sig-name">[Nombre del representante]</div>
+        <div class="sig-role">Administrador / Representante Legal</div>
+        <div class="sig-org">[Nombre de la Comunidad / Empresa]</div>
+      </div>
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <div class="sig-name">Corestack Solutions</div>
+        <div class="sig-role">Responsable Comercial</div>
+        <div class="sig-org">corestacksolutions.com.mx</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">ℹ</div>
+      <div>
+        <div class="callout-title">Plan aceptado</div>
+        <p>Plan: [___] · Casas: [___] · Puntos de acceso: [___] · Mensualidad: <strong>$[___] MXN + IVA</strong> · Inicio: [___]</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span><span class="footer-brand">Corestack Solutions</span> · corestack.sol@gmail.com · +52 993 442 1347</span>
+    <span class="doc-id">CS-RA-001 · Confidencial</span>
+    <span>Pág. 6 / 6</span>
+  </div>
+</div>
+
+
+<script>
+  const fecha = new Date().toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('doc-date-header').textContent = fecha;
+</script>
+</body>
+</html>

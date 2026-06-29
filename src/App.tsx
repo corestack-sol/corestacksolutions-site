@@ -15,6 +15,10 @@ import DeleteAccount from './Components/DeleteAccount'
 import ProposalTemplate from './Components/ProposalTemplate'
 import DashboardHome from './Components/Dashboard/DashboardHome'
 import ProjectDetail from './Components/Dashboard/ProjectDetail'
+import { AuthProvider } from './contexts/AuthContext'
+import LoginModal from './Components/LoginModal'
+import PrivateRoute from './Components/PrivateRoute'
+import CorporateIndex from './Components/CorporateIndex'
 
 function MainPage() {
   const [language, setLanguage] = useState<Language>('ES')
@@ -46,16 +50,27 @@ function MainPage() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/privacy-policy" element={<PolicyQRResidence />} />
-        <Route path="/delete-account" element={<DeleteAccount />} />
-        <Route path="/propuesta" element={<ProposalTemplate />} />
-        <Route path="/dashboard" element={<DashboardHome />} />
-        <Route path="/dashboard/:id" element={<ProjectDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <LoginModal />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/privacy-policy" element={<PolicyQRResidence />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/propuesta" element={<ProposalTemplate />} />
+          <Route path="/dashboard" element={<DashboardHome />} />
+          <Route path="/dashboard/:id" element={<ProjectDetail />} />
+          <Route
+            path="/corporate"
+            element={
+              <PrivateRoute>
+                <CorporateIndex />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

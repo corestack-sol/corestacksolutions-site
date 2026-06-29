@@ -7,13 +7,8 @@ const serveCorporate: Plugin = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     server.middlewares.use((req: any, res: any, next) => {
       const url = (req.url ?? '').split('?')[0]
-      // /corporate          → redirect → /corporate/index.html
-      // /corporate/doc-name → redirect → /corporate/doc-name.html
-      if (url === '/corporate') {
-        res.writeHead(302, { Location: '/corporate/index.html' })
-        res.end()
-        return
-      }
+      // /corporate is now handled by the React SPA (PrivateRoute → CorporateIndex)
+      // /corporate/doc-name → redirect → /corporate/doc-name.html (direct doc access in dev)
       if (/^\/corporate\/[\w-]+$/.test(url)) {
         res.writeHead(302, { Location: url + '.html' })
         res.end()
@@ -26,4 +21,12 @@ const serveCorporate: Plugin = {
 
 export default defineConfig({
   plugins: [react(), serveCorporate],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://corestacksolutions-api-production.up.railway.app',
+        changeOrigin: true,
+      },
+    },
+  },
 })

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { FaBars, FaTimes, FaLock, FaBuilding } from 'react-icons/fa'
 import { useActiveSection } from '../hooks/useActiveSection'
+import { useAuth } from '../contexts/AuthContext'
 import type { Language } from '../types'
 
 interface NavbarProps {
@@ -36,6 +38,7 @@ const Navbar = ({ language, toggleLanguage }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const active = useActiveSection(SECTION_IDS)
+  const { isAuthenticated, user, logout, openLoginModal } = useAuth()
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -77,7 +80,45 @@ const Navbar = ({ language, toggleLanguage }: NavbarProps) => {
               </button>
             </li>
           ))}
+
+          {/* Corporate — visible only when authenticated */}
+          {isAuthenticated && (
+            <li>
+              <Link
+                to="/corporate"
+                className="flex items-center gap-1.5 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-200"
+              >
+                <FaBuilding size={12} />
+                Corporate
+              </Link>
+            </li>
+          )}
         </ul>
+
+        {/* Auth button (desktop) */}
+        <div className="hidden md:flex items-center">
+          {isAuthenticated ? (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-slate-500 max-w-[120px] truncate">{user?.email}</span>
+              <button
+                onClick={logout}
+                title="Cerrar sesión"
+                className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 hover:border-red-500/50 hover:text-red-400 text-slate-400 flex items-center justify-center transition-all"
+              >
+                <FaTimes size={12} />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={openLoginModal}
+              title="Acceso corporativo"
+              className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-blue-400 border border-slate-700 hover:border-blue-500/50 px-3 py-1.5 rounded-full transition-all duration-200"
+            >
+              <FaLock size={10} />
+              Acceso
+            </button>
+          )}
+        </div>
 
         <button
           className="md:hidden text-white"
@@ -103,6 +144,39 @@ const Navbar = ({ language, toggleLanguage }: NavbarProps) => {
                 </button>
               </li>
             ))}
+
+            {isAuthenticated ? (
+              <>
+                <li>
+                  <Link
+                    to="/corporate"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-2 text-sm font-semibold text-blue-400"
+                  >
+                    <FaBuilding size={12} />
+                    Corporate
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={() => { logout(); setIsOpen(false) }}
+                    className="text-sm text-red-400"
+                  >
+                    Cerrar sesión
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <button
+                  onClick={() => { openLoginModal(); setIsOpen(false) }}
+                  className="flex items-center gap-2 text-sm font-semibold text-slate-400"
+                >
+                  <FaLock size={11} />
+                  Acceso corporativo
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       )}
