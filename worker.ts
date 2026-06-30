@@ -43,6 +43,9 @@ export default {
       }
     }
 
-    return env.ASSETS.fetch(request)
+    const res = await env.ASSETS.fetch(request)
+    const out = new Response(res.body, res)
+    out.headers.set('X-Worker', '1')
+    return out
   },
 }
