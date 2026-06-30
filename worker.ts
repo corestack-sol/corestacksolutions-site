@@ -34,6 +34,11 @@ export default {
       return fetch(upstream)
     }
 
+    // ── /corporate and /corporate/ → React SPA (not the static HTML directory) ──
+    if (url.pathname === '/corporate' || url.pathname === '/corporate/') {
+      return env.ASSETS.fetch(new Request(new URL('/index.html', url).toString(), request))
+    }
+
     // ── Protect /corporate/*.html ──
     if (url.pathname.startsWith('/corporate/') && url.pathname.endsWith('.html')) {
       const cookie = request.headers.get('Cookie') ?? ''
