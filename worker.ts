@@ -22,7 +22,7 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
 
-    // ── API proxy (dev & prod, avoids CORS) ──
+    // ── API proxy — avoids CORS in dev & prod ──
     if (url.pathname.startsWith('/api/')) {
       const target = new URL(url.pathname + url.search, RAILWAY)
       const upstream = new Request(target.toString(), {
@@ -34,14 +34,8 @@ export default {
       return fetch(upstream)
     }
 
-    // ── /corporate and /corporate/ → React SPA (not the static HTML directory) ──
-    if (url.pathname === '/corporate' || url.pathname === '/corporate/') {
-      url.pathname = '/index.html'
-      return env.ASSETS.fetch(new Request(url.toString()))
-    }
-
-    // ── Protect /corporate/*.html ──
-    if (url.pathname.startsWith('/corporate/') && url.pathname.endsWith('.html')) {
+    // ── Protect /corporate/* — requires valid session cookie ──
+    if (url.pathname.startsWith('/corporate')) {
       const cookie = request.headers.get('Cookie') ?? ''
       const token = getCookie(cookie, 'cs_auth')
       if (!token || !isTokenAlive(token)) {
