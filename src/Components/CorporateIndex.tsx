@@ -198,24 +198,34 @@ function Section({
 
 function DocGrid({ cards }: { cards: DocCard[] }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {cards.map(card => (
         <a
           key={card.href}
           href={card.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-slate-900 border border-slate-800 hover:border-blue-500/50 rounded-xl p-5 flex flex-col gap-2 transition-all duration-200 hover:bg-slate-800/70 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-950/40"
+          className="group rounded-2xl overflow-hidden border border-slate-700/60 shadow-md hover:shadow-xl hover:shadow-blue-950/40 hover:-translate-y-1 transition-all duration-200"
         >
-          <div className="flex items-start justify-between">
-            <span className="text-2xl">{card.icon}</span>
-            <FaExternalLinkAlt size={10} className="text-slate-700 group-hover:text-blue-500 transition-colors mt-1" />
+          {/* Dark section — icon + title */}
+          <div className="relative bg-[#0B1629] flex flex-col items-center justify-center gap-3 px-6 py-8">
+            <span className="text-4xl drop-shadow-md">{card.icon}</span>
+            <span className="text-white font-bold text-sm text-center leading-snug tracking-wide">
+              {card.name}
+            </span>
+            <FaExternalLinkAlt
+              size={9}
+              className="absolute top-3 right-3 text-slate-600 group-hover:text-blue-400 transition-colors"
+            />
           </div>
-          <div className="font-semibold text-sm text-white">{card.name}</div>
-          <div className="text-xs text-slate-500 leading-relaxed flex-1">{card.desc}</div>
-          <span className="inline-block bg-blue-950/60 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider w-fit mt-1">
-            {card.tag}
-          </span>
+
+          {/* Light section — description + tag */}
+          <div className="bg-white px-5 py-4 flex flex-col gap-3">
+            <p className="text-slate-500 text-xs leading-relaxed">{card.desc}</p>
+            <span className="inline-block bg-blue-50 text-blue-600 border border-blue-100 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider w-fit">
+              {card.tag}
+            </span>
+          </div>
         </a>
       ))}
     </div>
