@@ -36,7 +36,8 @@ export default {
 
     // ── /corporate and /corporate/ → React SPA (not the static HTML directory) ──
     if (url.pathname === '/corporate' || url.pathname === '/corporate/') {
-      return env.ASSETS.fetch(new Request(new URL('/index.html', url).toString(), request))
+      url.pathname = '/index.html'
+      return env.ASSETS.fetch(new Request(url.toString()))
     }
 
     // ── Protect /corporate/*.html ──
