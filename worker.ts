@@ -41,11 +41,13 @@ export default {
       if (!token || !isTokenAlive(token)) {
         return Response.redirect(new URL('/', url).toString(), 302)
       }
+      // Serve the asset but prevent edge caching so the auth check always runs
+      const res = await env.ASSETS.fetch(request)
+      const out = new Response(res.body, res)
+      out.headers.set('Cache-Control', 'private, no-store')
+      return out
     }
 
-    const res = await env.ASSETS.fetch(request)
-    const out = new Response(res.body, res)
-    out.headers.set('X-Worker', '1')
-    return out
+    return env.ASSETS.fetch(request)
   },
 }
