@@ -40,12 +40,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   function setSession(t: string, u: AuthUser) {
     localStorage.setItem(TOKEN_KEY, t)
+    document.cookie = `cs_auth=${t}; path=/; SameSite=Strict; max-age=${7 * 24 * 3600}`
     setToken(t)
     setUser(u)
   }
 
   function logout() {
     localStorage.removeItem(TOKEN_KEY)
+    document.cookie = 'cs_auth=; path=/; max-age=0'
     setToken(null)
     setUser(null)
   }
