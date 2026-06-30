@@ -23,14 +23,16 @@ const Contact = ({ data, language }: ContactProps) => {
   const [status, setStatus] = useState<Status>('idle')
 
   const t = {
-    label: language === 'EN' ? 'Get In Touch' : 'Contáctanos',
-    title: language === 'EN' ? "Let's Work Together" : 'Trabajemos Juntos',
-    subtitle: data.contactmessage,
+    label: language === 'EN' ? 'REAL IMPACT PROJECTS' : 'PROYECTOS CON IMPACTO REAL',
+    title: language === 'EN' ? 'Do you have an operational challenge worth solving?' : '¿Tienes un reto operativo que vale la pena resolver?',
+    subtitle: language === 'EN'
+      ? 'We take the time to understand your situation before responding. Every business is different, and we want to understand yours.'
+      : 'Nos tomamos el tiempo de entender tu caso antes de responder. Cada empresa es diferente y queremos entender la tuya.',
     namePh: language === 'EN' ? 'Your name' : 'Tu nombre',
     emailPh: language === 'EN' ? 'Your email' : 'Tu correo',
-    subjectPh: language === 'EN' ? 'Subject' : 'Asunto',
+    subjectPh: language === 'EN' ? 'E.g.: I want to automate my inventory control' : 'Ej: Quiero automatizar mi control de inventario',
     messagePh: language === 'EN' ? 'Your message' : 'Tu mensaje',
-    send: language === 'EN' ? 'Send Message' : 'Enviar Mensaje',
+    send: language === 'EN' ? 'Send my case' : 'Enviar mi caso',
     sending: language === 'EN' ? 'Sending...' : 'Enviando...',
     successMsg:
       language === 'EN'
