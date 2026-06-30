@@ -205,7 +205,7 @@ function DocGrid({ cards }: { cards: DocCard[] }) {
           href={card.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-2xl overflow-hidden border border-slate-700/60 shadow-md hover:shadow-xl hover:shadow-blue-950/40 hover:-translate-y-1 transition-all duration-200"
+          className="group rounded-2xl overflow-hidden border border-slate-700/60 shadow-md hover:shadow-xl hover:shadow-blue-950/40 hover:-translate-y-1 transition-all duration-200 flex flex-col"
         >
           {/* Dark section — icon + title */}
           <div className="relative bg-[#0B1629] flex flex-col items-center justify-center gap-3 px-6 py-8">
@@ -219,9 +219,9 @@ function DocGrid({ cards }: { cards: DocCard[] }) {
             />
           </div>
 
-          {/* Light section — description + tag */}
-          <div className="bg-white px-5 py-4 flex flex-col gap-3">
-            <p className="text-slate-500 text-xs leading-relaxed">{card.desc}</p>
+          {/* Light section — description + tag, flex-1 fills remaining height */}
+          <div className="bg-white px-5 py-4 flex flex-col gap-3 flex-1">
+            <p className="text-slate-500 text-xs leading-relaxed flex-1">{card.desc}</p>
             <span className="inline-block bg-blue-50 text-blue-600 border border-blue-100 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider w-fit">
               {card.tag}
             </span>
