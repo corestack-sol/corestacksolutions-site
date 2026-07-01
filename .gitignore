@@ -10,6 +10,12 @@ node_modules
 # production
 /build
 /dist
+/.wrangler
+*.tsbuildinfo
+
+# generated at dev/build time from docs/formatos and docs/propuestas — see vite.config.ts
+/public/docs
+/public/propuestas
 
 # misc
 .DS_Store
@@ -17,6 +23,7 @@ node_modules
 .env.development.local
 .env.test.local
 .env.production.local
+.dev.vars
 
 npm-debug.log*
 yarn-debug.log*

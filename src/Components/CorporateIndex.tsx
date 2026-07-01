@@ -17,35 +17,35 @@ const TEMPLATES: DocCard[] = [
     name: 'Propuesta Comercial',
     desc: 'Propuesta técnica y económica completa. Portada, TOC, alcance, arquitectura, cronograma, presupuesto y firma.',
     tag: 'CS-PROP',
-    href: '/corporate/proposal.html',
+    href: '/docs/formatos/proposal.html',
   },
   {
     icon: '⚙️',
     name: 'Reporte Técnico',
     desc: 'Estado del sistema, métricas de rendimiento, análisis de endpoints, seguridad y recomendaciones técnicas.',
     tag: 'CS-TECH',
-    href: '/corporate/technical-report.html',
+    href: '/docs/formatos/technical-report.html',
   },
   {
     icon: '⚖️',
     name: 'Contrato de Servicios',
     desc: 'Contrato de prestación de servicios con cláusulas de alcance, propiedad intelectual, pagos y confidencialidad.',
     tag: 'CS-CONT',
-    href: '/corporate/contract.html',
+    href: '/docs/formatos/contract.html',
   },
   {
     icon: '📊',
     name: 'Reporte Ejecutivo',
     desc: 'Dashboard de avance, KPIs, estado de sprints, control presupuestario y registro de riesgos del proyecto.',
     tag: 'CS-EXEC',
-    href: '/corporate/executive-report.html',
+    href: '/docs/formatos/executive-report.html',
   },
   {
     icon: '💰',
     name: 'Cotización Genérica',
     desc: 'Plantilla de cotización comercial editable. Conceptos, precios, condiciones y firma de aceptación.',
     tag: 'CS-COT',
-    href: '/corporate/cotizacion.html',
+    href: '/docs/formatos/cotizacion.html',
   },
 ]
 
@@ -55,38 +55,21 @@ const BRAND: DocCard[] = [
     name: 'Brand Guidelines',
     desc: 'Manual de identidad: paleta de colores, tipografía, logo, patrones gráficos, voz y tono de marca.',
     tag: 'Identidad',
-    href: '/corporate/brand-guidelines.html',
+    href: '/docs/formatos/brand-guidelines.html',
   },
   {
     icon: '🏷️',
     name: 'Logo Pack',
     desc: 'Variaciones del logotipo, usos correctos e incorrectos, zona de protección, tamaños e iconos de app.',
     tag: 'Logo',
-    href: '/corporate/logo-pack.html',
+    href: '/docs/formatos/logo-pack.html',
   },
   {
     icon: '✉️',
     name: 'Email Signature Kit',
     desc: '3 variaciones de firma corporativa. Edita tu nombre y cargo, copia con un clic e instala en Gmail, Outlook o Apple Mail.',
     tag: 'Email',
-    href: '/corporate/email-signature.html',
-  },
-]
-
-const PROPOSALS: DocCard[] = [
-  {
-    icon: '🏘️',
-    name: 'Propuesta Villa Universitaria',
-    desc: 'Propuesta completa para el proyecto Villa Universitaria. Portal inmobiliario con Residential Access integrado.',
-    tag: 'Propuesta',
-    href: '/propuestas/propuesta-villa-universitaria.html',
-  },
-  {
-    icon: '🔲',
-    name: 'Cotización Residential Access',
-    desc: 'Cotización comercial para el sistema de acceso residencial con QR. Folio CS-RA-001. 4 planes disponibles.',
-    tag: 'CS-RA-001',
-    href: '/propuestas/cotizacion-residential-access.html',
+    href: '/docs/formatos/email-signature.html',
   },
 ]
 
@@ -155,10 +138,6 @@ export default function CorporateIndex() {
 
         <Section title="Identidad de Marca" subtitle="Recursos de diseño y guías de uso de la marca">
           <DocGrid cards={BRAND} />
-        </Section>
-
-        <Section title="Propuestas y Cotizaciones" subtitle="Documentos específicos por cliente o producto">
-          <DocGrid cards={PROPOSALS} />
         </Section>
 
         <p className="text-center text-xs mt-8" style={{ color: '#F97316' }}>

@@ -1,43 +1,55 @@
-# Clever Programmer ReactJS Portfolio Template      
+# Corestack Solutions — Sitio Web
 
-## 👇 WATCH THIS FIRST 👇
-## https://tinyurl.com/customizeReactPortfolio
+Sitio corporativo de Corestack Solutions (software y automatización, Villahermosa, Tabasco), construido con React + Vite y desplegado en Cloudflare Workers.
 
-![ReactJS Resume Website Template](resume-screenshot.png?raw=true "ReactJS Resume Website Template")
+## Stack
 
-## <a href="https://compassionate-leakey-e9b16b.netlify.app/">LIVE DEMO</a>
+- **React 19** + **React Router** — SPA
+- **Vite** — build y dev server
+- **Tailwind CSS**
+- **TypeScript**
+- **Cloudflare Workers** (`worker.ts` + `wrangler.json`) — hosting, proxy de `/api` y protección de `/corporate` por cookie de sesión
+- API backend externa (Railway) consumida vía `/api/*`
 
-## Description
-This is a ReactJS based personal resume website template for participants of The 6 Figure JavaScript ReactJS Challenge by Clever 
+## Scripts
 
-## Make it Your Own!
-#### PREREQUISITES:
-- Sign up for a Netlify account <a href='https://www.netlify.com'>HERE</a>
-- Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
-#### PROCEDURE:
-- Download the zip folder from Github and unzip it
-Here is the link to download zip 👉
-<a href='https://github.com/CleverProgrammers/react-portfolio'>HERE</a>
-- Open the folder in VS Code
-- Edit <code>public/resumeData.json</code> and add your personal details and projects
-- Open terminal in VS Code
-- RUN <code>npm init</code> , this command can be used to set up a new or existing npm package
-- RUN <code>npm install</code> , this command pulls out all the require node modules
-- RUN <code>npm run build</code>, this command will create a build folder for you
-- DRAG AND DROP the BUILD folder on Netlify, your app is live now for the world to see
+```
+npm run dev       # servidor de desarrollo (vite)
+npm run build     # type-check (tsc) + build de producción → dist/
+npm run preview   # sirve el build de producción localmente
+npm run deploy    # build + despliegue a Cloudflare Workers (wrangler)
+```
 
+## Estructura
 
-## Credits
+```
+src/
+  Components/       componentes de página (Header, Resume, Portfolio, Contact, etc.)
+  Components/Dashboard/  panel de proyectos (/dashboard)
+  contexts/          AuthContext (sesión JWT)
+  api/                llamadas al backend (/api/auth/*)
+  hooks/              hooks compartidos (datos de currículum, sección activa, etc.)
+  styles/             CSS de la sección corporativa
+  types/
 
-#### All Credits Goes to Tim Baker <a href='https://github.com/tbakerx/react-resume-template'>Original Repo</a>
+public/
+  corporate/          plantillas HTML de documentos corporativos (propuesta, contrato,
+                       reportes, brand kit); servidas bajo /corporate y protegidas por
+                       cookie de sesión (ver worker.ts)
+  propuestas/          propuestas comerciales para clientes específicos, servidas bajo
+                       /propuestas (acceso directo por link, sin login)
+  images/, videos/     assets estáticos
+  resumeES.json, resumeEN.json  contenido del currículum/portafolio (ES/EN)
 
+propuestas/            documentos fuente de propuestas (brief, PDF) — no se sirven
+                       directamente; su versión final vive en public/propuestas/
+docs/                  documentación interna (spec de API, playbook de ventas)
+```
 
+## Rutas principales
 
-HTML Design Template
-<a href="https://www.styleshout.com/free-templates/ceevee/">Ceevee Template by Styleshout</a>
-
-Header photo credit
-<a href="https://unsplash.com/@mischievous_penguins?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge">Casey Horner</a>
-
-Testimonial photo credit
-<a href="https://unsplash.com/@samuelzeller?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge">Samuel Zeller</a>
+- `/` — sitio principal (resume/portfolio)
+- `/corporate` — panel de documentos corporativos (requiere login)
+- `/dashboard`, `/dashboard/:id` — panel de proyectos
+- `/propuesta` — plantilla de propuesta
+- `/privacy-policy`, `/delete-account` — páginas de política para la app de acceso residencial QR
