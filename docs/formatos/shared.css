@@ -41,9 +41,9 @@
   --margin-y:    1.4cm;
 
   /* Rutas de assets */
-  --logo:              url('../images/corestack.png');
-  --pattern-dark:      url('../images/dark pattern.png');
-  --pattern-light:     url('../images/light pattern.png');
+  --logo:              url('/images/corestack.png');
+  --pattern-dark:      url('/images/dark pattern.png');
+  --pattern-light:     url('/images/light pattern.png');
 }
 
 /* ──────────────────────────────────────────────────────────────
