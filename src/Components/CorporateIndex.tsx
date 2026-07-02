@@ -140,7 +140,7 @@ export default function CorporateIndex() {
           <DocGrid cards={BRAND} />
         </Section>
 
-        <p className="text-center text-xs mt-8" style={{ color: '#F97316' }}>
+        <p className="text-center text-xs mt-8" style={{ color: '#F59E0B' }}>
           Cada documento puede imprimirse o exportarse como PDF desde el botón en la barra superior.<br />
           Edita directamente el HTML para personalizar datos del cliente, folio, fechas y montos.
         </p>
